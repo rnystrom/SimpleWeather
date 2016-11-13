@@ -65,5 +65,4 @@ fastlane/screenshots
 fastlane/test_output
 
 .DS_Store
-SimpleWeather/Classes/Systems/API.swift
 
