@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.0.1)
+  - IGListKit (1.0.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - IGListKit
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  IGListKit: 3242c475fa77e2abf2d4de319703088008fbe9b9
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: 9cee875dd26caf600f115c6c0c92b64675888fda
+
+COCOAPODS: 1.1.1

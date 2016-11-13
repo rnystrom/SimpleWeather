@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sso-wo-8Yt">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="mkJ-UF-Von">
+            <objects>
+                <navigationController id="Sso-wo-8Yt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iyS-hW-e5w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zbT-OB-19z" kind="relationship" relationship="rootViewController" id="4SS-mL-xkG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pwl-Zq-A5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1032" y="90"/>
+        </scene>
+        <!--Your Location-->
+        <scene sceneID="UI1-Xg-wRX">
+            <objects>
+                <viewController id="zbT-OB-19z" customClass="WeatherViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G88-K2-Bqb"/>
+                        <viewControllerLayoutGuide type="bottom" id="s6t-mY-1wE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggW-Bb-TBA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-HX-2bj">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xdq-2I-oPs">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wBf-HX-2bj" secondAttribute="trailing" id="Hod-jb-Hic"/>
+                            <constraint firstItem="wBf-HX-2bj" firstAttribute="top" secondItem="G88-K2-Bqb" secondAttribute="bottom" id="LW3-gS-FYk"/>
+                            <constraint firstItem="s6t-mY-1wE" firstAttribute="top" secondItem="wBf-HX-2bj" secondAttribute="bottom" id="R1w-Bn-fm3"/>
+                            <constraint firstItem="wBf-HX-2bj" firstAttribute="leading" secondItem="ggW-Bb-TBA" secondAttribute="leading" id="mWN-Tw-TrA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your Location" id="IDE-lV-LUJ">
+                        <barButtonItem key="leftBarButtonItem" title="Locations" id="DTv-Gw-0pr">
+                            <connections>
+                                <segue destination="sU8-FH-KzD" kind="presentation" id="RPS-hG-4UA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Yb-fq-8v1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-581" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gMQ-TJ-Rdz">
+            <objects>
+                <navigationController id="sU8-FH-KzD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="An1-pR-6Wl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cPM-Dc-Myp" kind="relationship" relationship="rootViewController" id="PgR-pi-7vQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTD-RR-P41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142" y="90"/>
+        </scene>
+        <!--Locations-->
+        <scene sceneID="YzO-4w-nSf">
+            <objects>
+                <viewController title="Locations" id="cPM-Dc-Myp" customClass="LocationsViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LeD-rf-K88"/>
+                        <viewControllerLayoutGuide type="bottom" id="TTG-rW-hZQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6oS-oe-sm5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecu-c4-iKD">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7N6-yh-haC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ecu-c4-iKD" secondAttribute="trailing" id="8gN-2N-Hoq"/>
+                            <constraint firstItem="TTG-rW-hZQ" firstAttribute="top" secondItem="ecu-c4-iKD" secondAttribute="bottom" id="8l8-WN-hn6"/>
+                            <constraint firstItem="ecu-c4-iKD" firstAttribute="leading" secondItem="6oS-oe-sm5" secondAttribute="leading" id="fDc-4z-ClS"/>
+                            <constraint firstItem="ecu-c4-iKD" firstAttribute="top" secondItem="LeD-rf-K88" secondAttribute="bottom" id="mKA-DF-4eK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qmV-Lu-Awv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6qJ-b9-a43">
+                            <connections>
+                                <action selector="onDone:" destination="cPM-Dc-Myp" id="UJC-Rq-7V0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWd-9Y-YOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293" y="90"/>
+        </scene>
+    </scenes>
+</document>
