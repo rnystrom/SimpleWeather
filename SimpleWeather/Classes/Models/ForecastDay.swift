@@ -10,10 +10,6 @@ import Foundation
 
 struct ForecastDay {
 
-    enum Icon {
-        case chanceflurries, chancerain, chancesleet, chancesnow, chancetstorms, clear, cloudy, flurries, fog, hazy, mostlycloudy, mostlysunny, partlycloudy, partlysunny, sleet, rain, snow, sunny, tstorms, unknown
-    }
-
     struct Wind {
         let speed: Int
         let direction: String
@@ -40,7 +36,7 @@ struct ForecastDay {
     let snow_night: Double
     let max_wind: Wind?
     let average_wind: Wind?
-    let icon: Icon
+    let icon: ConditionsIcon
     let avehumidity: Int
     let maxhumidity: Int
     let minhumidity: Int
@@ -98,31 +94,7 @@ struct ForecastDay {
         self.avehumidity = avehumidity
         self.maxhumidity = maxhumidity
         self.minhumidity = minhumidity
-
-        let icon: Icon
-        switch icon_name {
-        case "chanceflurries": icon = .chanceflurries
-        case "chancerain": icon = .chancerain
-        case "chancesleet": icon = .chancesleet
-        case "chancesnow": icon = .chancesnow
-        case "chancetstorms": icon = .chancetstorms
-        case "clear": icon = .clear
-        case "cloudy": icon = .cloudy
-        case "flurries": icon = .flurries
-        case "fog": icon = .fog
-        case "hazy": icon = .hazy
-        case "mostlycloudy": icon = .mostlycloudy
-        case "mostlysunny": icon = .mostlysunny
-        case "partlycloudy": icon = .partlycloudy
-        case "partlysunny": icon = .partlysunny
-        case "sleet": icon = .sleet
-        case "rain": icon = .rain
-        case "snow": icon = .snow
-        case "sunny": icon = .sunny
-        case "tstorms": icon = .tstorms
-        default: icon = .unknown
-        }
-        self.icon = icon
+        self.icon = ConditionsIcon.from(string: icon_name)
     }
     
 }

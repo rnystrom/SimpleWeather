@@ -124,4 +124,56 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertNotNil(forecast)
     }
 
+    func test_thatForecastHourlyCreated_fromValidJSON() {
+        let json: [String: Any] = [
+            "FCTTIME": [
+                "epoch": "1479135600",
+            ],
+            "temp": [
+                "english": "53",
+            ],
+            "dewpoint": [
+                "english": "29",
+            ],
+            "condition": "Clear",
+            "icon": "clear",
+            "wspd": [
+                "english": "4",
+            ],
+            "wdir": [
+                "dir": "SW",
+            ],
+            "wx": "Sunny",
+            "uvi": "2",
+            "humidity": "39",
+            "windchill": [
+                "english": "-9999",
+            ],
+            "heatindex": [
+                "english": "-9999",
+            ],
+            "feelslike": [
+                "english": "53",
+            ],
+            "qpf": [
+                "english": "0.0",
+            ],
+            "snow": [
+                "english": "0.0",
+            ],
+            "pop": "0",
+            "mslp": [
+                "english": "30.06",
+            ]
+        ]
+        let forecast = ForecastHourly(json: json)
+        XCTAssertNotNil(forecast)
+    }
+
+    func test_thatForecastHourlyCreated_fromSampleJSON() {
+        let json = (sampleJSONResponse["hourly_forecast"] as! [ [String: Any] ]).first!
+        let forecast = ForecastHourly(json: json)
+        XCTAssertNotNil(forecast)
+    }
+
 }

@@ -22,6 +22,10 @@
 		29E0A3111DDAA1A1004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
 		29E0A3131DDAA46E004EA2C5 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */; };
 		29E0A3141DDAABD6004EA2C5 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */; };
+		29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */; };
+		29E0A3181DDAB889004EA2C5 /* ConditionsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3171DDAB889004EA2C5 /* ConditionsIcon.swift */; };
+		29E0A3191DDAB981004EA2C5 /* ForecastHourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */; };
+		29E0A31A1DDAB98A004EA2C5 /* ConditionsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3171DDAB889004EA2C5 /* ConditionsIcon.swift */; };
 		6962141FADBF729716365B07 /* Pods_SimpleWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEFB4A0F751D8FA1003488B /* Pods_SimpleWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,8 @@
 		290538961DDA0F6300531193 /* sample_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample_response.json; sourceTree = "<group>"; };
 		29E0A30F1DDAA19C004EA2C5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
+		29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHourly.swift; sourceTree = "<group>"; };
+		29E0A3171DDAB889004EA2C5 /* ConditionsIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsIcon.swift; sourceTree = "<group>"; };
 		97411C0C10DF125F88826C97 /* Pods-SimpleWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		E9FF45DCF72D75228D35D313 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 		FFEFB4A0F751D8FA1003488B /* Pods_SimpleWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +138,8 @@
 				290538941DDA09E100531193 /* Alert.swift */,
 				29E0A30F1DDAA19C004EA2C5 /* Location.swift */,
 				29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */,
+				29E0A3171DDAB889004EA2C5 /* ConditionsIcon.swift */,
+				29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,10 +363,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E0A3131DDAA46E004EA2C5 /* ForecastDay.swift in Sources */,
+				29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */,
 				290538601DD9231F00531193 /* AppDelegate.swift in Sources */,
 				290538831DD9287A00531193 /* WeatherViewController.swift in Sources */,
 				290538851DD92C3C00531193 /* API.swift in Sources */,
 				290538951DDA09E100531193 /* Alert.swift in Sources */,
+				29E0A3181DDAB889004EA2C5 /* ConditionsIcon.swift in Sources */,
 				29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */,
 				290538811DD9287100531193 /* LocationsViewController.swift in Sources */,
 			);
@@ -368,7 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E0A31A1DDAB98A004EA2C5 /* ConditionsIcon.swift in Sources */,
 				29E0A3081DDA10E3004EA2C5 /* Alert.swift in Sources */,
+				29E0A3191DDAB981004EA2C5 /* ForecastHourly.swift in Sources */,
 				29E0A3141DDAABD6004EA2C5 /* ForecastDay.swift in Sources */,
 				29E0A3111DDAA1A1004EA2C5 /* Location.swift in Sources */,
 				2905388D1DDA093900531193 /* ModelTests.swift in Sources */,
@@ -404,6 +416,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -454,6 +467,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -483,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97411C0C10DF125F88826C97 /* Pods-SimpleWeather.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 523C4DWBTH;
 				INFOPLIST_FILE = SimpleWeather/Resources/Info.plist;
@@ -498,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9FF45DCF72D75228D35D313 /* Pods-SimpleWeather.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 523C4DWBTH;
 				INFOPLIST_FILE = SimpleWeather/Resources/Info.plist;
