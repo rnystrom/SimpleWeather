@@ -18,7 +18,7 @@ class SimpleWeatherTests: XCTestCase {
     }()
 
     func test_thatAlertCreated_fromValidJSON() {
-        let json: [String: Any] = [
+        let json = [
             "type": "HEA",
             "description": "Heat Advisory",
             "date": "11:14 am CDT on July 3, 2012",
@@ -37,6 +37,35 @@ class SimpleWeatherTests: XCTestCase {
         let json = (sampleJSONResponse["alerts"] as! [ [String: Any] ]).first!
         let alert = Alert(json: json)
         XCTAssertNotNil(alert)
+    }
+
+    func test_thatLocationCreated_fromValidJSON() {
+        let json = [
+            "type": "CITY",
+            "country": "US",
+            "country_iso3166": "US",
+            "country_name": "USA",
+            "state": "NY",
+            "city": "Manhattan",
+            "tz_short": "EST",
+            "tz_long": "America/New_York",
+            "lat": "40.710000",
+            "lon": "-74.000000",
+            "zip": "11201",
+            "magic": "9",
+            "wmo": "99999",
+            "l": "/q/zmw:11201.9.99999",
+            "requesturl": "US/NY/Fulton_Ferry.html",
+            "wuiurl": "https://www.wunderground.com/US/NY/Fulton_Ferry.html"
+            ]
+        let location = Location(json: json)
+        XCTAssertNotNil(location)
+    }
+
+    func test_thatLocationCreated_fromSampleJSON() {
+        let json = sampleJSONResponse["location"] as! [String: Any]
+        let location = Location(json: json)
+        XCTAssertNotNil(location)
     }
 
 }
