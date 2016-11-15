@@ -68,4 +68,60 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertNotNil(location)
     }
 
+    func test_thatForecastDayCreated_fromValidJSON() {
+        let json: [String: Any] = [
+            "date": [
+                "epoch": "1479168000",
+            ],
+            "high": [
+                "fahrenheit": "64",
+            ],
+            "low": [
+                "fahrenheit": "50",
+            ],
+            "conditions": "Partly Cloudy",
+            "icon": "partlycloudy",
+            "pop": 50,
+            "qpf_allday": [
+                "in": 0.13,
+            ],
+            "qpf_day": [
+                "in": 0.0,
+            ],
+            "qpf_night": [
+                "in": 0.13,
+            ],
+            "snow_allday": [
+                "in": 0.0,
+            ],
+            "snow_day": [
+                "in": 0.0,
+            ],
+            "snow_night": [
+                "in": 0.0,
+            ],
+            "maxwind": [
+                "mph": 10,
+                "dir": "SW",
+            ],
+            "avewind": [
+                "mph": 5,
+                "dir": "SW",
+            ],
+            "avehumidity": 39,
+            "maxhumidity": 56,
+            "minhumidity": 30
+        ]
+        let forecast = ForecastDay(json: json)
+        XCTAssertNotNil(forecast)
+    }
+
+    func test_thatForecastDayCreated_fromSampleJSON() {
+        let forecast_json = sampleJSONResponse["forecast"] as! [String: Any]
+        let simpleforecast = forecast_json["simpleforecast"] as! [String: Any]
+        let forecastday = simpleforecast["forecastday"] as! [ [String: Any] ]
+        let forecast = ForecastDay(json: forecastday.first!)
+        XCTAssertNotNil(forecast)
+    }
+
 }
