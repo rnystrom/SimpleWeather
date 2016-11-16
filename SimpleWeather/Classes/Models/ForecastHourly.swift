@@ -14,8 +14,6 @@ struct ForecastHourly {
     let temp: Int
     let dewpoint: Int
     let condition: String
-    let wspd: Int
-    let wdir: String
     let wx: String
     let uvi: Int
     let humidity: Int
@@ -26,6 +24,7 @@ struct ForecastHourly {
     let snow: Double
     let pop: Double
     let mslp: Double
+    let wind: Wind
     let icon: ConditionsIcon
 
 }

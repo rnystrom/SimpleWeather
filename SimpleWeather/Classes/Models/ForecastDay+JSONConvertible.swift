@@ -24,12 +24,23 @@ extension ForecastDay: JSONConvertible {
             let snow_day = keypath(dict: json, path: "snow_day.in") as Double?,
             let snow_night = keypath(dict: json, path: "snow_night.in") as Double?,
             let icon_name = json["icon"] as? String,
-            let avewind_json = json["avewind"] as? [String: Any],
-            let maxwind_json = json["maxwind"] as? [String: Any],
             let avehumidity = json["avehumidity"] as? Int,
             let maxhumidity = json["maxhumidity"] as? Int,
             let minhumidity = json["minhumidity"] as? Int
             else { return nil }
+
+        var max_wind: Wind? = nil
+        if let wspd = keypath(dict: json, path: "maxwind.mph") as Int?,
+            let wdir = keypath(dict: json, path: "maxwind.dir") as String? {
+            max_wind = Wind(speed: wspd, direction: wdir)
+        }
+
+        var ave_wind: Wind? = nil
+        if let wspd = keypath(dict: json, path: "avewind.mph") as Int?,
+            let wdir = keypath(dict: json, path: "avewind.dir") as String? {
+            ave_wind = Wind(speed: wspd, direction: wdir)
+        }
+
         return ForecastDay(
             date: Date(timeIntervalSince1970: date_interval),
             high: high,
@@ -42,12 +53,12 @@ extension ForecastDay: JSONConvertible {
             snow_allday: snow_allday,
             snow_day: snow_day,
             snow_night: snow_night,
-            icon: ConditionsIcon.from(string: icon_name),
             avehumidity: avehumidity,
             maxhumidity: maxhumidity,
             minhumidity: minhumidity,
-            max_wind: Wind(json: maxwind_json),
-            average_wind: Wind(json: avewind_json)
+            icon: ConditionsIcon.from(string: icon_name),
+            max_wind: max_wind,
+            average_wind: ave_wind
         )
     }
 

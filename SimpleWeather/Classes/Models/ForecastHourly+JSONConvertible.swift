@@ -35,8 +35,6 @@ extension ForecastHourly: JSONConvertible {
             temp: temp,
             dewpoint: dewpoint,
             condition: condition,
-            wspd: wspd,
-            wdir: wdir,
             wx: wx,
             uvi: uvi,
             humidity: humidity,
@@ -47,6 +45,7 @@ extension ForecastHourly: JSONConvertible {
             snow: snow,
             pop: pop,
             mslp: mslp,
+            wind: Wind(speed: wspd, direction: wdir),
             icon: ConditionsIcon.from(string: icon)
         )
     }
