@@ -159,16 +159,16 @@
 			isa = PBXGroup;
 			children = (
 				290538941DDA09E100531193 /* Alert.swift */,
-				29E0A30F1DDAA19C004EA2C5 /* Location.swift */,
-				29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */,
-				29E0A3171DDAB889004EA2C5 /* ConditionsIcon.swift */,
-				29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */,
-				29E0A3381DDC0091004EA2C5 /* Wind.swift */,
-				29E0A3291DDBFD46004EA2C5 /* JSONConvertible.swift */,
 				29E0A32B1DDBFD82004EA2C5 /* Alert+JSONConvertible.swift */,
-				29E0A32D1DDBFE26004EA2C5 /* Location+JSONConvertible.swift */,
-				29E0A32F1DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift */,
+				29E0A3171DDAB889004EA2C5 /* ConditionsIcon.swift */,
+				29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */,
 				29E0A3311DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift */,
+				29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */,
+				29E0A32F1DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift */,
+				29E0A3291DDBFD46004EA2C5 /* JSONConvertible.swift */,
+				29E0A30F1DDAA19C004EA2C5 /* Location.swift */,
+				29E0A32D1DDBFE26004EA2C5 /* Location+JSONConvertible.swift */,
+				29E0A3381DDC0091004EA2C5 /* Wind.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

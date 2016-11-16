@@ -43,7 +43,7 @@ extension ForecastHourly: JSONConvertible {
             feelslike: feelslike,
             qpf: qpf,
             snow: snow,
-            pop: pop,
+            pop: pop / 100.0,
             mslp: mslp,
             wind: Wind(speed: wspd, direction: wdir),
             icon: ConditionsIcon.from(string: icon)

@@ -14,3 +14,11 @@ struct Wind {
     let direction: String
     
 }
+
+extension Wind: Equatable {
+
+    public static func ==(lhs: Wind, rhs: Wind) -> Bool {
+        return lhs.speed == rhs.speed && lhs.direction == rhs.direction
+    }
+
+}
