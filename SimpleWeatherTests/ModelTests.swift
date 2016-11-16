@@ -29,13 +29,13 @@ class SimpleWeatherTests: XCTestCase {
             "phenomena": "HT",
             "significance": "Y"
             ]
-        let alert = Alert(json: json)
+        let alert = Alert.fromJSON(json: json)
         XCTAssertNotNil(alert)
     }
 
     func test_thatAlertCreated_fromSampleJSON() {
         let json = (sampleJSONResponse["alerts"] as! [ [String: Any] ]).first!
-        let alert = Alert(json: json)
+        let alert = Alert.fromJSON(json: json)
         XCTAssertNotNil(alert)
     }
 
@@ -58,13 +58,13 @@ class SimpleWeatherTests: XCTestCase {
             "requesturl": "US/NY/Fulton_Ferry.html",
             "wuiurl": "https://www.wunderground.com/US/NY/Fulton_Ferry.html"
             ]
-        let location = Location(json: json)
+        let location = Location.fromJSON(json: json)
         XCTAssertNotNil(location)
     }
 
     func test_thatLocationCreated_fromSampleJSON() {
         let json = sampleJSONResponse["location"] as! [String: Any]
-        let location = Location(json: json)
+        let location = Location.fromJSON(json: json)
         XCTAssertNotNil(location)
     }
 
@@ -112,7 +112,7 @@ class SimpleWeatherTests: XCTestCase {
             "maxhumidity": 56,
             "minhumidity": 30
         ]
-        let forecast = ForecastDay(json: json)
+        let forecast = ForecastDay.fromJSON(json: json)
         XCTAssertNotNil(forecast)
     }
 
@@ -120,7 +120,7 @@ class SimpleWeatherTests: XCTestCase {
         let forecast_json = sampleJSONResponse["forecast"] as! [String: Any]
         let simpleforecast = forecast_json["simpleforecast"] as! [String: Any]
         let forecastday = simpleforecast["forecastday"] as! [ [String: Any] ]
-        let forecast = ForecastDay(json: forecastday.first!)
+        let forecast = ForecastDay.fromJSON(json: forecastday.first!)
         XCTAssertNotNil(forecast)
     }
 
@@ -166,13 +166,13 @@ class SimpleWeatherTests: XCTestCase {
                 "english": "30.06",
             ]
         ]
-        let forecast = ForecastHourly(json: json)
+        let forecast = ForecastHourly.fromJSON(json: json)
         XCTAssertNotNil(forecast)
     }
 
     func test_thatForecastHourlyCreated_fromSampleJSON() {
         let json = (sampleJSONResponse["hourly_forecast"] as! [ [String: Any] ]).first!
-        let forecast = ForecastHourly(json: json)
+        let forecast = ForecastHourly.fromJSON(json: json)
         XCTAssertNotNil(forecast)
     }
 
