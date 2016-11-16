@@ -30,13 +30,13 @@ extension ForecastDay: JSONConvertible {
             else { return nil }
 
         var max_wind: Wind? = nil
-        if let wspd = keypath(dict: json, path: "maxwind.mph") as Int?,
+        if let wspd = keypath(dict: json, path: "maxwind.mph") as Double?,
             let wdir = keypath(dict: json, path: "maxwind.dir") as String? {
             max_wind = Wind(speed: wspd, direction: wdir)
         }
 
         var ave_wind: Wind? = nil
-        if let wspd = keypath(dict: json, path: "avewind.mph") as Int?,
+        if let wspd = keypath(dict: json, path: "avewind.mph") as Double?,
             let wdir = keypath(dict: json, path: "avewind.dir") as String? {
             ave_wind = Wind(speed: wspd, direction: wdir)
         }

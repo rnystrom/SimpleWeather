@@ -10,7 +10,7 @@ import Foundation
 
 struct Wind {
 
-    let speed: Int
+    let speed: Double
     let direction: String
     
 }

@@ -25,7 +25,7 @@ extension ForecastHourly: JSONConvertible {
             let heatindex = (keypath(dict: json, path: "heatindex.english") as NSString?)?.integerValue,
             let feelslike = (keypath(dict: json, path: "feelslike.english") as NSString?)?.integerValue,
             let dewpoint = (keypath(dict: json, path: "dewpoint.english") as NSString?)?.integerValue,
-            let wspd = (keypath(dict: json, path: "wspd.english") as NSString?)?.integerValue,
+            let wspd = (keypath(dict: json, path: "wspd.english") as NSString?)?.doubleValue,
             let qpf = (keypath(dict: json, path: "qpf.english") as NSString?)?.doubleValue,
             let snow = (keypath(dict: json, path: "snow.english") as NSString?)?.doubleValue,
             let mslp = (keypath(dict: json, path: "mslp.english") as NSString?)?.doubleValue
