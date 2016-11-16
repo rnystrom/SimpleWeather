@@ -34,42 +34,27 @@ struct ForecastDay {
     let snow_allday: Double
     let snow_day: Double
     let snow_night: Double
-    let max_wind: Wind?
-    let average_wind: Wind?
     let icon: ConditionsIcon
     let avehumidity: Int
     let maxhumidity: Int
     let minhumidity: Int
 
-    static func parseTemp(key: String, json: [String: Any]) -> Int? {
-        guard let tempJSON = json[key] as? [String: String],
-            let tempStr = tempJSON["fahrenheit"],
-            let temp = Int(tempStr)
-            else { return nil }
-        return temp
-    }
-
-    static func parseTotal(key: String, json: [String: Any]) -> Double? {
-        guard let totalJSON = json[key] as? [String: Any],
-            let total = totalJSON["in"] as? Double
-            else { return nil }
-        return total
-    }
+    let max_wind: Wind?
+    let average_wind: Wind?
 
     init?(json: [String: Any]) {
-        guard let date_json = json["date"] as? [String: Any],
-            let epoch_string = date_json["epoch"] as? String,
+        guard let epoch_string = keypath(dict: json, path: "date.epoch") as String?,
             let date_interval = TimeInterval(epoch_string),
-            let high = ForecastDay.parseTemp(key: "high", json: json),
-            let low = ForecastDay.parseTemp(key: "low", json: json),
+            let high = (keypath(dict: json, path: "high.fahrenheit") as NSString?)?.integerValue,
+            let low = (keypath(dict: json, path: "low.fahrenheit") as NSString?)?.integerValue,
             let conditions = json["conditions"] as? String,
             let pop = json["pop"] as? Int,
-            let qpf_allday = ForecastDay.parseTotal(key: "qpf_allday", json: json),
-            let qpf_day = ForecastDay.parseTotal(key: "qpf_day", json: json),
-            let qpf_night = ForecastDay.parseTotal(key: "qpf_night", json: json),
-            let snow_allday = ForecastDay.parseTotal(key: "snow_allday", json: json),
-            let snow_day = ForecastDay.parseTotal(key: "snow_day", json: json),
-            let snow_night = ForecastDay.parseTotal(key: "snow_night", json: json),
+            let qpf_allday = keypath(dict: json, path: "qpf_allday.in") as Double?,
+            let qpf_day = keypath(dict: json, path: "qpf_day.in") as Double?,
+            let qpf_night = keypath(dict: json, path: "qpf_night.in") as Double?,
+            let snow_allday = keypath(dict: json, path: "snow_allday.in") as Double?,
+            let snow_day = keypath(dict: json, path: "snow_day.in") as Double?,
+            let snow_night = keypath(dict: json, path: "snow_night.in") as Double?,
             let icon_name = json["icon"] as? String,
             let avewind_json = json["avewind"] as? [String: Any],
             let maxwind_json = json["maxwind"] as? [String: Any],

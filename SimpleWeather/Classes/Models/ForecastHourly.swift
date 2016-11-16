@@ -35,38 +35,24 @@ struct ForecastHourly {
     let icon: ConditionsIcon
 
     init?(json: [String: Any]) {
-        guard let date_json = json["FCTTIME"] as? [String: Any],
-            let epoch_string = date_json["epoch"] as? String,
+        guard let epoch_string = keypath(dict: json, path: "FCTTIME.epoch") as String?,
             let date_interval = TimeInterval(epoch_string),
-            let temp_string = ForecastHourly.extractMetric(json: json["temp"]),
-            let temp = Int(temp_string),
-            let dewpoint_string = ForecastHourly.extractMetric(json: json["dewpoint"]),
-            let dewpoint = Int(dewpoint_string),
+            let temp = (keypath(dict: json, path: "temp.english") as NSString?)?.integerValue,
+            let dewpoint = (keypath(dict: json, path: "dewpoint.english") as NSString?)?.integerValue,
             let condition = json["condition"] as? String,
-            let icon_string = json["icon"] as? String,
-            let wspd_string = ForecastHourly.extractMetric(json: json["wspd"]),
-            let wspd = Int(wspd_string),
-            let wdir_json = json["wdir"] as? [String: String],
-            let wdir = wdir_json["dir"],
+            let icon = json["icon"] as? String,
+            let wspd = (keypath(dict: json, path: "wspd.english") as NSString?)?.integerValue,
+            let wdir = keypath(dict: json, path: "wdir.dir") as String?,
             let wx = json["wx"] as? String,
-            let uvi_string = json["uvi"] as? String,
-            let uvi = Int(uvi_string),
-            let humidity_string = json["humidity"] as? String,
-            let humidity = Int(humidity_string),
-            let windchill_string = ForecastHourly.extractMetric(json: json["windchill"]),
-            let windchill = Int(windchill_string),
-            let heatindex_string = ForecastHourly.extractMetric(json: json["heatindex"]),
-            let heatindex = Int(heatindex_string),
-            let feelslike_string = ForecastHourly.extractMetric(json: json["feelslike"]),
-            let feelslike = Int(feelslike_string),
-            let qpf_string = ForecastHourly.extractMetric(json: json["qpf"]),
-            let qpf = Double(qpf_string),
-            let snow_string = ForecastHourly.extractMetric(json: json["snow"]),
-            let snow = Double(snow_string),
-            let pop_string = json["pop"] as? String,
-            let pop = Double(pop_string),
-            let mslp_string = ForecastHourly.extractMetric(json: json["mslp"]),
-            let mslp = Double(mslp_string)
+            let uvi = (json["uvi"] as? NSString)?.integerValue,
+            let humidity = (json["humidity"] as? NSString)?.integerValue,
+            let windchill = (keypath(dict: json, path: "windchill.english") as NSString?)?.integerValue,
+            let heatindex = (keypath(dict: json, path: "heatindex.english") as NSString?)?.integerValue,
+            let feelslike = (keypath(dict: json, path: "feelslike.english") as NSString?)?.integerValue,
+            let qpf = (keypath(dict: json, path: "qpf.english") as NSString?)?.doubleValue,
+            let snow = (keypath(dict: json, path: "snow.english") as NSString?)?.doubleValue,
+            let pop = (json["pop"] as? NSString)?.doubleValue,
+            let mslp = (keypath(dict: json, path: "mslp.english") as NSString?)?.doubleValue
             else { return nil }
 
         self.date = Date(timeIntervalSince1970: date_interval)
@@ -85,7 +71,7 @@ struct ForecastHourly {
         self.snow = snow
         self.pop = pop
         self.mslp = mslp
-        self.icon = ConditionsIcon.from(string: icon_string)
+        self.icon = ConditionsIcon.from(string: icon)
     }
     
 }

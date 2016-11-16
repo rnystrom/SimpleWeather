@@ -20,7 +20,7 @@ struct Location {
     let tz_long: String
     let lat: Double
     let lon: Double
-    let zip: Int?
+    let zip: Int
     let magic: String
     let wmo: String
     let l: String
@@ -36,11 +36,9 @@ struct Location {
             let city = json["city"] as? String,
             let tz_short = json["tz_short"] as? String,
             let tz_long = json["tz_long"] as? String,
-            let lat_string = json["lat"] as? String,
-            let lat = Double(lat_string),
-            let lon_string = json["lon"] as? String,
-            let lon = Double(lon_string),
-            let zip_string = json["zip"] as? String,
+            let lat = (json["lat"] as? NSString)?.doubleValue,
+            let lon = (json["lon"] as? NSString)?.doubleValue,
+            let zip = (json["zip"] as? NSString)?.integerValue,
             let magic = json["magic"] as? String,
             let wmo = json["wmo"] as? String,
             let l = json["l"] as? String,
@@ -57,7 +55,7 @@ struct Location {
         self.tz_long = tz_long
         self.lat = lat
         self.lon = lon
-        self.zip = Int(zip_string)
+        self.zip = zip
         self.magic = magic
         self.wmo = wmo
         self.l = l
