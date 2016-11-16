@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>http://api.wunderground.com/api/36c847c1ef056205/forecast/geolookup/conditions/forecast10day/alerts/hourly/q/40.71,-74.json</string>
+	<key>followRedirect</key>
+	<true/>
+	<key>handleJSONPCallbacks</key>
+	<false/>
+	<key>headers</key>
+	<array/>
+	<key>httpMethod</key>
+	<string>GET</string>
+	<key>jsonpScript</key>
+	<string></string>
+	<key>paramBodyUIChoice</key>
+	<integer>0</integer>
+	<key>parameters</key>
+	<array/>
+	<key>parametersType</key>
+	<integer>0</integer>
+	<key>presentBeforeChallenge</key>
+	<false/>
+	<key>stringEncoding</key>
+	<integer>4</integer>
+	<key>usingHTTPBody</key>
+	<false/>
+</dict>
+</plist>
