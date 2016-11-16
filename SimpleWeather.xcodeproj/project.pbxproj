@@ -41,6 +41,8 @@
 		29E0A3371DDBFFAF004EA2C5 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3291DDBFD46004EA2C5 /* JSONConvertible.swift */; };
 		29E0A3391DDC0091004EA2C5 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3381DDC0091004EA2C5 /* Wind.swift */; };
 		29E0A33A1DDC00DE004EA2C5 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3381DDC0091004EA2C5 /* Wind.swift */; };
+		29E0A33C1DDC0BD1004EA2C5 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */; };
+		29E0A33D1DDCB85F004EA2C5 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */; };
 		6962141FADBF729716365B07 /* Pods_SimpleWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFEFB4A0F751D8FA1003488B /* Pods_SimpleWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,7 @@
 		29E0A32F1DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForecastHourly+JSONConvertible.swift"; sourceTree = "<group>"; };
 		29E0A3311DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForecastDay+JSONConvertible.swift"; sourceTree = "<group>"; };
 		29E0A3381DDC0091004EA2C5 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimiter.swift; sourceTree = "<group>"; };
 		97411C0C10DF125F88826C97 /* Pods-SimpleWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		E9FF45DCF72D75228D35D313 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 		FFEFB4A0F751D8FA1003488B /* Pods_SimpleWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +188,7 @@
 			children = (
 				290538841DD92C3C00531193 /* API.swift */,
 				29E0A31B1DDB61C5004EA2C5 /* KeypathParsing.swift */,
+				29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -398,6 +402,7 @@
 				29E0A3131DDAA46E004EA2C5 /* ForecastDay.swift in Sources */,
 				29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */,
 				29E0A32E1DDBFE26004EA2C5 /* Location+JSONConvertible.swift in Sources */,
+				29E0A33C1DDC0BD1004EA2C5 /* RateLimiter.swift in Sources */,
 				290538601DD9231F00531193 /* AppDelegate.swift in Sources */,
 				29E0A3321DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift in Sources */,
 				29E0A3391DDC0091004EA2C5 /* Wind.swift in Sources */,
@@ -417,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E0A31A1DDAB98A004EA2C5 /* ConditionsIcon.swift in Sources */,
+				29E0A33D1DDCB85F004EA2C5 /* RateLimiter.swift in Sources */,
 				29E0A31F1DDBA22C004EA2C5 /* KeypathParsingTests.swift in Sources */,
 				29E0A3081DDA10E3004EA2C5 /* Alert.swift in Sources */,
 				29E0A3331DDBFFAC004EA2C5 /* Alert+JSONConvertible.swift in Sources */,
