@@ -12,8 +12,9 @@ class WeatherViewController: UIViewController {
 
     var session: APISession? {
         didSet {
-            session?.getForecast(lat: 47.1, lon: -74, completion: { (forecast: Forecast?, error: Error?) in
+            session?.getForecastForCurrentLocation(completion: { (forecast: Forecast?, error: Error?) in
                 self.title = forecast?.location?.city
+                print(error)
             })
         }
     }

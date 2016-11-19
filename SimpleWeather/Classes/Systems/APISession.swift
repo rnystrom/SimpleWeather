@@ -7,12 +7,17 @@
 //
 
 import Foundation
+import CoreLocation
 
 class APISession {
+
+    typealias APISessionCompletion = (Forecast?, Error?) -> Void
 
     let session: URLSession
     let key: String
     let limiter: RateLimiter
+
+    var locationRequester: LocationRequester?
 
     init(key: String, limiter: RateLimiter, session: URLSession = URLSession.shared) {
         self.key = key
@@ -22,10 +27,21 @@ class APISession {
 
     // MARK: Public API
 
-    public func getForecast(lat: Double, lon: Double, completion: @escaping (Forecast?, Error?) -> Void) {
+    public func getForecastForCurrentLocation(completion: @escaping APISessionCompletion) {
+        locationRequester = LocationRequester()
+        locationRequester?.getLocation(completion: { [weak self] (location: CLLocation?, error: Error?) in
+            if let coordinate = location?.coordinate {
+                self?.getForecast(lat: coordinate.latitude, lon: coordinate.longitude, completion: completion)
+            } else {
+                completion(nil, error)
+            }
+        })
+    }
+
+    public func getForecast(lat: Double, lon: Double, completion: @escaping APISessionCompletion) {
         guard let url = forecastURL(lat: lat, lon: lon) else { return }
 
-        let mainCompletion: (Forecast?, Error?) -> Void = { (f: Forecast?, e: Error?) in
+        let mainCompletion: APISessionCompletion = { (f: Forecast?, e: Error?) in
             DispatchQueue.main.async {
                 completion(f, e)
             }
@@ -98,5 +114,7 @@ class APISession {
             }
         }
     }
+
+    
     
 }

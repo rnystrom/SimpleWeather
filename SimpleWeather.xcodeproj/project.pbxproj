@@ -26,6 +26,7 @@
 		29C579401DE0F6BA003A149B /* Forecast+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5793F1DE0F6BA003A149B /* Forecast+JSONConvertible.swift */; };
 		29C579411DE0F96A003A149B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5793D1DE0F652003A149B /* Forecast.swift */; };
 		29C579421DE0F96A003A149B /* Forecast+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5793F1DE0F6BA003A149B /* Forecast+JSONConvertible.swift */; };
+		29C579441DE103A5003A149B /* LocationRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579431DE103A5003A149B /* LocationRequester.swift */; };
 		29E0A3081DDA10E3004EA2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290538941DDA09E100531193 /* Alert.swift */; };
 		29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
 		29E0A3111DDAA1A1004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
@@ -90,6 +91,7 @@
 		29C579391DE0F275003A149B /* APISessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionTests.swift; sourceTree = "<group>"; };
 		29C5793D1DE0F652003A149B /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		29C5793F1DE0F6BA003A149B /* Forecast+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Forecast+JSONConvertible.swift"; sourceTree = "<group>"; };
+		29C579431DE103A5003A149B /* LocationRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRequester.swift; sourceTree = "<group>"; };
 		29E0A30F1DDAA19C004EA2C5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHourly.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				290538841DD92C3C00531193 /* API.swift */,
 				29C474881DDEA2AF00AE68CE /* APISession.swift */,
 				29E0A31B1DDB61C5004EA2C5 /* KeypathParsing.swift */,
+				29C579431DE103A5003A149B /* LocationRequester.swift */,
 				29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */,
 				29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */,
 			);
@@ -445,6 +448,7 @@
 				29E0A3181DDAB889004EA2C5 /* ConditionsIcon.swift in Sources */,
 				29E0A31C1DDB61C5004EA2C5 /* KeypathParsing.swift in Sources */,
 				29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */,
+				29C579441DE103A5003A149B /* LocationRequester.swift in Sources */,
 				290538811DD9287100531193 /* LocationsViewController.swift in Sources */,
 				29C474891DDEA2AF00AE68CE /* APISession.swift in Sources */,
 				29C5793E1DE0F652003A149B /* Forecast.swift in Sources */,
