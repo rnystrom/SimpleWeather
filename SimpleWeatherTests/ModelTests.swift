@@ -264,4 +264,13 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertNotNil(conditions)
     }
 
+    func test_thatForecastCreated_fromSampleJSON() {
+        let forecast = Forecast.fromJSON(json: sampleJSONResponse)
+        XCTAssertNotNil(forecast?.conditions)
+        XCTAssertNotNil(forecast?.location)
+        XCTAssertEqual(forecast?.alerts?.count, 1)
+        XCTAssertEqual(forecast?.daily?.count, 10)
+        XCTAssertEqual(forecast?.hourly?.count, 36)
+    }
+
 }
