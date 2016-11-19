@@ -15,5 +15,11 @@ class APISessionTests: XCTestCase {
         let key = url.diskCacheKey
         XCTAssertEqual(key.components(separatedBy: ".").last, "json")
     }
+
+    func test_whenCreatingForecastURL_withLatLon_thatURLExists() {
+        let session = APISession(key: "key", limiter: RateLimiter(rates: RateLimiter.API_RATES))
+        let url = session.forecastURL(lat: 1, lon: 1)
+        XCTAssertNotNil(url)
+    }
     
 }

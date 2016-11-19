@@ -47,18 +47,18 @@ class APISession {
 
     // MARK: Private API
 
+    internal func forecastURL(lat: Double, lon: Double) -> URL? {
+        let latlon = String(format: "%.2f,%.2f", lat, lon)
+        let functions = ["forecast", "geolookup", "conditions", "forecast10day", "alerts", "hourly"]
+        return URL(string: base(functions: functions, query: latlon))
+    }
+
     private var base: String {
         return "http://api.wunderground.com/api/\(key)/"
     }
 
     private func base(functions: [String], query: String) -> String {
         return base + functions.joined(separator: "/") + "/q/" + query + ".json"
-    }
-
-    private func forecastURL(lat: Double, lon: Double) -> URL? {
-        let latlon = String(format: "%.2f,%.2f", lat, lon)
-        let functions = ["forecast", "geolookup", "conditions", "forecast10day", "alerts", "hourly"]
-        return URL(string: base(functions: functions, query: latlon))
     }
 
     private func cacheURL(url: URL) -> URL? {
