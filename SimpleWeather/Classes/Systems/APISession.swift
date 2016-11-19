@@ -22,25 +22,34 @@ class APISession {
 
     // MARK: Public API
 
-    public func getForecast(lat: Double, lon: Double, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    public func getForecast(lat: Double, lon: Double, completion: @escaping (Forecast?, Error?) -> Void) {
         guard let url = forecastURL(lat: lat, lon: lon) else { return }
+
+        let mainCompletion: (Forecast?, Error?) -> Void = { (f: Forecast?, e: Error?) in
+            DispatchQueue.main.async {
+                completion(f, e)
+            }
+        }
 
         if limiter.attempt() {
             let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
                 if let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []),
+                    let castedJSON = json as? [String: Any] {
                     self.saveCachedResponse(url: url, data: data)
-                    completion(json, nil)
+                    mainCompletion(Forecast.fromJSON(json: castedJSON), nil)
                 } else {
-                    completion(nil, error)
+                    mainCompletion(nil, error)
                 }
             })
             task.resume()
         } else {
-            if let json = fetchCachedResponse(url: url) {
-                completion(json, nil)
-            } else {
-                completion(nil, nil)
+            DispatchQueue.global().async {
+                if let json = self.fetchCachedResponse(url: url) {
+                    mainCompletion(Forecast.fromJSON(json: json), nil)
+                } else {
+                    mainCompletion(nil, nil)
+                }
             }
         }
     }

@@ -41,14 +41,14 @@
 
 #pragma mark - Public API
 
-- (NSUInteger)sectionForSectionController:(IGListSectionController <IGListSectionType> *)sectionController {
+- (NSInteger)sectionForSectionController:(IGListSectionController <IGListSectionType> *)sectionController {
     IGParameterAssert(sectionController != nil);
 
     NSNumber *index = [self.sectionControllerToSectionMap objectForKey:sectionController];
     return index != nil ? [index unsignedIntegerValue] : NSNotFound;
 }
 
-- (IGListSectionController <IGListSectionType> *)sectionControllerForSection:(NSUInteger)section {
+- (IGListSectionController <IGListSectionType> *)sectionControllerForSection:(NSInteger)section {
     return [self.sectionControllerToObjectMap objectForKey:[self objectForSection:section]];
 }
 
@@ -74,11 +74,16 @@
     return [self.sectionControllerToObjectMap objectForKey:object];
 }
 
-- (id)objectForSection:(NSUInteger)section {
-    return self.objects[section];
+- (id)objectForSection:(NSInteger)section {
+    NSArray *objects = self.objects;
+    if (section < objects.count) {
+        return objects[section];
+    } else {
+        return nil;
+    }
 }
 
-- (NSUInteger)sectionForObject:(id)object {
+- (NSInteger)sectionForObject:(id)object {
     IGParameterAssert(object != nil);
 
     id sectionController = [self sectionControllerForObject:object];
@@ -106,7 +111,7 @@
     self.objects = [mobjects copy];
 }
 
-- (void)enumerateUsingBlock:(void (^)(id object, IGListSectionController <IGListSectionType> *sectionController, NSUInteger section, BOOL *stop))block {
+- (void)enumerateUsingBlock:(void (^)(id object, IGListSectionController <IGListSectionType> *sectionController, NSInteger section, BOOL *stop))block {
     IGParameterAssert(block != nil);
 
     BOOL stop = NO;

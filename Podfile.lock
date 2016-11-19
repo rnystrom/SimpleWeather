@@ -1,20 +1,22 @@
 PODS:
-  - Alamofire (4.0.1)
   - IGListKit (1.0.0)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
-  - Alamofire
-  - IGListKit
-  - SDWebImage
+  - IGListKit (from `https://github.com/Instagram/IGListKit.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  IGListKit:
+    :branch: master
+    :git: https://github.com/Instagram/IGListKit.git
+
+CHECKOUT OPTIONS:
+  IGListKit:
+    :commit: 7a4ebc94bc4467e9f1863981f343b46031acbafc
+    :git: https://github.com/Instagram/IGListKit.git
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  IGListKit: 3242c475fa77e2abf2d4de319703088008fbe9b9
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  IGListKit: a534a917b574ec56697390ef182f125ccff2145b
 
-PODFILE CHECKSUM: 9cee875dd26caf600f115c6c0c92b64675888fda
+PODFILE CHECKSUM: 04c70633276c72fb0c22d7db6ca564aac773eec3
 
 COCOAPODS: 1.1.1

@@ -93,17 +93,17 @@ static void * kStackedSectionControllerIndexKey = &kStackedSectionControllerInde
     IGAssert(self.sectionControllersForItems.count == self.flattenedNumberOfItems, @"Controller map does not equal total number of items");
 }
 
-- (IGListSectionController <IGListSectionType> *)sectionControllerForObjectIndex:(NSUInteger)itemIndex {
+- (IGListSectionController <IGListSectionType> *)sectionControllerForObjectIndex:(NSInteger)itemIndex {
     return self.sectionControllersForItems[itemIndex];
 }
 
-- (NSUInteger)offsetForSectionController:(IGListSectionController<IGListSectionType> *)sectionController {
+- (NSInteger)offsetForSectionController:(IGListSectionController<IGListSectionType> *)sectionController {
     const NSUInteger index = [self.sectionControllers indexOfObject:sectionController];
     IGAssert(index != NSNotFound, @"Querying offset for an undocumented section controller");
     return [self.sectionControllerOffsets[index] integerValue];
 }
 
-- (NSUInteger)localIndexForSectionController:(IGListSectionController<IGListSectionType> *)sectionController index:(NSUInteger)index {
+- (NSInteger)localIndexForSectionController:(IGListSectionController<IGListSectionType> *)sectionController index:(NSInteger)index {
     const NSUInteger offset = [self offsetForSectionController:sectionController];
     IGAssert(offset <= index, @"Section controller offset must be less than or equal to the item index");
     return index - offset;
@@ -155,7 +155,7 @@ static void * kStackedSectionControllerIndexKey = &kStackedSectionControllerInde
     return [self.collectionContext containerSize];
 }
 
-- (NSUInteger)indexForCell:(UICollectionViewCell *)cell sectionController:(IGListSectionController<IGListSectionType> *)sectionController {
+- (NSInteger)indexForCell:(UICollectionViewCell *)cell sectionController:(IGListSectionController<IGListSectionType> *)sectionController {
     const NSUInteger index = [self.collectionContext indexForCell:cell sectionController:self];
     return [self localIndexForSectionController:sectionController index:index];
 }
@@ -183,7 +183,7 @@ static void * kStackedSectionControllerIndexKey = &kStackedSectionControllerInde
     [self.collectionContext deselectItemAtIndex:localIndex sectionController:self animated:animated];
 }
 
-- (NSUInteger)sectionForSectionController:(IGListSectionController<IGListSectionType> *)sectionController {
+- (NSInteger)sectionForSectionController:(IGListSectionController<IGListSectionType> *)sectionController {
     return [self.collectionContext sectionForSectionController:self];
 }
 
@@ -196,6 +196,26 @@ static void * kStackedSectionControllerIndexKey = &kStackedSectionControllerInde
                                                                                       atIndex:(index + offset)];
 }
 
+- (UICollectionViewCell *)dequeueReusableCellWithNibName:(NSString *)nibName
+                                                  bundle:(NSBundle *)bundle
+                                    forSectionController:(IGListSectionController<IGListSectionType> *)sectionController
+                                                 atIndex:(NSInteger)index {
+    const NSUInteger offset = [self offsetForSectionController:sectionController];
+    return (UICollectionViewCell *_Nonnull)[self.collectionContext dequeueReusableCellWithNibName:nibName
+                                                                                           bundle:bundle
+                                                                             forSectionController:self
+                                                                                          atIndex:(index + offset)];
+}
+
+- (UICollectionViewCell *)dequeueReusableCellFromStoryboardWithIdentifier:(NSString *)identifier
+                                                     forSectionController:(IGListSectionController <IGListSectionType> *)sectionController
+                                                                  atIndex:(NSInteger)index {
+    const NSUInteger offset = [self offsetForSectionController:sectionController];
+    return (UICollectionViewCell *_Nonnull)[self.collectionContext dequeueReusableCellFromStoryboardWithIdentifier:identifier
+                                                                                              forSectionController:self
+                                                                                                           atIndex:(index + offset)];
+}
+
 - (UICollectionReusableView *)dequeueReusableSupplementaryViewOfKind:(NSString *)elementKind
                                                 forSectionController:(IGListSectionController<IGListSectionType> *)sectionController
                                                                class:(Class)viewClass
@@ -204,6 +224,30 @@ static void * kStackedSectionControllerIndexKey = &kStackedSectionControllerInde
     return (UICollectionViewCell *_Nonnull)[self.collectionContext dequeueReusableSupplementaryViewOfKind:elementKind
                                                                                      forSectionController:self
                                                                                                     class:viewClass
+                                                                                                  atIndex:(index + offset)];
+}
+
+- (UICollectionReusableView *)dequeueReusableSupplementaryViewFromStoryboardOfKind:(NSString *)elementKind
+                                                                    withIdentifier:(NSString *)identifier
+                                                              forSectionController:(IGListSectionController<IGListSectionType> *)sectionController
+                                                                           atIndex:(NSInteger)index {
+    const NSUInteger offset = [self offsetForSectionController:sectionController];
+    return (UICollectionViewCell *_Nonnull)[self.collectionContext dequeueReusableSupplementaryViewFromStoryboardOfKind:elementKind
+                                                                                                         withIdentifier:identifier
+                                                                                                   forSectionController:self
+                                                                                                                atIndex:(index + offset)];
+}
+
+- (UICollectionReusableView *)dequeueReusableSupplementaryViewOfKind:(NSString *)elementKind
+                                                forSectionController:(IGListSectionController<IGListSectionType> *)sectionController
+                                                             nibName:(NSString *)nibName
+                                                              bundle:(NSBundle *)bundle
+                                                             atIndex:(NSInteger)index {
+    const NSUInteger offset = [self offsetForSectionController:sectionController];
+    return (UICollectionViewCell *_Nonnull)[self.collectionContext dequeueReusableSupplementaryViewOfKind:elementKind
+                                                                                     forSectionController:self
+                                                                                                  nibName:nibName
+                                                                                                   bundle:bundle
                                                                                                   atIndex:(index + offset)];
 }
 

@@ -213,9 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				290538841DD92C3C00531193 /* API.swift */,
+				29C474881DDEA2AF00AE68CE /* APISession.swift */,
 				29E0A31B1DDB61C5004EA2C5 /* KeypathParsing.swift */,
 				29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */,
-				29C474881DDEA2AF00AE68CE /* APISession.swift */,
 				29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */,
 			);
 			path = Systems;
@@ -251,11 +251,11 @@
 		2905388B1DDA093900531193 /* SimpleWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				2905388C1DDA093900531193 /* ModelTests.swift */,
-				2905388E1DDA093900531193 /* Info.plist */,
-				290538961DDA0F6300531193 /* sample_response.json */,
-				29E0A31E1DDBA22C004EA2C5 /* KeypathParsingTests.swift */,
 				29C579391DE0F275003A149B /* APISessionTests.swift */,
+				2905388E1DDA093900531193 /* Info.plist */,
+				29E0A31E1DDBA22C004EA2C5 /* KeypathParsingTests.swift */,
+				2905388C1DDA093900531193 /* ModelTests.swift */,
+				290538961DDA0F6300531193 /* sample_response.json */,
 			);
 			path = SimpleWeatherTests;
 			sourceTree = "<group>";

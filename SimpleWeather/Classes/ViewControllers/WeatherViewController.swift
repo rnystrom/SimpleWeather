@@ -10,6 +10,20 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+    var session: APISession? {
+        didSet {
+            session?.getForecast(lat: 47.1, lon: -74, completion: { (forecast: Forecast?, error: Error?) in
+                self.title = forecast?.location?.city
+            })
+        }
+    }
+
+    var forecast: Forecast? {
+        didSet {
+            title = forecast?.location?.city
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
