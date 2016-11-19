@@ -17,6 +17,11 @@
 		2905388D1DDA093900531193 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905388C1DDA093900531193 /* ModelTests.swift */; };
 		290538951DDA09E100531193 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290538941DDA09E100531193 /* Alert.swift */; };
 		290538971DDA0F6300531193 /* sample_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 290538961DDA0F6300531193 /* sample_response.json */; };
+		29C474891DDEA2AF00AE68CE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C474881DDEA2AF00AE68CE /* APISession.swift */; };
+		29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
+		29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579391DE0F275003A149B /* APISessionTests.swift */; };
+		29C5793B1DE0F2CF003A149B /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C474881DDEA2AF00AE68CE /* APISession.swift */; };
+		29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
 		29E0A3081DDA10E3004EA2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290538941DDA09E100531193 /* Alert.swift */; };
 		29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
 		29E0A3111DDAA1A1004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
@@ -75,6 +80,10 @@
 		2905388E1DDA093900531193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290538941DDA09E100531193 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		290538961DDA0F6300531193 /* sample_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample_response.json; sourceTree = "<group>"; };
+		29C474881DDEA2AF00AE68CE /* APISession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
+		29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+DiskCacheKey.swift"; sourceTree = "<group>"; };
+		29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWeather-Briding-Header.h"; sourceTree = "<group>"; };
+		29C579391DE0F275003A149B /* APISessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionTests.swift; sourceTree = "<group>"; };
 		29E0A30F1DDAA19C004EA2C5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHourly.swift; sourceTree = "<group>"; };
@@ -148,6 +157,7 @@
 				290538711DD9254F00531193 /* Classes */,
 				290538771DD9254F00531193 /* Resources */,
 				2905385F1DD9231F00531193 /* AppDelegate.swift */,
+				29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */,
 			);
 			path = SimpleWeather;
 			sourceTree = "<group>";
@@ -197,6 +207,8 @@
 				290538841DD92C3C00531193 /* API.swift */,
 				29E0A31B1DDB61C5004EA2C5 /* KeypathParsing.swift */,
 				29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */,
+				29C474881DDEA2AF00AE68CE /* APISession.swift */,
+				29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -235,6 +247,7 @@
 				2905388E1DDA093900531193 /* Info.plist */,
 				290538961DDA0F6300531193 /* sample_response.json */,
 				29E0A31E1DDBA22C004EA2C5 /* KeypathParsingTests.swift */,
+				29C579391DE0F275003A149B /* APISessionTests.swift */,
 			);
 			path = SimpleWeatherTests;
 			sourceTree = "<group>";
@@ -418,11 +431,13 @@
 				290538831DD9287A00531193 /* WeatherViewController.swift in Sources */,
 				290538851DD92C3C00531193 /* API.swift in Sources */,
 				29E0A3411DDCD1DE004EA2C5 /* Conditions.swift in Sources */,
+				29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */,
 				290538951DDA09E100531193 /* Alert.swift in Sources */,
 				29E0A3181DDAB889004EA2C5 /* ConditionsIcon.swift in Sources */,
 				29E0A31C1DDB61C5004EA2C5 /* KeypathParsing.swift in Sources */,
 				29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */,
 				290538811DD9287100531193 /* LocationsViewController.swift in Sources */,
+				29C474891DDEA2AF00AE68CE /* APISession.swift in Sources */,
 				29E0A32A1DDBFD46004EA2C5 /* JSONConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,16 +449,19 @@
 				29E0A31A1DDAB98A004EA2C5 /* ConditionsIcon.swift in Sources */,
 				29E0A33D1DDCB85F004EA2C5 /* RateLimiter.swift in Sources */,
 				29E0A31F1DDBA22C004EA2C5 /* KeypathParsingTests.swift in Sources */,
+				29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */,
 				29E0A3081DDA10E3004EA2C5 /* Alert.swift in Sources */,
 				29E0A3331DDBFFAC004EA2C5 /* Alert+JSONConvertible.swift in Sources */,
 				29E0A3441DDCD69F004EA2C5 /* Conditions.swift in Sources */,
 				29E0A3191DDAB981004EA2C5 /* ForecastHourly.swift in Sources */,
+				29C5793B1DE0F2CF003A149B /* APISession.swift in Sources */,
 				29E0A31D1DDBA21F004EA2C5 /* KeypathParsing.swift in Sources */,
 				29E0A3451DDCD69F004EA2C5 /* Conditions+JSONConvertible.swift in Sources */,
 				29E0A3351DDBFFAC004EA2C5 /* ForecastHourly+JSONConvertible.swift in Sources */,
 				29E0A3341DDBFFAC004EA2C5 /* Location+JSONConvertible.swift in Sources */,
 				29E0A3141DDAABD6004EA2C5 /* ForecastDay.swift in Sources */,
 				29E0A33A1DDC00DE004EA2C5 /* Wind.swift in Sources */,
+				29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */,
 				29E0A3361DDBFFAC004EA2C5 /* ForecastDay+JSONConvertible.swift in Sources */,
 				29E0A3111DDAA1A1004EA2C5 /* Location.swift in Sources */,
 				2905388D1DDA093900531193 /* ModelTests.swift in Sources */,
@@ -568,6 +586,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.SimpleWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleWeather/SimpleWeather-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -584,6 +603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.SimpleWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleWeather/SimpleWeather-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -598,6 +618,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.SimpleWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleWeather/SimpleWeather-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleWeather.app/SimpleWeather";
 			};
@@ -612,6 +633,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.SimpleWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleWeather/SimpleWeather-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleWeather.app/SimpleWeather";
 			};
