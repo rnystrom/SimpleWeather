@@ -27,6 +27,8 @@
 		29C579411DE0F96A003A149B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5793D1DE0F652003A149B /* Forecast.swift */; };
 		29C579421DE0F96A003A149B /* Forecast+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5793F1DE0F6BA003A149B /* Forecast+JSONConvertible.swift */; };
 		29C579441DE103A5003A149B /* LocationRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579431DE103A5003A149B /* LocationRequester.swift */; };
+		29C579461DE120AF003A149B /* ConditionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579451DE120AF003A149B /* ConditionsCell.swift */; };
+		29C579491DE121FE003A149B /* ConditionsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579481DE121FE003A149B /* ConditionsCellViewModel.swift */; };
 		29E0A3081DDA10E3004EA2C5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290538941DDA09E100531193 /* Alert.swift */; };
 		29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
 		29E0A3111DDAA1A1004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
@@ -92,6 +94,8 @@
 		29C5793D1DE0F652003A149B /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		29C5793F1DE0F6BA003A149B /* Forecast+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Forecast+JSONConvertible.swift"; sourceTree = "<group>"; };
 		29C579431DE103A5003A149B /* LocationRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRequester.swift; sourceTree = "<group>"; };
+		29C579451DE120AF003A149B /* ConditionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsCell.swift; sourceTree = "<group>"; };
+		29C579481DE121FE003A149B /* ConditionsCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsCellViewModel.swift; sourceTree = "<group>"; };
 		29E0A30F1DDAA19C004EA2C5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHourly.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		290538711DD9254F00531193 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				29C579471DE121F2003A149B /* ViewModels */,
 				290538721DD9254F00531193 /* Models */,
 				290538731DD9254F00531193 /* SectionControllers */,
 				290538741DD9254F00531193 /* Systems */,
@@ -236,6 +241,7 @@
 		290538761DD9254F00531193 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29C579451DE120AF003A149B /* ConditionsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +267,14 @@
 				290538961DDA0F6300531193 /* sample_response.json */,
 			);
 			path = SimpleWeatherTests;
+			sourceTree = "<group>";
+		};
+		29C579471DE121F2003A149B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				29C579481DE121FE003A149B /* ConditionsCellViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		30C9C6513D7795166DBE4860 /* Pods */ = {
@@ -435,9 +449,11 @@
 				29E0A3131DDAA46E004EA2C5 /* ForecastDay.swift in Sources */,
 				29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */,
 				29E0A32E1DDBFE26004EA2C5 /* Location+JSONConvertible.swift in Sources */,
+				29C579491DE121FE003A149B /* ConditionsCellViewModel.swift in Sources */,
 				29C579401DE0F6BA003A149B /* Forecast+JSONConvertible.swift in Sources */,
 				29E0A33C1DDC0BD1004EA2C5 /* RateLimiter.swift in Sources */,
 				290538601DD9231F00531193 /* AppDelegate.swift in Sources */,
+				29C579461DE120AF003A149B /* ConditionsCell.swift in Sources */,
 				29E0A3321DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift in Sources */,
 				29E0A3391DDC0091004EA2C5 /* Wind.swift in Sources */,
 				290538831DD9287A00531193 /* WeatherViewController.swift in Sources */,

@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwl-Zq-A5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1032" y="90"/>
+            <point key="canvasLocation" x="-1384" y="90"/>
         </scene>
         <!--Your Location-->
         <scene sceneID="UI1-Xg-wRX">
@@ -37,16 +37,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-HX-2bj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-HX-2bj" customClass="IGListCollectionView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xdq-2I-oPs">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="255" height="75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConditionsCell" id="WNJ-tn-TKG" customClass="ConditionsCell" customModule="SimpleWeather" customModuleProvider="target">
+                                        <rect key="frame" x="33" y="0.0" width="255" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌤58°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-AS-Hlz">
+                                                    <rect key="frame" x="15" y="19" width="82" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63°/45°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIc-j3-Xlo">
+                                                    <rect key="frame" x="175" y="26" width="65" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="gbg-AS-Hlz" firstAttribute="leading" secondItem="WNJ-tn-TKG" secondAttribute="leading" constant="15" id="5Wu-of-Pef"/>
+                                            <constraint firstAttribute="trailing" secondItem="XIc-j3-Xlo" secondAttribute="trailing" constant="15" id="Uhg-vr-ISX"/>
+                                            <constraint firstItem="XIc-j3-Xlo" firstAttribute="centerY" secondItem="WNJ-tn-TKG" secondAttribute="centerY" id="uLS-ay-Izb"/>
+                                            <constraint firstItem="gbg-AS-Hlz" firstAttribute="centerY" secondItem="WNJ-tn-TKG" secondAttribute="centerY" id="utH-m9-C5d"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="highLowLabel" destination="XIc-j3-Xlo" id="gy2-oK-y4e"/>
+                                            <outlet property="temperatureLabel" destination="gbg-AS-Hlz" id="lbJ-gw-jd5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,10 +97,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="wBf-HX-2bj" id="Vnx-vm-uwM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yb-fq-8v1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-581" y="90"/>
+            <point key="canvasLocation" x="-581.25" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gMQ-TJ-Rdz">
@@ -83,7 +119,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTD-RR-P41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142" y="90"/>
+            <point key="canvasLocation" x="129" y="90"/>
         </scene>
         <!--Locations-->
         <scene sceneID="YzO-4w-nSf">
@@ -97,7 +133,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecu-c4-iKD">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ecu-c4-iKD" customClass="IGListCollectionView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7N6-yh-haC">
@@ -127,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWd-9Y-YOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="293" y="90"/>
+            <point key="canvasLocation" x="846" y="90"/>
         </scene>
     </scenes>
 </document>

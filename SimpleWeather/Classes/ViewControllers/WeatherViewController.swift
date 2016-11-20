@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import IGListKit
 
 class WeatherViewController: UIViewController {
+
+    @IBOutlet weak var collectionView: IGListCollectionView!
 
     var session: APISession? {
         didSet {
