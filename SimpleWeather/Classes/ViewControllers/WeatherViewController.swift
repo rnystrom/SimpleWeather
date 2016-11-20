@@ -9,15 +9,19 @@
 import UIKit
 import IGListKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     @IBOutlet weak var collectionView: IGListCollectionView!
+    lazy var adapter: IGListAdapter = {
+        return IGListAdapter(updater: IGListAdapterUpdater(), viewController: self, workingRangeSize: 0)
+    }()
 
     var session: APISession? {
         didSet {
             session?.getForecastForCurrentLocation(completion: { (forecast: Forecast?, error: Error?) in
+                self.forecast = forecast
                 self.title = forecast?.location?.city
-                print(error)
+                self.adapter.performUpdates(animated: true)
             })
         }
     }
@@ -30,6 +34,35 @@ class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
+    }
+
+    //MARK: IGListAdapterDataSource
+
+    func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
+        var objects = [IGListDiffable]()
+
+        let sortedDaily = forecast?.daily?.sorted(by: { $0.date > $1.date })
+
+        if let conditions = forecast?.conditions,
+            let today = sortedDaily?.first {
+            let viewModel = ConditionsCellViewModel(temperature: Int(conditions.temp),
+                                                    high: today.high,
+                                                    low: today.low,
+                                                    conditionsEmoji: conditions.icon.emoji)
+            objects.append(viewModel)
+        }
+
+        return objects
+    }
+
+    func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
+        return ConditionsSectionController()
+    }
+
+    func emptyView(for listAdapter: IGListAdapter) -> UIView? {
+        return nil
     }
 
 }

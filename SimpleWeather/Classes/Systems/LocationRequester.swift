@@ -18,7 +18,7 @@ class LocationRequester: NSObject, CLLocationManagerDelegate {
         return l
     }()
     private var completion: ((CLLocation?, Error?) -> Void)?
-    var authRequested = false
+    var authorizationRequested = false
 
     // MARK: Public API
 
@@ -27,9 +27,10 @@ class LocationRequester: NSObject, CLLocationManagerDelegate {
             self.completion = completion
             switch CLLocationManager.authorizationStatus() {
             case .authorizedAlways, .authorizedWhenInUse:
-                locationManager.requestLocation()
+                requestLocation()
             case .notDetermined:
-                authRequested = true
+                print("Authorizing location access...")
+                authorizationRequested = true
                 locationManager.requestWhenInUseAuthorization()
             default:
                 completion(nil, nil)
@@ -39,23 +40,33 @@ class LocationRequester: NSObject, CLLocationManagerDelegate {
         }
     }
 
+    // MARK: Private API
+
+    func requestLocation() {
+        print("Requesting location...")
+        locationManager.requestLocation()
+    }
+
     // MARK: CLLocationManagerDelegate
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Location found at \(locations.first)")
         completion?(locations.first, nil)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location manager failed: " + error.localizedDescription)
         completion?(nil, error)
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            if authRequested == true {
-                locationManager.requestLocation()
+            if authorizationRequested {
+                requestLocation()
             }
-        default: return
+        default:
+            completion?(nil, nil)
         }
     }
     

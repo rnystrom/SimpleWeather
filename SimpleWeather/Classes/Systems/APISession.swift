@@ -48,6 +48,7 @@ class APISession {
         }
 
         if limiter.attempt() {
+            print("Fetching " + url.absoluteString)
             let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
                 if let data = data,
                     let json = try? JSONSerialization.jsonObject(with: data, options: []),
@@ -60,6 +61,7 @@ class APISession {
             })
             task.resume()
         } else {
+            print("Rate limited, fetching last response from disk")
             DispatchQueue.global().async {
                 if let json = self.fetchCachedResponse(url: url) {
                     mainCompletion(Forecast.fromJSON(json: json), nil)
