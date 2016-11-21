@@ -42,10 +42,11 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
         var objects = [IGListDiffable]()
+        guard let forecast = forecast else { return objects }
 
-        let sortedDaily = forecast?.daily?.sorted(by: { $0.date > $1.date })
+        let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
 
-        if let conditions = forecast?.conditions,
+        if let conditions = forecast.conditions,
             let today = sortedDaily?.first {
             let viewModel = ConditionsCellViewModel(temperature: Int(conditions.temp),
                                                     high: today.high,
@@ -54,11 +55,20 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
             objects.append(viewModel)
         }
 
+        if let dailySection = DailyForecastSection.from(forecast: forecast) {
+            objects.append(dailySection)
+        }
+
         return objects
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
-        return ConditionsSectionController()
+        if object is ConditionsCellViewModel {
+            return ConditionsSectionController()
+        } else if object is DailyForecastSection {
+            return DailyForecastSectionController()
+        }
+        return IGListSectionController()
     }
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
