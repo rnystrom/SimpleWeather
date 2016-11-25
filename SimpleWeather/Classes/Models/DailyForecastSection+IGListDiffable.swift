@@ -12,7 +12,7 @@ import IGListKit
 extension DailyForecastSection: IGListDiffable {
 
     func diffIdentifier() -> NSObjectProtocol {
-        return currentDate as NSObjectProtocol
+        return "daily" as NSString
     }
 
     func isEqual(toDiffableObject object: IGListDiffable?) -> Bool {

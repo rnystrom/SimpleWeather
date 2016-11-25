@@ -26,11 +26,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         }
     }
 
-    var forecast: Forecast? {
-        didSet {
-            title = forecast?.location?.city
-        }
-    }
+    var forecast: Forecast?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +51,10 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
             objects.append(viewModel)
         }
 
+        if let hourly = EmbeddedSection.from(forecast: forecast) {
+            objects.append(hourly)
+        }
+
         if let dailySection = DailyForecastSection.from(forecast: forecast) {
             objects.append(dailySection)
         }
@@ -67,6 +67,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
             return ConditionsSectionController()
         } else if object is DailyForecastSection {
             return DailyForecastSectionController()
+        } else if object is EmbeddedSection {
+            return EmbeddedAdapterSectionController(height: 80, dataSource: ForecastHourlyDataSource())
         }
         return IGListSectionController()
     }

@@ -25,16 +25,16 @@ extension Forecast: JSONConvertible {
             location = nil
         }
 
-        let alerts: [Alert]? = (json["alerts"] as? [ [String: Any] ])?.flatMap({ (alertJSON: [String: Any]) in
-            return Alert.fromJSON(json: alertJSON)
+        let alerts: [Alert]? = (json["alerts"] as? [ [String: Any] ])?.flatMap({ (json: [String: Any]) in
+            return Alert.fromJSON(json: json)
         })
 
-        let daily: [ForecastDay]? = (keypath(dict: json, path: "forecast.simpleforecast.forecastday") as [ [String: Any] ]?)?.flatMap({ (alertJSON: [String: Any]) in
-            return ForecastDay.fromJSON(json: alertJSON)
+        let daily: [ForecastDay]? = (keypath(dict: json, path: "forecast.simpleforecast.forecastday") as [ [String: Any] ]?)?.flatMap({ (json: [String: Any]) in
+            return ForecastDay.fromJSON(json: json)
         })
 
-        let hourly: [ForecastHourly]? = (json["hourly_forecast"] as? [ [String: Any] ])?.flatMap({ (alertJSON: [String: Any]) in
-            return ForecastHourly.fromJSON(json: alertJSON)
+        let hourly: [ForecastHourly]? = (json["hourly_forecast"] as? [ [String: Any] ])?.flatMap({ (json: [String: Any]) in
+            return ForecastHourly.fromJSON(json: json)
         })
 
         return Forecast(
