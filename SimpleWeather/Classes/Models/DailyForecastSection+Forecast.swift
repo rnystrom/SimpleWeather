@@ -23,7 +23,7 @@ extension DailyForecastSection {
                 high:
                 day.high,
                 low: day.low,
-                conditionsEmoji: day.condition.emoji
+                conditionsEmoji: day.condition.emoji()
             )
             viewModels.append(viewModel)
             if viewModels.count >= limit { break }

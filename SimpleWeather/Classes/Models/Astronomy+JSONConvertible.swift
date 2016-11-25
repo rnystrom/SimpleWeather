@@ -24,7 +24,7 @@ extension Astronomy: JSONConvertible {
         let moonsetHour = (keypath(dict: json, path: "moonset.hour") as NSString?)?.integerValue,
         let moonsetMinute = (keypath(dict: json, path: "moonset.minute") as NSString?)?.integerValue
             else { return nil }
-        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day], from: Date())
 
         components.hour = sunriseHour

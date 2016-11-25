@@ -76,7 +76,7 @@ class APISession {
 
     internal func forecastURL(lat: Double, lon: Double) -> URL? {
         let latlon = String(format: "%.2f,%.2f", lat, lon)
-        let functions = ["forecast", "geolookup", "conditions", "forecast10day", "alerts", "hourly"]
+        let functions = ["forecast", "geolookup", "conditions", "forecast10day", "alerts", "hourly", "astronomy"]
         return URL(string: base(functions: functions, query: latlon))
     }
 
