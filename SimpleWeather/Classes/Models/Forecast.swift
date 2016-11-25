@@ -15,5 +15,6 @@ struct Forecast {
     let alerts: [Alert]?
     let daily: [ForecastDay]?
     let hourly: [ForecastHourly]?
+    let astronomy: Astronomy?
 
 }

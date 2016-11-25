@@ -37,12 +37,20 @@ extension Forecast: JSONConvertible {
             return ForecastHourly.fromJSON(json: json)
         })
 
+        let astronomy: Astronomy?
+        if let json = json["moon_phase"] as? [String: Any] {
+            astronomy = Astronomy.fromJSON(json: json)
+        } else {
+            astronomy = nil
+        }
+
         return Forecast(
             location: location,
             observation: observation,
             alerts: alerts,
             daily: daily,
-            hourly: hourly
+            hourly: hourly,
+            astronomy: astronomy
         )
     }
 

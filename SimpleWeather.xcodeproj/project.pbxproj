@@ -48,6 +48,10 @@
 		295EAF091DE8D59200D1EF26 /* Condition+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF071DE8D59200D1EF26 /* Condition+Emoji.swift */; };
 		295EAF0A1DE8D59400D1EF26 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF061DE8D59200D1EF26 /* Condition.swift */; };
 		295EAF0B1DE8D59400D1EF26 /* Condition+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF071DE8D59200D1EF26 /* Condition+Emoji.swift */; };
+		295EAF0D1DE8D84800D1EF26 /* Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF0C1DE8D84800D1EF26 /* Astronomy.swift */; };
+		295EAF0E1DE8D8D400D1EF26 /* Astronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF0C1DE8D84800D1EF26 /* Astronomy.swift */; };
+		295EAF101DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF0F1DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift */; };
+		295EAF111DE8DB1A00D1EF26 /* Astronomy+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF0F1DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift */; };
 		29C474891DDEA2AF00AE68CE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C474881DDEA2AF00AE68CE /* APISession.swift */; };
 		29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
 		29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579391DE0F275003A149B /* APISessionTests.swift */; };
@@ -122,6 +126,8 @@
 		295EAEE01DE8D3FE00D1EF26 /* Observation+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observation+JSONConvertible.swift"; sourceTree = "<group>"; };
 		295EAF061DE8D59200D1EF26 /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		295EAF071DE8D59200D1EF26 /* Condition+Emoji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Condition+Emoji.swift"; sourceTree = "<group>"; };
+		295EAF0C1DE8D84800D1EF26 /* Astronomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Astronomy.swift; sourceTree = "<group>"; };
+		295EAF0F1DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Astronomy+JSONConvertible.swift"; sourceTree = "<group>"; };
 		29C474881DDEA2AF00AE68CE /* APISession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+DiskCacheKey.swift"; sourceTree = "<group>"; };
 		29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWeather-Briding-Header.h"; sourceTree = "<group>"; };
@@ -238,6 +244,8 @@
 			children = (
 				290538941DDA09E100531193 /* Alert.swift */,
 				29E0A32B1DDBFD82004EA2C5 /* Alert+JSONConvertible.swift */,
+				295EAF0C1DE8D84800D1EF26 /* Astronomy.swift */,
+				295EAF0F1DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift */,
 				295EAF061DE8D59200D1EF26 /* Condition.swift */,
 				295EAF071DE8D59200D1EF26 /* Condition+Emoji.swift */,
 				29C579561DE28F3A003A149B /* DailyForecastSection.swift */,
@@ -570,6 +578,7 @@
 				29C579491DE121FE003A149B /* ConditionsCellViewModel.swift in Sources */,
 				29C579551DE28F08003A149B /* DailyForecastSectionController.swift in Sources */,
 				29C579591DE28F75003A149B /* DailyForecastSection+IGListDiffable.swift in Sources */,
+				295EAF101DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift in Sources */,
 				29C579531DE28DF9003A149B /* ForecastDayCellViewModel.swift in Sources */,
 				29C579401DE0F6BA003A149B /* Forecast+JSONConvertible.swift in Sources */,
 				29E0A33C1DDC0BD1004EA2C5 /* RateLimiter.swift in Sources */,
@@ -588,6 +597,7 @@
 				29C579571DE28F3A003A149B /* DailyForecastSection.swift in Sources */,
 				295EAECE1DE7860000D1EF26 /* EmbeddedCollectionViewCell.swift in Sources */,
 				29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */,
+				295EAF0D1DE8D84800D1EF26 /* Astronomy.swift in Sources */,
 				290538951DDA09E100531193 /* Alert.swift in Sources */,
 				29E0A31C1DDB61C5004EA2C5 /* KeypathParsing.swift in Sources */,
 				29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */,
@@ -612,6 +622,7 @@
 			files = (
 				29E0A33D1DDCB85F004EA2C5 /* RateLimiter.swift in Sources */,
 				295EAEF41DE8D4AF00D1EF26 /* ForecastDay.swift in Sources */,
+				295EAF0E1DE8D8D400D1EF26 /* Astronomy.swift in Sources */,
 				295EAEEE1DE8D4AF00D1EF26 /* Wind.swift in Sources */,
 				295EAF011DE8D4AF00D1EF26 /* ForecastDay+JSONConvertible.swift in Sources */,
 				29E0A31F1DDBA22C004EA2C5 /* KeypathParsingTests.swift in Sources */,
@@ -619,6 +630,7 @@
 				295EAEEC1DE8D4AF00D1EF26 /* Forecast+JSONConvertible.swift in Sources */,
 				295EAF0A1DE8D59400D1EF26 /* Condition.swift in Sources */,
 				295EAF031DE8D4E300D1EF26 /* Location+JSONConvertible.swift in Sources */,
+				295EAF111DE8DB1A00D1EF26 /* Astronomy+JSONConvertible.swift in Sources */,
 				295EAEF91DE8D4AF00D1EF26 /* Alert.swift in Sources */,
 				29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */,
 				295EAEED1DE8D4AF00D1EF26 /* Observation.swift in Sources */,

@@ -4268,5 +4268,31 @@
         }
       }
     }
-  ]
+  ],
+  "moon_phase": {
+    "percentIlluminated": "12",
+    "ageOfMoon": "26",
+    "phaseofMoon": "Waning Crescent",
+    "hemisphere": "North",
+    "current_time": {
+      "hour": "15",
+      "minute": "36"
+    },
+    "sunrise": {
+      "hour": "6",
+      "minute": "54"
+    },
+    "sunset": {
+      "hour": "16",
+      "minute": "31"
+    },
+    "moonrise": {
+      "hour": "3",
+      "minute": "04"
+    },
+    "moonset": {
+      "hour": "14",
+      "minute": "48"
+    }
+  }
 }

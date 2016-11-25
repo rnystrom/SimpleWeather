@@ -271,6 +271,43 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(forecast?.alerts?.count, 1)
         XCTAssertEqual(forecast?.daily?.count, 10)
         XCTAssertEqual(forecast?.hourly?.count, 36)
+        XCTAssertNotNil(forecast?.astronomy)
+    }
+
+    func test_thatAstronomyCreated_fromValidJSON() {
+        let json: [String: Any] = [
+            "percentIlluminated": "12",
+            "ageOfMoon": "26",
+            "phaseofMoon": "Waning Crescent",
+            "hemisphere": "North",
+            "sunrise": [
+                "hour": "6",
+                "minute": "54"
+            ],
+            "sunset": [
+                "hour": "16",
+                "minute": "31"
+            ],
+            "moonrise": [
+                "hour": "3",
+                "minute": "04"
+            ],
+            "moonset": [
+                "hour": "14",
+                "minute": "48"
+            ]
+        ]
+        let astronomy = Astronomy.fromJSON(json: json)
+        XCTAssertEqual(astronomy?.moonIllumination, 0.12)
+        XCTAssertEqual(astronomy?.moonAge, 26)
+        XCTAssertEqual(astronomy?.moonPhaseDescription, "Waning Crescent")
+        XCTAssertEqual(astronomy?.moonHemisphere, "North")
+    }
+
+    func test_thatAstronomyCreated_fromSampleJSON() {
+        let json = sampleJSONResponse["moon_phase"] as! [String: Any]
+        let astronomy = Astronomy.fromJSON(json: json)
+        XCTAssertNotNil(astronomy)
     }
 
 }
