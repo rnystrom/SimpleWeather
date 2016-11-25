@@ -13,7 +13,7 @@ struct ForecastDay {
     let date: Date
     let high: Int
     let low: Int
-    let conditions: String
+    let description: String
     let pop: Double
     let qpf_allday: Double
     let qpf_day: Double
@@ -24,7 +24,7 @@ struct ForecastDay {
     let avehumidity: Int
     let maxhumidity: Int
     let minhumidity: Int
-    let icon: ConditionsIcon
+    let condition: Condition
     let max_wind: Wind?
     let average_wind: Wind?
     

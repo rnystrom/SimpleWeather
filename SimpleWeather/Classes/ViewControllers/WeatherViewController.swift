@@ -42,12 +42,12 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
         let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
 
-        if let conditions = forecast.observation,
+        if let observation = forecast.observation,
             let today = sortedDaily?.first {
-            let viewModel = ConditionsCellViewModel(temperature: Int(conditions.temp),
+            let viewModel = ConditionsCellViewModel(temperature: Int(observation.temp),
                                                     high: today.high,
                                                     low: today.low,
-                                                    conditionsEmoji: conditions.icon.emoji)
+                                                    conditionsEmoji: observation.condition.emoji)
             objects.append(viewModel)
         }
 

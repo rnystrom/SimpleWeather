@@ -15,7 +15,7 @@ extension ForecastDay: JSONConvertible {
             let date_interval = TimeInterval(epoch_string),
             let high = (keypath(dict: json, path: "high.fahrenheit") as NSString?)?.integerValue,
             let low = (keypath(dict: json, path: "low.fahrenheit") as NSString?)?.integerValue,
-            let conditions = json["conditions"] as? String,
+            let description = json["conditions"] as? String,
             let pop = json["pop"] as? Int,
             let qpf_allday = keypath(dict: json, path: "qpf_allday.in") as Double?,
             let qpf_day = keypath(dict: json, path: "qpf_day.in") as Double?,
@@ -45,7 +45,7 @@ extension ForecastDay: JSONConvertible {
             date: Date(timeIntervalSince1970: date_interval),
             high: high,
             low: low,
-            conditions: conditions,
+            description: description,
             pop: Double(pop) / 100.0,
             qpf_allday: qpf_allday,
             qpf_day: qpf_day,
@@ -56,7 +56,7 @@ extension ForecastDay: JSONConvertible {
             avehumidity: avehumidity,
             maxhumidity: maxhumidity,
             minhumidity: minhumidity,
-            icon: ConditionsIcon.from(string: icon_name),
+            condition: Condition.from(string: icon_name),
             max_wind: max_wind,
             average_wind: ave_wind
         )

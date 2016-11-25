@@ -28,7 +28,7 @@ extension Observation: JSONConvertible {
             let icon_string = json["icon"] as? String
             else { return nil }
 
-        let icon = ConditionsIcon.from(string: icon_string)
+        let condition = Condition.from(string: icon_string)
         let wind = Wind(speed: wspd, direction: wdir)
 
         return Observation(
@@ -44,7 +44,7 @@ extension Observation: JSONConvertible {
             uvi: uvi,
             precip_1hr: precip_1hr,
             precip_day: precip_day,
-            icon: icon
+            condition: condition
         )
     }
     

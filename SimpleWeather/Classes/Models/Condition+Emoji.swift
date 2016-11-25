@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension ConditionsIcon {
+extension Condition {
 
     var emoji: String {
         switch self {

@@ -14,7 +14,7 @@ extension ForecastHourly: JSONConvertible {
         guard let epoch_string = keypath(dict: json, path: "FCTTIME.epoch") as String?,
             let date_interval = TimeInterval(epoch_string),
             let wdir = keypath(dict: json, path: "wdir.dir") as String?,
-            let condition = json["condition"] as? String,
+            let description = json["condition"] as? String,
             let icon = json["icon"] as? String,
             let wx = json["wx"] as? String,
             let uvi = (json["uvi"] as? NSString)?.integerValue,
@@ -34,7 +34,7 @@ extension ForecastHourly: JSONConvertible {
             date: Date(timeIntervalSince1970: date_interval),
             temp: temp,
             dewpoint: dewpoint,
-            condition: condition,
+            description: description,
             wx: wx,
             uvi: uvi,
             humidity: humidity,
@@ -46,7 +46,7 @@ extension ForecastHourly: JSONConvertible {
             pop: pop / 100.0,
             mslp: mslp,
             wind: Wind(speed: wspd, direction: wdir),
-            icon: ConditionsIcon.from(string: icon)
+            condition: Condition.from(string: icon)
         )
     }
 

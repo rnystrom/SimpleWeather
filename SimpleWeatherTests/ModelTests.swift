@@ -134,7 +134,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(forecast?.date, Date(timeIntervalSince1970: 1479168000))
         XCTAssertEqual(forecast?.high, 64)
         XCTAssertEqual(forecast?.low, 50)
-        XCTAssertEqual(forecast?.conditions, "Partly Cloudy")
+        XCTAssertEqual(forecast?.description, "Partly Cloudy")
         XCTAssertEqual(forecast?.pop, 0.5)
         XCTAssertEqual(forecast?.qpf_allday, 0.1)
         XCTAssertEqual(forecast?.qpf_day, 0.2)
@@ -145,7 +145,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(forecast?.avehumidity, 39)
         XCTAssertEqual(forecast?.maxhumidity, 56)
         XCTAssertEqual(forecast?.minhumidity, 30)
-        XCTAssertEqual(forecast?.icon, .partlycloudy)
+        XCTAssertEqual(forecast?.condition, .partlycloudy)
         XCTAssertEqual(forecast?.max_wind, Wind(speed: 10, direction: "SW"))
         XCTAssertEqual(forecast?.average_wind, Wind(speed: 5, direction: "NW"))
     }
@@ -204,7 +204,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(forecast?.date, Date(timeIntervalSince1970: 1479135600))
         XCTAssertEqual(forecast?.temp, 53)
         XCTAssertEqual(forecast?.dewpoint, 29)
-        XCTAssertEqual(forecast?.condition, "Clear")
+        XCTAssertEqual(forecast?.description, "Clear")
         XCTAssertEqual(forecast?.wx, "Sunny")
         XCTAssertEqual(forecast?.uvi, 2)
         XCTAssertEqual(forecast?.humidity, 39)
@@ -216,7 +216,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(forecast?.pop, 0.3)
         XCTAssertEqual(forecast?.mslp, 30.06)
         XCTAssertEqual(forecast?.wind, Wind(speed: 4, direction: "SW"))
-        XCTAssertEqual(forecast?.icon, .clear)
+        XCTAssertEqual(forecast?.condition, .clear)
     }
 
     func test_thatForecastHourlyCreated_fromSampleJSON() {
@@ -255,7 +255,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(observation?.uvi, 2)
         XCTAssertEqual(observation?.precip_1hr, 1.1)
         XCTAssertEqual(observation?.precip_day, 2.1)
-        XCTAssertEqual(observation?.icon, .clear)
+        XCTAssertEqual(observation?.condition, .clear)
     }
 
     func test_thatObservationCreated_fromSampleJSON() {

@@ -19,7 +19,7 @@ extension EmbeddedSection {
             let viewModel = ForecastHourCellViewModel(
                 date: hour.date,
                 temp: hour.temp,
-                conditionsEmoji: hour.icon.emoji
+                conditionsEmoji: hour.condition.emoji
             )
             viewModels.append(viewModel)
             if viewModels.count >= limit { break }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum ConditionsIcon {
+enum Condition {
     case chanceflurries, chancerain, chancesleet, chancesnow, chancetstorms, clear, cloudy, flurries, fog, hazy, mostlycloudy, mostlysunny, partlycloudy, partlysunny, sleet, rain, snow, sunny, tstorms, unknown
 
-    static func from(string: String) -> ConditionsIcon {
+    static func from(string: String) -> Condition {
         switch string {
         case "chanceflurries": return .chanceflurries
         case "chancerain": return .chancerain

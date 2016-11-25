@@ -22,6 +22,6 @@ struct Observation {
     let uvi: Int
     let precip_1hr: Double
     let precip_day: Double
-    let icon: ConditionsIcon
+    let condition: Condition
 
 }
