@@ -11,11 +11,11 @@ import Foundation
 extension Forecast: JSONConvertible {
 
     static func fromJSON(json: [String : Any]) -> Forecast? {
-        let conditions: Conditions?
+        let observation: Observation?
         if let json = json["current_observation"] as? [String: Any] {
-            conditions = Conditions.fromJSON(json: json)
+            observation = Observation.fromJSON(json: json)
         } else {
-            conditions = nil
+            observation = nil
         }
 
         let location: Location?
@@ -39,7 +39,7 @@ extension Forecast: JSONConvertible {
 
         return Forecast(
             location: location,
-            conditions: conditions,
+            observation: observation,
             alerts: alerts,
             daily: daily,
             hourly: hourly

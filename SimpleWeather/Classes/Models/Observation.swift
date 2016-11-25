@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Conditions {
+struct Observation {
 
     let date: Date
     let weather: String

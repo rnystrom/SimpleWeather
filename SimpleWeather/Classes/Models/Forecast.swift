@@ -11,7 +11,7 @@ import Foundation
 struct Forecast {
 
     let location: Location?
-    let conditions: Conditions?
+    let observation: Observation?
     let alerts: [Alert]?
     let daily: [ForecastDay]?
     let hourly: [ForecastHourly]?

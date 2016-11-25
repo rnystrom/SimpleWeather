@@ -225,7 +225,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertNotNil(forecast)
     }
 
-    func test_thatConditionsCreated_fromValidJSON() {
+    func test_thatObservationCreated_fromValidJSON() {
         let json: [String: Any] = [
             "observation_epoch": "1479134694",
             "weather": "Clear",
@@ -242,31 +242,31 @@ class SimpleWeatherTests: XCTestCase {
             "precip_today_in": "2.10",
             "icon": "clear"
         ]
-        let conditions = Conditions.fromJSON(json: json)
-        XCTAssertEqual(conditions?.date, Date(timeIntervalSince1970: 1479134694))
-        XCTAssertEqual(conditions?.weather, "Clear")
-        XCTAssertEqual(conditions?.temp, 52.0)
-        XCTAssertEqual(conditions?.humidity, "35%")
-        XCTAssertEqual(conditions?.wind, Wind(speed: 2.0, direction: "WNW"))
-        XCTAssertEqual(conditions?.pressure, 30.42)
-        XCTAssertEqual(conditions?.dewpoint, 26.0)
-        XCTAssertEqual(conditions?.feelslike, 54.0)
-        XCTAssertEqual(conditions?.visibility, 10.0)
-        XCTAssertEqual(conditions?.uvi, 2)
-        XCTAssertEqual(conditions?.precip_1hr, 1.1)
-        XCTAssertEqual(conditions?.precip_day, 2.1)
-        XCTAssertEqual(conditions?.icon, .clear)
+        let observation = Observation.fromJSON(json: json)
+        XCTAssertEqual(observation?.date, Date(timeIntervalSince1970: 1479134694))
+        XCTAssertEqual(observation?.weather, "Clear")
+        XCTAssertEqual(observation?.temp, 52.0)
+        XCTAssertEqual(observation?.humidity, "35%")
+        XCTAssertEqual(observation?.wind, Wind(speed: 2.0, direction: "WNW"))
+        XCTAssertEqual(observation?.pressure, 30.42)
+        XCTAssertEqual(observation?.dewpoint, 26.0)
+        XCTAssertEqual(observation?.feelslike, 54.0)
+        XCTAssertEqual(observation?.visibility, 10.0)
+        XCTAssertEqual(observation?.uvi, 2)
+        XCTAssertEqual(observation?.precip_1hr, 1.1)
+        XCTAssertEqual(observation?.precip_day, 2.1)
+        XCTAssertEqual(observation?.icon, .clear)
     }
 
-    func test_thatConditionsCreated_fromSampleJSON() {
+    func test_thatObservationCreated_fromSampleJSON() {
         let json = sampleJSONResponse["current_observation"] as! [String: Any]
-        let conditions = Conditions.fromJSON(json: json)
-        XCTAssertNotNil(conditions)
+        let observation = Observation.fromJSON(json: json)
+        XCTAssertNotNil(observation)
     }
 
     func test_thatForecastCreated_fromSampleJSON() {
         let forecast = Forecast.fromJSON(json: sampleJSONResponse)
-        XCTAssertNotNil(forecast?.conditions)
+        XCTAssertNotNil(forecast?.observation)
         XCTAssertNotNil(forecast?.location)
         XCTAssertEqual(forecast?.alerts?.count, 1)
         XCTAssertEqual(forecast?.daily?.count, 10)

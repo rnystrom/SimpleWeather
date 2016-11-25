@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Conditions: JSONConvertible {
+extension Observation: JSONConvertible {
 
-    static func fromJSON(json: [String : Any]) -> Conditions? {
+    static func fromJSON(json: [String : Any]) -> Observation? {
         guard let epoch_string = json["observation_epoch"] as? String,
             let epoch_interval = TimeInterval(epoch_string),
             let weather = json["weather"] as? String,
@@ -31,7 +31,7 @@ extension Conditions: JSONConvertible {
         let icon = ConditionsIcon.from(string: icon_string)
         let wind = Wind(speed: wspd, direction: wdir)
 
-        return Conditions(
+        return Observation(
             date: Date(timeIntervalSince1970: epoch_interval),
             weather: weather,
             temp: temp,

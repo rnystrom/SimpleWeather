@@ -22,11 +22,11 @@
 		3032134FE6570408CBB34B34700F8928 /* IGListMoveIndexInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F1B6844E38625D1DB0E8A7B67199B2 /* IGListMoveIndexInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		38E6A83B3F9217B2DB30B43B2BF5DC29 /* IGListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C025B9D29D759C1C3624887D5AE5AA /* IGListCollectionView.m */; };
 		3C462E1F812A73F75E7FB77AEB045704 /* IGListExperiments.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E5740F22AFB387D3FAC27B78F904AE /* IGListExperiments.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		498E0DCEA1669645DC645FC2C474C291 /* Pods-SimpleWeather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D7123C191EAA50517C0910728B612CE /* Pods-SimpleWeather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		498E0DCEA1669645DC645FC2C474C291 /* Pods-SimpleWeather-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C5924C22981F1DF260A5998B642FFCC /* Pods-SimpleWeather-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4AE69B49BE34346C78C7A939A2B22A8D /* IGListIndexSetResultInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5600A359121BD1EE75171B223CAB99A9 /* IGListIndexSetResultInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		55FE5865F3D1590ED0019BF6D799BE78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
 		572D5A74BD9BB47F7FBCF80252CFEE90 /* IGListWorkingRangeHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA72A1EF9D4B256BAAAEDB0CC528D80 /* IGListWorkingRangeHandler.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		5B1D7DC22517633444DA3B9B9626D981 /* Pods-SimpleWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF593B7425F56EC2BB6E0B18AAE87A61 /* Pods-SimpleWeather-dummy.m */; };
+		5B1D7DC22517633444DA3B9B9626D981 /* Pods-SimpleWeather-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B84507CEA9586BC7CAE2856CD8C8AAD5 /* Pods-SimpleWeather-dummy.m */; };
 		5C346E4C1112B1C32EFE9245DFED073C /* IGListAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B1F576F4A15F1247D9BCF46B99250B /* IGListAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F33A9F6A11DF03808EA6B8BE12FEE87 /* IGListMoveIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 41313258D28BF3C4AB0388CCD74F45D1 /* IGListMoveIndex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6364C57986509EF4814301D5A528B16B /* IGListScrollDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EE356C1A0B984E5B97EDB79088F5D86 /* IGListScrollDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,10 +58,13 @@
 		B6340BC6E874D52D8278038377EB2BC2 /* IGListAdapterUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 677EC0C56076B68DA1711D560E3BD19B /* IGListAdapterUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B733F48CBE5223F936417694B254211E /* IGListKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D568156AE984E801EEB024BABC1EF7E /* IGListKit-dummy.m */; };
 		BB8936D4E9C5AC9F84977BB86335B888 /* IGListMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D4EBF13C8985B0DC304F019150D2BFF4 /* IGListMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE0595954C95B8EAACFEA1632B094C57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		C0CE9D8339C51D3496383620DC4F5D8A /* UICollectionView+IGListBatchUpdateData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1916DE2F54412BD7AE069CE82D70E4B /* UICollectionView+IGListBatchUpdateData.m */; };
 		C6093828F7D640D58A2FB028EF1EB55F /* IGListAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 665B8111DEC7B0BF3BD3693BAAF7A248 /* IGListAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7F8A6A8CBCCBA978C570F804EB50CAB /* IGListSectionControllerInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF9C7DBB3AE07E4E8D4861C8C1F0AFD /* IGListSectionControllerInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C98738B3178EDE1BC1A0118BB71730A7 /* Pods-SimpleWeatherTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA0E6FFB0BCD0C010136463308A06B /* Pods-SimpleWeatherTests-dummy.m */; };
 		CCC6129FE0AF029D4A0C276E1AC32171 /* IGListWorkingRangeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F45257D02578CA1851370B0CA1C3FB8B /* IGListWorkingRangeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF2F9156EBA4BEDE435E405CD39B2711 /* Pods-SimpleWeatherTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 465B430BF4CAF717229BE750D566CDB9 /* Pods-SimpleWeatherTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0BDB33439430AE431CEAD5EFE8CCE8C /* IGListAdapterUpdaterInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 277963016FF390FAF7DF103DE276D0C0 /* IGListAdapterUpdaterInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E233D349919C85535CA8E31128BAC88B /* IGListSectionType.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8671D1B443CF4701D5CC13A7F4A638 /* IGListSectionType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E259B03898B1A3BEAED56A749E554017 /* IGListAdapterDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B822A0F4C0624AF23F3FEDDA4D399013 /* IGListAdapterDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,36 +88,43 @@
 			remoteGlobalIDString = 69D4D7AE264E7E3080B0DF650DDE7F16;
 			remoteInfo = IGListKit;
 		};
+		7C933302CD1C6D3BB803D8891F0F1765 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69D4D7AE264E7E3080B0DF650DDE7F16;
+			remoteInfo = IGListKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		006EB68B4A8D8254524332AA0A419F5E /* IGListSectionMap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListSectionMap.m; path = Source/Internal/IGListSectionMap.m; sourceTree = "<group>"; };
 		032906500EFEC792CDEFD19E769F9520 /* IGListKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGListKit-umbrella.h"; sourceTree = "<group>"; };
-		0422C2F096D1820461A3D9AFC9F5354C /* Pods-SimpleWeather-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleWeather-frameworks.sh"; sourceTree = "<group>"; };
 		068EB0B5B9FC8144B252A31A9820973F /* IGListAdapterDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterDataSource.h; path = Source/IGListAdapterDataSource.h; sourceTree = "<group>"; };
-		08CCD6F8D12EA670E88F57777CF7ADBD /* Pods-SimpleWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		0AD71C8B1A6EE3B6446A2581392BF94C /* IGListAdapterUpdater.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListAdapterUpdater.m; path = Source/IGListAdapterUpdater.m; sourceTree = "<group>"; };
-		0F56E8B4E71CBF86D5E195310829C0FE /* Pods-SimpleWeather.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleWeather.modulemap"; sourceTree = "<group>"; };
 		1759B93ED7E0C3C77F2CEA17C628D742 /* IGListIndexPathResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResult.h; path = Source/IGListIndexPathResult.h; sourceTree = "<group>"; };
 		178FE804D22B76B43B062F28B5C5107C /* IGListDiffable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDiffable.h; path = Source/IGListDiffable.h; sourceTree = "<group>"; };
+		1F97783DA9543D0739BE8445B00949D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2320CD7BF90675345831BE6327EE07D8 /* Pods_SimpleWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleWeather.framework; path = "Pods-SimpleWeather.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A32E8F9C8FC00478304E1E50A4446D /* IGListAdapterProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListAdapterProxy.m; path = Source/Internal/IGListAdapterProxy.m; sourceTree = "<group>"; };
+		2698F8EA1A7CA4F640FAB145337951F4 /* Pods-SimpleWeatherTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleWeatherTests.modulemap"; sourceTree = "<group>"; };
 		277963016FF390FAF7DF103DE276D0C0 /* IGListAdapterUpdaterInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterUpdaterInternal.h; path = Source/Internal/IGListAdapterUpdaterInternal.h; sourceTree = "<group>"; };
 		288AC45AEB23B9C1645FB8F9558C3B99 /* IGListDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDiff.h; path = Source/IGListDiff.h; sourceTree = "<group>"; };
+		2C5924C22981F1DF260A5998B642FFCC /* Pods-SimpleWeather-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleWeather-umbrella.h"; sourceTree = "<group>"; };
 		2F3E8D96C877BDCA41D73A99F78AFA93 /* IGListDisplayHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListDisplayHandler.m; path = Source/Internal/IGListDisplayHandler.m; sourceTree = "<group>"; };
+		34A58F65D76D4708EB9FE056D26DE878 /* Pods-SimpleWeatherTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleWeatherTests-frameworks.sh"; sourceTree = "<group>"; };
 		3B2D826CDF1930E8F29ECB1EF9994A50 /* IGListAdapterInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterInternal.h; path = Source/Internal/IGListAdapterInternal.h; sourceTree = "<group>"; };
 		3C49BBD5BC0D5E0D7F9465DA672CC7B7 /* IGListReloadDataUpdater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListReloadDataUpdater.h; path = Source/IGListReloadDataUpdater.h; sourceTree = "<group>"; };
 		3CFB7711AC79056249969985A3EBC4BE /* IGListKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IGListKit.xcconfig; sourceTree = "<group>"; };
-		3DCCE7702DAAA9BC9F8430CEBE0BED0C /* IGListKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IGListKit.framework; path = IGListKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41313258D28BF3C4AB0388CCD74F45D1 /* IGListMoveIndex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMoveIndex.h; path = Source/IGListMoveIndex.h; sourceTree = "<group>"; };
 		437DC14A8F673C5DB13F99B21259B935 /* IGListStackedSectionControllerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListStackedSectionControllerInternal.h; path = Source/Internal/IGListStackedSectionControllerInternal.h; sourceTree = "<group>"; };
+		4478923A3FC52311C2FE2BC33E5DAE98 /* Pods-SimpleWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		465B430BF4CAF717229BE750D566CDB9 /* Pods-SimpleWeatherTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleWeatherTests-umbrella.h"; sourceTree = "<group>"; };
 		47F43BD709C9F58AA96BAC5F31313592 /* IGListIndexPathResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexPathResultInternal.h; path = Source/Internal/IGListIndexPathResultInternal.h; sourceTree = "<group>"; };
 		535B256087C1BFD2A5CCB15ECA2F5A17 /* NSObject+IGListDiffable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+IGListDiffable.m"; path = "Source/NSObject+IGListDiffable.m"; sourceTree = "<group>"; };
-		541AA543584592E4B2C72AE67435A244 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5595B67F8E52DB382D01115EC71AD5FD /* IGListAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListAdapter.m; path = Source/IGListAdapter.m; sourceTree = "<group>"; };
 		5600A359121BD1EE75171B223CAB99A9 /* IGListIndexSetResultInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexSetResultInternal.h; path = Source/Internal/IGListIndexSetResultInternal.h; sourceTree = "<group>"; };
-		56812A45EBD287531C14E3E362B8C179 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 		57A2F19CDA6ACF2384C115B6A593BC8F /* IGListMoveIndexPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListMoveIndexPath.m; path = Source/IGListMoveIndexPath.m; sourceTree = "<group>"; };
-		5D7123C191EAA50517C0910728B612CE /* Pods-SimpleWeather-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleWeather-umbrella.h"; sourceTree = "<group>"; };
 		5F95A46EC909A5F82F8067A182C7B1A8 /* IGListDiff.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = IGListDiff.mm; path = Source/IGListDiff.mm; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		646DFB70A087387BB26FAEDC692FF750 /* IGListIndexPathResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListIndexPathResult.m; path = Source/IGListIndexPathResult.m; sourceTree = "<group>"; };
@@ -123,19 +133,20 @@
 		66E46325E3313EF99EDB6AD0E7F40B38 /* IGListMoveIndex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListMoveIndex.m; path = Source/IGListMoveIndex.m; sourceTree = "<group>"; };
 		677EC0C56076B68DA1711D560E3BD19B /* IGListAdapterUpdater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterUpdater.h; path = Source/IGListAdapterUpdater.h; sourceTree = "<group>"; };
 		67F3365C3E67F87AAD151D6E72A1967C /* IGListWorkingRangeHandler.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = IGListWorkingRangeHandler.mm; path = Source/Internal/IGListWorkingRangeHandler.mm; sourceTree = "<group>"; };
-		6864A718A9D4893BD19C0DAB10C99B05 /* Pods_SimpleWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleWeather.framework; path = "Pods-SimpleWeather.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F671DA6C41BEDA8F0CCB3E97C0D4EA /* IGListStackedSectionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListStackedSectionController.m; path = Source/IGListStackedSectionController.m; sourceTree = "<group>"; };
 		6B01F4339FE98A6306C0EA5E671AB421 /* IGListAdapterUpdaterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterUpdaterDelegate.h; path = Source/IGListAdapterUpdaterDelegate.h; sourceTree = "<group>"; };
 		709D5DC23F5BB1433CEA0E35CAF26E59 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		716C97195F96F94BDB9DFC6C7A8FC715 /* IGListMoveIndexPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMoveIndexPath.h; path = Source/IGListMoveIndexPath.h; sourceTree = "<group>"; };
 		783F26ADB60C89AA4C64B1E78A094DE6 /* IGListKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListKit.h; path = Source/IGListKit.h; sourceTree = "<group>"; };
 		7A2D9D52C12C098C3E88B19D437CD8BA /* UICollectionView+IGListBatchUpdateData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+IGListBatchUpdateData.h"; path = "Source/Internal/UICollectionView+IGListBatchUpdateData.h"; sourceTree = "<group>"; };
+		7ADA0E6FFB0BCD0C010136463308A06B /* Pods-SimpleWeatherTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleWeatherTests-dummy.m"; sourceTree = "<group>"; };
 		7B54B89AFEA743AFC6A6D7A71D373B1D /* IGListBatchUpdateData.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = IGListBatchUpdateData.mm; path = Source/IGListBatchUpdateData.mm; sourceTree = "<group>"; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8CF34C6BE38AFEC5E9744EA6184AD483 /* IGListBatchUpdateData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListBatchUpdateData.h; path = Source/IGListBatchUpdateData.h; sourceTree = "<group>"; };
 		8D568156AE984E801EEB024BABC1EF7E /* IGListKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IGListKit-dummy.m"; sourceTree = "<group>"; };
 		8FD111559CCA55CA4C5C9707515D22CF /* IGListStackedSectionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListStackedSectionController.h; path = Source/IGListStackedSectionController.h; sourceTree = "<group>"; };
 		92281E6D05BAE894A60F4ED8C86F5AEA /* IGListReloadDataUpdater.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListReloadDataUpdater.m; path = Source/IGListReloadDataUpdater.m; sourceTree = "<group>"; };
+		92C4CAB7BBAEBA1760165C20AF3E83A2 /* Pods-SimpleWeatherTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleWeatherTests-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EDFCD7CDB21429917277BEEFAB2983D /* IGListMoveIndexPathInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMoveIndexPathInternal.h; path = Source/Internal/IGListMoveIndexPathInternal.h; sourceTree = "<group>"; };
 		9EE356C1A0B984E5B97EDB79088F5D86 /* IGListScrollDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListScrollDelegate.h; path = Source/IGListScrollDelegate.h; sourceTree = "<group>"; };
@@ -143,33 +154,43 @@
 		A2C025B9D29D759C1C3624887D5AE5AA /* IGListCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListCollectionView.m; path = Source/IGListCollectionView.m; sourceTree = "<group>"; };
 		A5B1F576F4A15F1247D9BCF46B99250B /* IGListAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAssert.h; path = Source/IGListAssert.h; sourceTree = "<group>"; };
 		A9F1B6844E38625D1DB0E8A7B67199B2 /* IGListMoveIndexInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMoveIndexInternal.h; path = Source/Internal/IGListMoveIndexInternal.h; sourceTree = "<group>"; };
-		AC396D3488967C98EEA2C11AC5D7996D /* Pods-SimpleWeather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleWeather-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AED63F09709068DC5B554986C34F9D83 /* NSObject+IGListDiffable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+IGListDiffable.h"; path = "Source/NSObject+IGListDiffable.h"; sourceTree = "<group>"; };
 		AF3722277D01CC1E8A4649CF9E4F4C91 /* IGListSupplementaryViewSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSupplementaryViewSource.h; path = Source/IGListSupplementaryViewSource.h; sourceTree = "<group>"; };
-		AF593B7425F56EC2BB6E0B18AAE87A61 /* Pods-SimpleWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleWeather-dummy.m"; sourceTree = "<group>"; };
+		B1E800FE2B03C92506ADCE7631DE0C26 /* Pods-SimpleWeatherTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleWeatherTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B4C4FE68B671C383846DC093E74E32B2 /* IGListSectionMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionMap.h; path = Source/Internal/IGListSectionMap.h; sourceTree = "<group>"; };
 		B822A0F4C0624AF23F3FEDDA4D399013 /* IGListAdapterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterDelegate.h; path = Source/IGListAdapterDelegate.h; sourceTree = "<group>"; };
+		B84507CEA9586BC7CAE2856CD8C8AAD5 /* Pods-SimpleWeather-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleWeather-dummy.m"; sourceTree = "<group>"; };
 		B8E5740F22AFB387D3FAC27B78F904AE /* IGListExperiments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListExperiments.h; path = Source/IGListExperiments.h; sourceTree = "<group>"; };
-		BA337DA17AF5618DA0455CE8895BABE8 /* Pods-SimpleWeather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleWeather-resources.sh"; sourceTree = "<group>"; };
+		BAD9644369F558BA5EA6D6698AF4619F /* Pods-SimpleWeather.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SimpleWeather.modulemap"; sourceTree = "<group>"; };
 		BAE5B965BFBE8697D2A3CC873FC20A54 /* IGListDisplayDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDisplayDelegate.h; path = Source/IGListDisplayDelegate.h; sourceTree = "<group>"; };
+		BF2F1D73DC18B4A4A29D9C6ED2182607 /* Pods-SimpleWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C063DB770398C6E87998AEFA3DD656D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3C854CC42A564965183353E543830D7 /* IGListCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListCollectionView.h; path = Source/IGListCollectionView.h; sourceTree = "<group>"; };
 		C7EEB07CFBC5D7D86DAE5072C92973E0 /* IGListKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = IGListKit.modulemap; sourceTree = "<group>"; };
 		C82F98591DEEE35FC113AB5B096D1E5A /* IGListUpdatingDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListUpdatingDelegate.h; path = Source/IGListUpdatingDelegate.h; sourceTree = "<group>"; };
 		CA25483E5A38B9D3394C1C4AAE8A80A6 /* IGListIndexSetResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListIndexSetResult.h; path = Source/IGListIndexSetResult.h; sourceTree = "<group>"; };
 		CAF9C7DBB3AE07E4E8D4861C8C1F0AFD /* IGListSectionControllerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionControllerInternal.h; path = Source/Internal/IGListSectionControllerInternal.h; sourceTree = "<group>"; };
+		CDF243E03CF72C5844DAF8023FB8F0BB /* Pods-SimpleWeather-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleWeather-frameworks.sh"; sourceTree = "<group>"; };
 		CEEB44284E1FF389A2CA6F811B004953 /* IGListKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IGListKit-prefix.pch"; sourceTree = "<group>"; };
 		D4EBF13C8985B0DC304F019150D2BFF4 /* IGListMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListMacros.h; path = Source/IGListMacros.h; sourceTree = "<group>"; };
 		D61F30312C73B00F08A6F7000B044511 /* IGListSingleSectionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSingleSectionController.h; path = Source/IGListSingleSectionController.h; sourceTree = "<group>"; };
+		D637C89CDA8B0B6D8294229483129706 /* Pods_SimpleWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SimpleWeatherTests.framework; path = "Pods-SimpleWeatherTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65299765A7FA3F084307E3BC56848B5 /* IGListCollectionContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListCollectionContext.h; path = Source/IGListCollectionContext.h; sourceTree = "<group>"; };
 		D8011EBE0E9214671059A486CFAF2FCD /* IGListDisplayHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListDisplayHandler.h; path = Source/Internal/IGListDisplayHandler.h; sourceTree = "<group>"; };
-		D9E4A0CF0B0C9D7A8A43C9B88B5AF885 /* Pods-SimpleWeather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleWeather-acknowledgements.plist"; sourceTree = "<group>"; };
+		D8488FD7D0B93BFF06B542878C8933DE /* Pods-SimpleWeather-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleWeather-acknowledgements.plist"; sourceTree = "<group>"; };
 		E1028DAF746891D1D48200EE76476C16 /* IGListSectionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListSectionController.m; path = Source/IGListSectionController.m; sourceTree = "<group>"; };
 		E2336CA532887E54A0B6BD5EC659B0DC /* IGListSingleSectionController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IGListSingleSectionController.m; path = Source/IGListSingleSectionController.m; sourceTree = "<group>"; };
+		E3EC4D3CDCF1F92F67FACE767F6C5195 /* Pods-SimpleWeatherTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleWeatherTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E450F4B1B493F2CB50D2A0A67B87E6A6 /* Pods-SimpleWeather-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleWeather-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EAED348A454FFE2AF6CAD779FBADF8F3 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
+		EC6AAAB7E7AD8756A0F20D489103BB80 /* Pods-SimpleWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		ED620B75486B5EEFAFFDB2A58512265D /* IGListSectionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionController.h; path = Source/IGListSectionController.h; sourceTree = "<group>"; };
 		EDA72A1EF9D4B256BAAAEDB0CC528D80 /* IGListWorkingRangeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListWorkingRangeHandler.h; path = Source/Internal/IGListWorkingRangeHandler.h; sourceTree = "<group>"; };
+		F08C8A6E67B59F3EF7B368A2D5F42D06 /* IGListKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IGListKit.framework; path = IGListKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45257D02578CA1851370B0CA1C3FB8B /* IGListWorkingRangeDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListWorkingRangeDelegate.h; path = Source/IGListWorkingRangeDelegate.h; sourceTree = "<group>"; };
 		F76B00FE62AA91F7E79AF429CF5FB063 /* IGListAdapterProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListAdapterProxy.h; path = Source/Internal/IGListAdapterProxy.h; sourceTree = "<group>"; };
 		FC8671D1B443CF4701D5CC13A7F4A638 /* IGListSectionType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IGListSectionType.h; path = Source/IGListSectionType.h; sourceTree = "<group>"; };
+		FE3F7FDE4E32E35F4C205E8A229D9789 /* Pods-SimpleWeather-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleWeather-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +211,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		87480A8877B90F44F279B23D99F4A455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE0595954C95B8EAACFEA1632B094C57 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -199,24 +228,6 @@
 				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		44E217164A374FD07BFDC25AE5B07702 /* Pods-SimpleWeather */ = {
-			isa = PBXGroup;
-			children = (
-				541AA543584592E4B2C72AE67435A244 /* Info.plist */,
-				0F56E8B4E71CBF86D5E195310829C0FE /* Pods-SimpleWeather.modulemap */,
-				AC396D3488967C98EEA2C11AC5D7996D /* Pods-SimpleWeather-acknowledgements.markdown */,
-				D9E4A0CF0B0C9D7A8A43C9B88B5AF885 /* Pods-SimpleWeather-acknowledgements.plist */,
-				AF593B7425F56EC2BB6E0B18AAE87A61 /* Pods-SimpleWeather-dummy.m */,
-				0422C2F096D1820461A3D9AFC9F5354C /* Pods-SimpleWeather-frameworks.sh */,
-				BA337DA17AF5618DA0455CE8895BABE8 /* Pods-SimpleWeather-resources.sh */,
-				5D7123C191EAA50517C0910728B612CE /* Pods-SimpleWeather-umbrella.h */,
-				08CCD6F8D12EA670E88F57777CF7ADBD /* Pods-SimpleWeather.debug.xcconfig */,
-				56812A45EBD287531C14E3E362B8C179 /* Pods-SimpleWeather.release.xcconfig */,
-			);
-			name = "Pods-SimpleWeather";
-			path = "Target Support Files/Pods-SimpleWeather";
 			sourceTree = "<group>";
 		};
 		4D3D9058AB3D6443A10B9F97B1443440 /* Support Files */ = {
@@ -233,21 +244,22 @@
 			path = "../Target Support Files/IGListKit";
 			sourceTree = "<group>";
 		};
-		5566E2EE137EB64749AD6E927DD0CB37 /* Products */ = {
+		76ECF5558DB951299700B6641AF2DDD5 /* Pods-SimpleWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				3DCCE7702DAAA9BC9F8430CEBE0BED0C /* IGListKit.framework */,
-				6864A718A9D4893BD19C0DAB10C99B05 /* Pods_SimpleWeather.framework */,
+				C063DB770398C6E87998AEFA3DD656D2 /* Info.plist */,
+				2698F8EA1A7CA4F640FAB145337951F4 /* Pods-SimpleWeatherTests.modulemap */,
+				E3EC4D3CDCF1F92F67FACE767F6C5195 /* Pods-SimpleWeatherTests-acknowledgements.markdown */,
+				B1E800FE2B03C92506ADCE7631DE0C26 /* Pods-SimpleWeatherTests-acknowledgements.plist */,
+				7ADA0E6FFB0BCD0C010136463308A06B /* Pods-SimpleWeatherTests-dummy.m */,
+				34A58F65D76D4708EB9FE056D26DE878 /* Pods-SimpleWeatherTests-frameworks.sh */,
+				92C4CAB7BBAEBA1760165C20AF3E83A2 /* Pods-SimpleWeatherTests-resources.sh */,
+				465B430BF4CAF717229BE750D566CDB9 /* Pods-SimpleWeatherTests-umbrella.h */,
+				BF2F1D73DC18B4A4A29D9C6ED2182607 /* Pods-SimpleWeatherTests.debug.xcconfig */,
+				4478923A3FC52311C2FE2BC33E5DAE98 /* Pods-SimpleWeatherTests.release.xcconfig */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		67334AFE34E383442D517795EEBA33FE /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				44E217164A374FD07BFDC25AE5B07702 /* Pods-SimpleWeather */,
-			);
-			name = "Targets Support Files";
+			name = "Pods-SimpleWeatherTests";
+			path = "Target Support Files/Pods-SimpleWeatherTests";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -256,9 +268,46 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				AE71D7EA3DE4F5AF4168CAFDADC125F2 /* Pods */,
-				5566E2EE137EB64749AD6E927DD0CB37 /* Products */,
-				67334AFE34E383442D517795EEBA33FE /* Targets Support Files */,
+				86751ACA574233F4271C18D2B896025D /* Products */,
+				96E90BB6BB579A57CED61A680DFB967F /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		86751ACA574233F4271C18D2B896025D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F08C8A6E67B59F3EF7B368A2D5F42D06 /* IGListKit.framework */,
+				2320CD7BF90675345831BE6327EE07D8 /* Pods_SimpleWeather.framework */,
+				D637C89CDA8B0B6D8294229483129706 /* Pods_SimpleWeatherTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96E90BB6BB579A57CED61A680DFB967F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A13AB2F3FBB6A9239B775EF7FCEA8AB9 /* Pods-SimpleWeather */,
+				76ECF5558DB951299700B6641AF2DDD5 /* Pods-SimpleWeatherTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A13AB2F3FBB6A9239B775EF7FCEA8AB9 /* Pods-SimpleWeather */ = {
+			isa = PBXGroup;
+			children = (
+				1F97783DA9543D0739BE8445B00949D2 /* Info.plist */,
+				BAD9644369F558BA5EA6D6698AF4619F /* Pods-SimpleWeather.modulemap */,
+				E450F4B1B493F2CB50D2A0A67B87E6A6 /* Pods-SimpleWeather-acknowledgements.markdown */,
+				D8488FD7D0B93BFF06B542878C8933DE /* Pods-SimpleWeather-acknowledgements.plist */,
+				B84507CEA9586BC7CAE2856CD8C8AAD5 /* Pods-SimpleWeather-dummy.m */,
+				CDF243E03CF72C5844DAF8023FB8F0BB /* Pods-SimpleWeather-frameworks.sh */,
+				FE3F7FDE4E32E35F4C205E8A229D9789 /* Pods-SimpleWeather-resources.sh */,
+				2C5924C22981F1DF260A5998B642FFCC /* Pods-SimpleWeather-umbrella.h */,
+				EC6AAAB7E7AD8756A0F20D489103BB80 /* Pods-SimpleWeather.debug.xcconfig */,
+				EAED348A454FFE2AF6CAD779FBADF8F3 /* Pods-SimpleWeather.release.xcconfig */,
+			);
+			name = "Pods-SimpleWeather";
+			path = "Target Support Files/Pods-SimpleWeather";
 			sourceTree = "<group>";
 		};
 		AE71D7EA3DE4F5AF4168CAFDADC125F2 /* Pods */ = {
@@ -401,6 +450,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3766D8050DEF66CBD7608DEAB42F87FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2F9156EBA4BEDE435E405CD39B2711 /* Pods-SimpleWeatherTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FD5E60FDE5C47348D8981FD079D7861 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +469,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		05443813EBCAFC873A57CBD8A02161B3 /* Pods-SimpleWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D082F6D3D9D89F014655339E612ADE2C /* Build configuration list for PBXNativeTarget "Pods-SimpleWeatherTests" */;
+			buildPhases = (
+				97F365DB24B911E77396CAF8B958E11F /* Sources */,
+				87480A8877B90F44F279B23D99F4A455 /* Frameworks */,
+				3766D8050DEF66CBD7608DEAB42F87FC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9371A63C48472184110398D1095E78A /* PBXTargetDependency */,
+			);
+			name = "Pods-SimpleWeatherTests";
+			productName = "Pods-SimpleWeatherTests";
+			productReference = D637C89CDA8B0B6D8294229483129706 /* Pods_SimpleWeatherTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		17F5E1A856DC9D7495C45AC57199471E /* Pods-SimpleWeather */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D73D49965D25374F8B25B87A64C13327 /* Build configuration list for PBXNativeTarget "Pods-SimpleWeather" */;
@@ -427,7 +502,7 @@
 			);
 			name = "Pods-SimpleWeather";
 			productName = "Pods-SimpleWeather";
-			productReference = 6864A718A9D4893BD19C0DAB10C99B05 /* Pods_SimpleWeather.framework */;
+			productReference = 2320CD7BF90675345831BE6327EE07D8 /* Pods_SimpleWeather.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		69D4D7AE264E7E3080B0DF650DDE7F16 /* IGListKit */ = {
@@ -444,7 +519,7 @@
 			);
 			name = IGListKit;
 			productName = IGListKit;
-			productReference = 3DCCE7702DAAA9BC9F8430CEBE0BED0C /* IGListKit.framework */;
+			productReference = F08C8A6E67B59F3EF7B368A2D5F42D06 /* IGListKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -464,12 +539,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 5566E2EE137EB64749AD6E927DD0CB37 /* Products */;
+			productRefGroup = 86751ACA574233F4271C18D2B896025D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				69D4D7AE264E7E3080B0DF650DDE7F16 /* IGListKit */,
 				17F5E1A856DC9D7495C45AC57199471E /* Pods-SimpleWeather */,
+				05443813EBCAFC873A57CBD8A02161B3 /* Pods-SimpleWeatherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -502,6 +578,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97F365DB24B911E77396CAF8B958E11F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C98738B3178EDE1BC1A0118BB71730A7 /* Pods-SimpleWeatherTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD3C0982FFACCEB7F0F64004C063B275 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,6 +602,12 @@
 			name = IGListKit;
 			target = 69D4D7AE264E7E3080B0DF650DDE7F16 /* IGListKit */;
 			targetProxy = 37EF44039C4E45B3BAF05D0CE2FD5B3F /* PBXContainerItemProxy */;
+		};
+		B9371A63C48472184110398D1095E78A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IGListKit;
+			target = 69D4D7AE264E7E3080B0DF650DDE7F16 /* IGListKit */;
+			targetProxy = 7C933302CD1C6D3BB803D8891F0F1765 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -586,9 +676,79 @@
 			};
 			name = Release;
 		};
+		3E47020DBBF5690F55F14D52E6C5BDCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2F1D73DC18B4A4A29D9C6ED2182607 /* Pods-SimpleWeatherTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleWeatherTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleWeatherTests/Pods-SimpleWeatherTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleWeatherTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		425FFFFF03E29098153893835DA9F0A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4478923A3FC52311C2FE2BC33E5DAE98 /* Pods-SimpleWeatherTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleWeatherTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleWeatherTests/Pods-SimpleWeatherTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleWeatherTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		98484180043A799A3C006D50D8167C7C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56812A45EBD287531C14E3E362B8C179 /* Pods-SimpleWeather.release.xcconfig */;
+			baseConfigurationReference = EAED348A454FFE2AF6CAD779FBADF8F3 /* Pods-SimpleWeather.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -623,7 +783,7 @@
 		};
 		9D5411608BA9C2FB0AC3D5AA28DD45B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08CCD6F8D12EA670E88F57777CF7ADBD /* Pods-SimpleWeather.debug.xcconfig */;
+			baseConfigurationReference = EC6AAAB7E7AD8756A0F20D489103BB80 /* Pods-SimpleWeather.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -757,6 +917,15 @@
 			buildConfigurations = (
 				CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */,
 				ED4FC68AB2A4E06C718CFF338F6F156B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D082F6D3D9D89F014655339E612ADE2C /* Build configuration list for PBXNativeTarget "Pods-SimpleWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E47020DBBF5690F55F14D52E6C5BDCD /* Debug */,
+				425FFFFF03E29098153893835DA9F0A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

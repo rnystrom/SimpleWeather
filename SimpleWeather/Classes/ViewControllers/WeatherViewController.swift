@@ -42,7 +42,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
         let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
 
-        if let conditions = forecast.conditions,
+        if let conditions = forecast.observation,
             let today = sortedDaily?.first {
             let viewModel = ConditionsCellViewModel(temperature: Int(conditions.temp),
                                                     high: today.high,
