@@ -19,10 +19,11 @@ extension EmbeddedSection {
         var viewModels = [ForecastHourCellViewModel]()
         let limit = 12
         for hour in hourly {
+            let timeOfDay = hour.date.timeOfDay(sunrise: sunrise, sunset: sunset)
             let viewModel = ForecastHourCellViewModel(
                 date: hour.date,
                 temp: hour.temp,
-                conditionsEmoji: hour.condition.emoji(date: hour.date, sunrise: sunrise, sunset: sunset)
+                conditionsEmoji: hour.condition.emoji(night: timeOfDay == .night)
             )
             viewModels.append(viewModel)
             if viewModels.count >= limit { break }

@@ -46,11 +46,12 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
             let today = sortedDaily?.first,
             let sunrise = forecast.astronomy?.sunrise,
             let sunset = forecast.astronomy?.sunset {
+            let timeOfDay = Date().timeOfDay(sunrise: sunrise, sunset: sunset)
             let viewModel = ConditionsCellViewModel(
                 temperature: Int(observation.temp),
                 high: today.high,
                 low: today.low,
-                conditionsEmoji: observation.condition.emoji(date: Date(), sunrise: sunrise, sunset: sunset)
+                conditionsEmoji: observation.condition.emoji(night: timeOfDay == .night)
             )
             objects.append(viewModel)
         }
