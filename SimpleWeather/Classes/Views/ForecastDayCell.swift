@@ -12,6 +12,7 @@ class ForecastDayCell: UICollectionViewCell {
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var highLowConditionsLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
 
     func configure(viewModel: ForecastDayCellViewModel) {
         dayLabel.text = viewModel.dateString

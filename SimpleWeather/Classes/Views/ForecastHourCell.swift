@@ -11,12 +11,11 @@ import UIKit
 class ForecastHourCell: UICollectionViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
 
     func configure(viewModel: ForecastHourCellViewModel) {
         timeLabel.text = viewModel.dateString
-        emojiLabel.text = viewModel.conditionsEmoji
         tempLabel.text = viewModel.tempString
     }
 
