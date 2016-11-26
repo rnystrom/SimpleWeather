@@ -17,30 +17,29 @@ class ViewPulser {
         view.isHidden = true
     }
 
-    var pulsing = false
     var enabled = true
 
     func pulse() {
-        guard !pulsing, enabled, !view.isHidden else { return }
+        guard enabled, !view.isHidden else { return }
 
-        pulsing = true
-        let appear = view.alpha < 1
+        let pulseAnimation = CABasicAnimation(keyPath: "opacity")
+        pulseAnimation.duration = 0.5
+        pulseAnimation.fromValue = 0
+        pulseAnimation.toValue = 1
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
-        UIView.animate(
-            withDuration: 0.5,
-            delay: appear ? 0 : 0.5,
-            options: [],
-            animations: { [weak self] in
-                self?.view.alpha = appear ? 1 : 0
-        }, completion: { [weak self] (finished: Bool) in
-            self?.pulsing = false
-            self?.pulse()
-        })
+        let group = CAAnimationGroup()
+        group.duration = 2
+        group.repeatCount = FLT_MAX
+        group.animations = [pulseAnimation]
+
+        view.layer.add(group, forKey: "animateOpacity")
     }
 
     func disable() {
         enabled = false
         view.isHidden = true
+        view.layer.removeAllAnimations()
     }
 
     func enable() {
