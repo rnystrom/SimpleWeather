@@ -217,14 +217,75 @@
                             <constraint firstItem="wBf-HX-2bj" firstAttribute="leading" secondItem="ggW-Bb-TBA" secondAttribute="leading" id="mWN-Tw-TrA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Your Location" id="IDE-lV-LUJ"/>
+                    <navigationItem key="navigationItem" title="Your Location" id="IDE-lV-LUJ">
+                        <barButtonItem key="rightBarButtonItem" id="s1L-Cr-CKR">
+                            <view key="customView" contentMode="scaleToFill" id="DSY-D9-p2e">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adl-DI-iLO">
+                                        <rect key="frame" x="26" y="-0.5" width="45" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Alerts"/>
+                                        <connections>
+                                            <segue destination="276-ez-YL7" kind="show" identifier="ShowAlertsViewController" id="Cwf-Lx-IgB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="adl-DI-iLO" secondAttribute="trailing" id="5X3-yS-O9h"/>
+                                    <constraint firstItem="adl-DI-iLO" firstAttribute="centerY" secondItem="DSY-D9-p2e" secondAttribute="centerY" id="wFQ-d4-iR9"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="alertsButton" destination="adl-DI-iLO" id="aHZ-61-PkE"/>
                         <outlet property="collectionView" destination="wBf-HX-2bj" id="Vnx-vm-uwM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Yb-fq-8v1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-581.25" y="90"/>
+        </scene>
+        <!--Alerts-->
+        <scene sceneID="afb-mq-tJG">
+            <objects>
+                <viewController storyboardIdentifier="AlertsViewController" id="276-ez-YL7" customClass="AlertsViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZPl-yj-mkL"/>
+                        <viewControllerLayoutGuide type="bottom" id="mVB-iL-qaB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hbp-9e-yHU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZtG-25-pca">
+                                <rect key="frame" x="15" y="64" width="290" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZtG-25-pca" secondAttribute="trailing" constant="15" id="SrV-dk-7eI"/>
+                            <constraint firstItem="ZtG-25-pca" firstAttribute="top" secondItem="ZPl-yj-mkL" secondAttribute="bottom" id="asQ-sg-Q6a"/>
+                            <constraint firstItem="mVB-iL-qaB" firstAttribute="top" secondItem="ZtG-25-pca" secondAttribute="bottom" id="if4-dD-Tc1"/>
+                            <constraint firstItem="ZtG-25-pca" firstAttribute="leading" secondItem="Hbp-9e-yHU" secondAttribute="leading" constant="15" id="mea-XQ-HIq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Alerts" id="ftY-ue-b0n"/>
+                    <connections>
+                        <outlet property="textView" destination="ZtG-25-pca" id="Fn2-5x-v3d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8s-DD-CU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="206.25" y="90"/>
         </scene>
     </scenes>
     <resources>

@@ -12,6 +12,8 @@ import IGListKit
 class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     @IBOutlet weak var collectionView: IGListCollectionView!
+    @IBOutlet weak var alertsButton: UIButton!
+
     lazy var adapter: IGListAdapter = {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
@@ -28,13 +30,21 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     var forecast: Forecast?
 
+    // MARK: UIViewController
+
     override func viewDidLoad() {
         super.viewDidLoad()
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
 
-    //MARK: IGListAdapterDataSource
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let alertsVC = segue.destination as? AlertsViewController {
+            alertsVC.alerts = forecast?.alerts
+        }
+    }
+
+    // MARK: IGListAdapterDataSource
 
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
         var objects = [IGListDiffable]()
