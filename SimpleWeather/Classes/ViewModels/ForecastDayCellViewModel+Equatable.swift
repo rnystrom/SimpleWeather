@@ -14,7 +14,7 @@ extension ForecastDayCellViewModel: Equatable {
         return lhs.date == rhs.date
             && lhs.high == rhs.high
             && lhs.low == rhs.low
-            && lhs.conditionsEmoji == rhs.conditionsEmoji
+            && lhs.conditionImageName == rhs.conditionImageName
     }
 
 }

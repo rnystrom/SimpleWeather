@@ -18,12 +18,12 @@ class ForecastHourCellViewModel {
 
     let date: Date
     let temp: Int
-    let conditionsEmoji: String
+    let conditionImageName: String
 
-    init(date: Date, temp: Int, conditionsEmoji: String) {
+    init(date: Date, temp: Int, conditionImageName: String) {
         self.date = date
         self.temp = temp
-        self.conditionsEmoji = conditionsEmoji
+        self.conditionImageName = conditionImageName
     }
 
     var dateString: String {

@@ -13,17 +13,17 @@ class ConditionsCellViewModel {
     let temperature: Int
     let high: Int
     let low: Int
-    let conditionsEmoji: String
+    let conditionImageName: String
 
-    init(temperature: Int, high: Int, low: Int, conditionsEmoji: String) {
+    init(temperature: Int, high: Int, low: Int, conditionImageName: String) {
         self.temperature = temperature
         self.high = high
         self.low = low
-        self.conditionsEmoji = conditionsEmoji
+        self.conditionImageName = conditionImageName
     }
 
     var temperatureLabelText: String {
-        return String(format: "%@ %zi°", conditionsEmoji, temperature)
+        return String(format: "%zi°", temperature)
     }
 
     var highLowLabelText: String {

@@ -21,7 +21,7 @@ extension ConditionsCellViewModel: IGListDiffable {
         return temperature == rhs.temperature
         && high == rhs.high
         && low == rhs.low
-        && conditionsEmoji == rhs.conditionsEmoji
+        && conditionImageName == rhs.conditionImageName
     }
 
 }

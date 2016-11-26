@@ -18,7 +18,7 @@ extension ForecastHourCellViewModel: IGListDiffable {
     func isEqual(toDiffableObject object: IGListDiffable?) -> Bool {
         if self === object { return true }
         guard let object = object as? ForecastHourCellViewModel else { return false }
-        return date == object.date && temp == object.temp && conditionsEmoji == object.conditionsEmoji
+        return date == object.date && temp == object.temp && conditionImageName == object.conditionImageName
     }
 
 }

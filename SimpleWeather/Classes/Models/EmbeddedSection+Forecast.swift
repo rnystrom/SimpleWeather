@@ -23,7 +23,7 @@ extension EmbeddedSection {
             let viewModel = ForecastHourCellViewModel(
                 date: hour.date,
                 temp: hour.temp,
-                conditionsEmoji: hour.condition.emoji(night: timeOfDay == .night)
+                conditionImageName: hour.condition.icon(night: timeOfDay == .night)
             )
             viewModels.append(viewModel)
             if viewModels.count >= limit { break }

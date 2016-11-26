@@ -17,6 +17,7 @@ class ConditionsCell: UICollectionViewCell {
     func configure(viewModel: ConditionsCellViewModel) {
         temperatureLabel.text = viewModel.temperatureLabelText
         highLowLabel.text = viewModel.highLowLabelText
+        iconImageView.image = UIImage(named: viewModel.conditionImageName)
     }
     
 }

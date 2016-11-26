@@ -19,14 +19,14 @@ struct ForecastDayCellViewModel {
     let date: Date
     let high: Int
     let low: Int
-    let conditionsEmoji: String
+    let conditionImageName: String
 
     var dateString: String {
         return ForecastDayCellViewModel.dateFormatter.string(from: date)
     }
 
     var highLowConditionsString: String {
-        return String(format: "%@ %zi° / %zi°", conditionsEmoji, high, low)
+        return String(format: "%zi° / %zi°", high, low)
     }
 
 }
