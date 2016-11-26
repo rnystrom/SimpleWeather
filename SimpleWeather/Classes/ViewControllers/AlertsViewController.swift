@@ -16,7 +16,7 @@ class AlertsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let descriptions: [String]? = alerts?.flatMap({ $0.description })
+        let descriptions: [String]? = alerts?.flatMap({ $0.message })
         textView.text = descriptions?.joined(separator: "\n")
     }
 

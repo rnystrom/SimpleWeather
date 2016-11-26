@@ -252,7 +252,7 @@
         <!--Alerts-->
         <scene sceneID="afb-mq-tJG">
             <objects>
-                <viewController storyboardIdentifier="AlertsViewController" id="276-ez-YL7" customClass="AlertsViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertsViewController" automaticallyAdjustsScrollViewInsets="NO" id="276-ez-YL7" customClass="AlertsViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZPl-yj-mkL"/>
                         <viewControllerLayoutGuide type="bottom" id="mVB-iL-qaB"/>
