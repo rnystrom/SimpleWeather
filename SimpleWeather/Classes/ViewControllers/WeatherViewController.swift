@@ -24,6 +24,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
                 self.forecast = forecast
                 self.title = forecast?.location?.city
                 self.adapter.performUpdates(animated: true)
+                self.alertsButton.pulsate()
             })
         }
     }
