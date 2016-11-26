@@ -18,6 +18,7 @@ class APISession {
     let limiter: RateLimiter
 
     var locationRequester: LocationRequester?
+    var task: URLSessionDataTask?
 
     init(key: String, limiter: RateLimiter, session: URLSession = URLSession.shared) {
         self.key = key
@@ -39,17 +40,18 @@ class APISession {
     }
 
     public func getForecast(lat: Double, lon: Double, completion: @escaping APISessionCompletion) {
-        guard let url = forecastURL(lat: lat, lon: lon) else { return }
+        guard let url = forecastURL(lat: lat, lon: lon), task?.originalRequest?.url != url else { return }
 
-        let mainCompletion: APISessionCompletion = { (f: Forecast?, e: Error?) in
+        let mainCompletion: APISessionCompletion = { [weak self] (f: Forecast?, e: Error?) in
             DispatchQueue.main.async {
+                self?.task = nil
                 completion(f, e)
             }
         }
 
         if limiter.attempt() {
             print("Fetching " + url.absoluteString)
-            let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+            task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
                 if let data = data,
                     let json = try? JSONSerialization.jsonObject(with: data, options: []),
                     let castedJSON = json as? [String: Any] {
@@ -59,7 +61,7 @@ class APISession {
                     mainCompletion(nil, error)
                 }
             })
-            task.resume()
+            task?.resume()
         } else {
             print("Rate limited, fetching last response from disk")
             DispatchQueue.global().async {

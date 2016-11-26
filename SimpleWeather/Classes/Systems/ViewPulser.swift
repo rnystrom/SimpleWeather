@@ -30,8 +30,8 @@ class ViewPulser {
             withDuration: 0.5,
             delay: appear ? 0 : 0.5,
             options: [],
-            animations: {
-                self.view.alpha = appear ? 1 : 0
+            animations: { [weak self] in
+                self?.view.alpha = appear ? 1 : 0
         }, completion: { [weak self] (finished: Bool) in
             self?.pulsing = false
             self?.pulse()
