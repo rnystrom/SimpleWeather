@@ -15,9 +15,17 @@ extension DailyForecastSection {
             let daily = forecast.daily?.sorted(by: { $0.date < $1.date })
             else { return nil }
 
+        let calendar = Calendar.current
+        let components: Set<Calendar.Component> = [.day]
+        let observationDay = calendar.dateComponents(components, from: date).day
+
         var viewModels = [ForecastDayCellViewModel]()
         let limit = 10
         for day in daily {
+            // dont include daily forecasts when already have observations
+            guard viewModels.count >= limit else { break }
+            guard observationDay != calendar.dateComponents(components, from: day.date).day else { continue }
+
             let viewModel = ForecastDayCellViewModel(
                 date: day.date,
                 high:
@@ -27,7 +35,6 @@ extension DailyForecastSection {
                 chancePrecip: day.pop
             )
             viewModels.append(viewModel)
-            if viewModels.count >= limit { break }
         }
         return DailyForecastSection(
             currentDate: date,
