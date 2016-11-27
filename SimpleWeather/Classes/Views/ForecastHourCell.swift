@@ -16,7 +16,7 @@ class ForecastHourCell: UICollectionViewCell {
 
     func configure(viewModel: ForecastHourCellViewModel) {
         timeLabel.text = viewModel.dateString
-        tempLabel.text = viewModel.tempString
+        tempLabel.attributedText = viewModel.detailsAttributedString
         iconImageView.image = UIImage(named: viewModel.conditionImageName)
     }
 

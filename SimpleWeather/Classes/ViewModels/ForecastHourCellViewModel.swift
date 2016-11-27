@@ -19,19 +19,36 @@ class ForecastHourCellViewModel {
     let date: Date
     let temp: Int
     let conditionImageName: String
+    let chancePrecip: Double
 
-    init(date: Date, temp: Int, conditionImageName: String) {
+    init(date: Date, temp: Int, conditionImageName: String, chancePrecip: Double) {
         self.date = date
         self.temp = temp
         self.conditionImageName = conditionImageName
+        self.chancePrecip = chancePrecip
     }
 
     var dateString: String {
         return ForecastHourCellViewModel.dateFormatter.string(from: date)
     }
 
-    var tempString: String {
-        return String(format: "%zi°", temp)
+    var detailsAttributedString: NSAttributedString {
+        let font = UIFont.systemFont(ofSize: 15)
+        let mAttrString = NSMutableAttributedString(
+            string: String(format: "%zi°", temp),
+            attributes: [NSFontAttributeName: font]
+        )
+        if chancePrecip >= 0.2 {
+            let percipAttrStr = NSAttributedString(
+                string: String(format: " %.0f%%", chancePrecip * 100.0),
+                attributes: [
+                    NSFontAttributeName: font,
+                    NSForegroundColorAttributeName: UIColor(red: 73/255.0, green: 130/255.0, blue: 193/255.0, alpha: 1)
+                ]
+            )
+            mAttrString.append(percipAttrStr)
+        }
+        return mAttrString
     }
 
 }
