@@ -96,6 +96,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="222-RT-0oZ">
+                                                    <rect key="frame" x="190" y="8" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="liY-Dr-Nlo"/>
+                                                        <constraint firstAttribute="height" constant="20" id="pTf-1J-mUT"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63°/45°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lr-Cw-mfV">
                                                     <rect key="frame" x="217" y="9.5" width="55" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -108,13 +115,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="222-RT-0oZ">
-                                                    <rect key="frame" x="190" y="8" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="liY-Dr-Nlo"/>
-                                                        <constraint firstAttribute="height" constant="20" id="pTf-1J-mUT"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKc-Yk-kud">
+                                                    <rect key="frame" x="158" y="9.5" width="28" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <color key="textColor" red="0.28627450980392155" green="0.50980392156862742" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -122,14 +128,17 @@
                                             <constraint firstItem="2Lr-Cw-mfV" firstAttribute="leading" secondItem="222-RT-0oZ" secondAttribute="trailing" constant="7" id="HUk-oD-du1"/>
                                             <constraint firstAttribute="trailing" secondItem="2Lr-Cw-mfV" secondAttribute="trailing" constant="15" id="Jii-Uy-b6Z"/>
                                             <constraint firstItem="wui-0B-QbE" firstAttribute="leading" secondItem="HcW-nJ-XS5" secondAttribute="leading" constant="15" id="LA2-Jt-7iW"/>
+                                            <constraint firstItem="NKc-Yk-kud" firstAttribute="centerY" secondItem="222-RT-0oZ" secondAttribute="centerY" id="W8B-b2-8Gz"/>
                                             <constraint firstItem="222-RT-0oZ" firstAttribute="centerY" secondItem="2Lr-Cw-mfV" secondAttribute="centerY" id="erY-IW-NV4"/>
                                             <constraint firstItem="2Lr-Cw-mfV" firstAttribute="centerY" secondItem="HcW-nJ-XS5" secondAttribute="centerY" id="tbt-Ml-X94"/>
+                                            <constraint firstItem="222-RT-0oZ" firstAttribute="leading" secondItem="NKc-Yk-kud" secondAttribute="trailing" constant="4" id="xa4-Y1-j1T"/>
                                         </constraints>
                                         <size key="customSize" width="287" height="37"/>
                                         <connections>
                                             <outlet property="dayLabel" destination="wui-0B-QbE" id="Uad-dV-IB9"/>
                                             <outlet property="highLowConditionsLabel" destination="2Lr-Cw-mfV" id="Mfa-dl-6sJ"/>
                                             <outlet property="iconImageView" destination="222-RT-0oZ" id="uDE-wo-FP2"/>
+                                            <outlet property="precipLabel" destination="NKc-Yk-kud" id="Pv6-Q4-nfk"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmbeddedCollectionViewCell" id="fe4-cb-hjL" customClass="EmbeddedCollectionViewCell" customModule="SimpleWeather" customModuleProvider="target">

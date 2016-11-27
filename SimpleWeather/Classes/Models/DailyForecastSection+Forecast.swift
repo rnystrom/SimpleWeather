@@ -23,7 +23,8 @@ extension DailyForecastSection {
                 high:
                 day.high,
                 low: day.low,
-                conditionImageName: day.condition.icon()
+                conditionImageName: day.condition.icon(),
+                chancePrecip: day.pop
             )
             viewModels.append(viewModel)
             if viewModels.count >= limit { break }

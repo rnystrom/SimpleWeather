@@ -20,6 +20,7 @@ struct ForecastDayCellViewModel {
     let high: Int
     let low: Int
     let conditionImageName: String
+    let chancePrecip: Double
 
     var dateString: String {
         return ForecastDayCellViewModel.dateFormatter.string(from: date)
@@ -27,6 +28,10 @@ struct ForecastDayCellViewModel {
 
     var highLowConditionsString: String {
         return String(format: "%zi° / %zi°", high, low)
+    }
+
+    var precipString: String? {
+        return chancePrecip >= 0.2 ? String(format: "%.0f%%", chancePrecip * 100.0) : nil
     }
 
 }
