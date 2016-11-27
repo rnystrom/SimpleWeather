@@ -23,7 +23,7 @@ extension DailyForecastSection {
         let limit = 10
         for day in daily {
             // dont include daily forecasts when already have observations
-            guard viewModels.count >= limit else { break }
+            guard viewModels.count < limit else { break }
             guard observationDay != calendar.dateComponents(components, from: day.date).day else { continue }
 
             let viewModel = ForecastDayCellViewModel(
