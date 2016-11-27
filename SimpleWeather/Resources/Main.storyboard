@@ -55,22 +55,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="K0M-QQ-dAQ">
-                                                    <rect key="frame" x="15" y="7.5" width="40" height="40"/>
+                                                    <rect key="frame" x="15" y="8" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="AtP-02-gK2"/>
                                                         <constraint firstAttribute="height" constant="40" id="uuh-j4-fW4"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-AS-Hlz">
+                                                    <rect key="frame" x="63" y="10" width="48" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63°/45°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIc-j3-Xlo">
                                                     <rect key="frame" x="207" y="17" width="65" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-AS-Hlz">
-                                                    <rect key="frame" x="63" y="9.5" width="48" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like 54°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CII-0B-nLU">
+                                                    <rect key="frame" x="63" y="42" width="71" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -79,11 +85,14 @@
                                             <constraint firstItem="K0M-QQ-dAQ" firstAttribute="leading" secondItem="WNJ-tn-TKG" secondAttribute="leading" constant="15" id="36a-IW-zv0"/>
                                             <constraint firstItem="gbg-AS-Hlz" firstAttribute="centerY" secondItem="K0M-QQ-dAQ" secondAttribute="centerY" id="7Ef-Ko-Nk4"/>
                                             <constraint firstItem="gbg-AS-Hlz" firstAttribute="leading" secondItem="K0M-QQ-dAQ" secondAttribute="trailing" constant="8" id="CGS-Sn-Pfm"/>
+                                            <constraint firstItem="CII-0B-nLU" firstAttribute="top" secondItem="gbg-AS-Hlz" secondAttribute="bottom" constant="-4" id="Lz6-Rd-7Ta"/>
+                                            <constraint firstItem="CII-0B-nLU" firstAttribute="leading" secondItem="gbg-AS-Hlz" secondAttribute="leading" id="MbE-BJ-mMn"/>
                                             <constraint firstAttribute="trailing" secondItem="XIc-j3-Xlo" secondAttribute="trailing" constant="15" id="Uhg-vr-ISX"/>
                                             <constraint firstItem="K0M-QQ-dAQ" firstAttribute="centerY" secondItem="WNJ-tn-TKG" secondAttribute="centerY" id="lmC-xg-D8u"/>
                                             <constraint firstItem="XIc-j3-Xlo" firstAttribute="centerY" secondItem="WNJ-tn-TKG" secondAttribute="centerY" id="uLS-ay-Izb"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="feelsLikeLabel" destination="CII-0B-nLU" id="CCl-eR-lTs"/>
                                             <outlet property="highLowLabel" destination="XIc-j3-Xlo" id="gy2-oK-y4e"/>
                                             <outlet property="iconImageView" destination="K0M-QQ-dAQ" id="bjT-Rs-sfu"/>
                                             <outlet property="temperatureLabel" destination="gbg-AS-Hlz" id="lbJ-gw-jd5"/>

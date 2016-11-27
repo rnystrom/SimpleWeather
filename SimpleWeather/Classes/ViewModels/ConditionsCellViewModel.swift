@@ -14,12 +14,14 @@ class ConditionsCellViewModel {
     let high: Int
     let low: Int
     let conditionImageName: String
+    let feelsLike: Int
 
-    init(temperature: Int, high: Int, low: Int, conditionImageName: String) {
+    init(temperature: Int, high: Int, low: Int, conditionImageName: String, feelsLike: Int) {
         self.temperature = temperature
         self.high = high
         self.low = low
         self.conditionImageName = conditionImageName
+        self.feelsLike = feelsLike
     }
 
     var temperatureLabelText: String {
@@ -28,6 +30,10 @@ class ConditionsCellViewModel {
 
     var highLowLabelText: String {
         return String(format: "%zi° / %zi°", high, low)
+    }
+
+    var feelsLikeText: String? {
+        return temperature != feelsLike ? String(format: "Feels like: %zi°", feelsLike) : nil
     }
     
 }

@@ -20,7 +20,7 @@ extension Observation: JSONConvertible {
             let wspd = json["wind_mph"] as? Double,
             let pressure = (json["pressure_in"] as? NSString)?.doubleValue,
             let dewpoint = json["dewpoint_f"] as? Double,
-            let feelslike = (json["feelslike_f"] as? NSString)?.doubleValue,
+            let feelslike = (json["feelslike_f"] as? NSString)?.integerValue,
             let visibility = (json["visibility_mi"] as? NSString)?.doubleValue,
             let uvi = (json["UV"] as? NSString)?.integerValue,
             let precip_1hr = (json["precip_1hr_in"] as? NSString)?.doubleValue,

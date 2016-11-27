@@ -17,7 +17,7 @@ struct Observation {
     let wind: Wind
     let pressure: Double
     let dewpoint: Double
-    let feelslike: Double
+    let feelslike: Int
     let visibility: Double
     let uvi: Int
     let precip_1hr: Double
