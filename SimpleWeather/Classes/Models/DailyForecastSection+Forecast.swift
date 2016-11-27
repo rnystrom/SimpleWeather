@@ -12,7 +12,7 @@ extension DailyForecastSection {
 
     static func from(forecast: Forecast) -> DailyForecastSection? {
         guard let date = forecast.observation?.date,
-            let daily = forecast.daily?.sorted(by: { $0.date > $1.date })
+            let daily = forecast.daily?.sorted(by: { $0.date < $1.date })
             else { return nil }
 
         var viewModels = [ForecastDayCellViewModel]()
