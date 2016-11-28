@@ -79,7 +79,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         if let location = forecast.location {
             let radar = RadarSection(
                 center: CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon),
-                width: 2
+                width: 1
             )
             objects.append(radar)
         }
