@@ -17,7 +17,7 @@ class ForecastDayCell: UICollectionViewCell {
 
     func configure(viewModel: ForecastDayCellViewModel) {
         dayLabel.text = viewModel.dateString
-        highLowConditionsLabel.text = viewModel.highLowConditionsString
+        highLowConditionsLabel.attributedText = viewModel.highLowConditionsString
         iconImageView.image = UIImage(named: viewModel.conditionImageName)
 
         if let precip = viewModel.precipString {

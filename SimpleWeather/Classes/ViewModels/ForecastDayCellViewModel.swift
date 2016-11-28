@@ -26,8 +26,8 @@ struct ForecastDayCellViewModel {
         return ForecastDayCellViewModel.dateFormatter.string(from: date)
     }
 
-    var highLowConditionsString: String {
-        return String(format: "%zi° / %zi°", high, low)
+    var highLowConditionsString: NSAttributedString {
+        return highLowAttributedString(high: high, low: low, size: 15)
     }
 
     var precipString: String? {

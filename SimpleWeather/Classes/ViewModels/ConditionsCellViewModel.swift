@@ -28,8 +28,8 @@ class ConditionsCellViewModel {
         return String(format: "%zi°", temperature)
     }
 
-    var highLowLabelText: String {
-        return String(format: "%zi° / %zi°", high, low)
+    var highLowLabelText: NSAttributedString {
+        return highLowAttributedString(high: high, low: low, size: 18)
     }
 
     var feelsLikeText: String? {
