@@ -8,6 +8,7 @@
 
 import UIKit
 import IGListKit
+import CoreLocation
 
 class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
@@ -75,6 +76,14 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         var objects = [IGListDiffable]()
         guard let forecast = forecast else { return objects }
 
+        if let location = forecast.location {
+            let radar = RadarSection(
+                center: CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon),
+                width: 2
+            )
+            objects.append(radar)
+        }
+
         let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
 
         if let observation = forecast.observation,
@@ -110,6 +119,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
             return DailyForecastSectionController()
         } else if object is EmbeddedSection {
             return EmbeddedAdapterSectionController(height: 80, dataSource: ForecastHourlyDataSource())
+        } else if let session = session, object is RadarSection {
+            return RadarSectionController(session: session)
         }
         return IGListSectionController()
     }

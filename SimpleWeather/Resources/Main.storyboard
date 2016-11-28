@@ -224,6 +224,29 @@
                                             <outlet property="collectionView" destination="ssT-cI-9ai" id="D9a-35-fdn"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapCell" id="GJQ-hs-I81" customClass="MapCell" customModule="SimpleWeather" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="202" width="287" height="155"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="155"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-Ns-gYX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="155"/>
+                                                </mapView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8Pq-Ns-gYX" secondAttribute="bottom" id="FU3-iC-0iS"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Pq-Ns-gYX" secondAttribute="trailing" id="WIG-h6-PwA"/>
+                                            <constraint firstItem="8Pq-Ns-gYX" firstAttribute="leading" secondItem="GJQ-hs-I81" secondAttribute="leading" id="XAD-Ca-q5D"/>
+                                            <constraint firstItem="8Pq-Ns-gYX" firstAttribute="top" secondItem="GJQ-hs-I81" secondAttribute="top" id="lYh-U4-eL9"/>
+                                        </constraints>
+                                        <size key="customSize" width="287" height="155"/>
+                                        <connections>
+                                            <outlet property="mapView" destination="8Pq-Ns-gYX" id="uQS-vD-6KI"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
