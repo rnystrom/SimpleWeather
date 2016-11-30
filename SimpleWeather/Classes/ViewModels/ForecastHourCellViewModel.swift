@@ -40,7 +40,7 @@ class ForecastHourCellViewModel {
         )
         if chancePrecip >= 0.2 {
             let percipAttrStr = NSAttributedString(
-                string: String(format: " %.0f%%", chancePrecip * 100.0),
+                string: String(format: " %.0f%%", round(chancePrecip * 10.0) * 10.0),
                 attributes: [
                     NSFontAttributeName: font,
                     NSForegroundColorAttributeName: UIColor(red: 73/255.0, green: 130/255.0, blue: 193/255.0, alpha: 1)
