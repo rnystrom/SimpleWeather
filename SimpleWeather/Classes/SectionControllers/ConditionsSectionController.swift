@@ -11,7 +11,8 @@ import IGListKit
 
 class ConditionsSectionController: IGListSectionController, IGListSectionType {
 
-    var viewModel: ConditionsCellViewModel?
+    var model: ConditionsSection?
+    var viewModels: [Any]?
     var expanded = false
 
     override init() {
@@ -32,7 +33,7 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
 
     func cellForItem(at index: Int) -> UICollectionViewCell {
         guard let context = collectionContext,
-            let viewModel = viewModel,
+            let viewModel = viewModels?[index] as? ConditionsCellViewModel,
             let cell = context.dequeueReusableCellFromStoryboard(withIdentifier: "ConditionsCell", for: self, at: index) as? ConditionsCell
             else { return UICollectionViewCell() }
         cell.configure(viewModel: viewModel)
@@ -41,7 +42,8 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
     }
 
     func didUpdate(to object: Any) {
-        viewModel = object as? ConditionsCellViewModel
+        model = object as? ConditionsSection
+        viewModels = model?.viewModels
     }
 
     func didSelectItem(at index: Int) {

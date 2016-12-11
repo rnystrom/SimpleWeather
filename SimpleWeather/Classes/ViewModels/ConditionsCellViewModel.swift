@@ -8,21 +8,13 @@
 
 import Foundation
 
-class ConditionsCellViewModel {
+struct ConditionsCellViewModel {
 
     let temperature: Int
     let high: Int
     let low: Int
     let conditionImageName: String
     let feelsLike: Int
-
-    init(temperature: Int, high: Int, low: Int, conditionImageName: String, feelsLike: Int) {
-        self.temperature = temperature
-        self.high = high
-        self.low = low
-        self.conditionImageName = conditionImageName
-        self.feelsLike = feelsLike
-    }
 
     var temperatureLabelText: String {
         return String(format: "%zi°", temperature)

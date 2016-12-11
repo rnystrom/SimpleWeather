@@ -86,19 +86,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
         let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
 
-        if let observation = forecast.observation,
-            let today = sortedDaily?.first,
-            let sunrise = forecast.astronomy?.sunrise,
-            let sunset = forecast.astronomy?.sunset {
-            let timeOfDay = Date().timeOfDay(sunrise: sunrise, sunset: sunset)
-            let viewModel = ConditionsCellViewModel(
-                temperature: Int(observation.temp),
-                high: today.high,
-                low: today.low,
-                conditionImageName: observation.condition.icon(night: timeOfDay == .night),
-                feelsLike: observation.feelslike
-            )
-            objects.append(viewModel)
+        if let conditions = ConditionsSection.from(observation: forecast.observation, today: sortedDaily?.first, astronomy: forecast.astronomy) {
+            objects.append(conditions)
         }
 
         if let hourly = EmbeddedSection.from(forecast: forecast) {
@@ -113,7 +102,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
-        if object is ConditionsCellViewModel {
+        if object is ConditionsSection {
             return ConditionsSectionController()
         } else if object is DailyForecastSection {
             return DailyForecastSectionController()
