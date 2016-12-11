@@ -11,21 +11,15 @@
 
 @implementation IGListCollectionView
 
-- (void)commonInit {
-    self.backgroundColor = [UIColor whiteColor];
-    self.alwaysBounceVertical = YES;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
-        [self commonInit];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        [self commonInit];
+        
+        UIColor *backgroundAppearanceColor = (UIColor *) [[[self class] appearance] backgroundColor];
+        if (!backgroundAppearanceColor) {
+            self.backgroundColor = [UIColor whiteColor];
+        }
+        
+        self.alwaysBounceVertical = YES;
     }
     return self;
 }

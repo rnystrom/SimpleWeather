@@ -33,7 +33,7 @@ class ConditionsCellViewModel {
     }
 
     var feelsLikeText: String? {
-        return temperature != feelsLike ? String(format: "Feels like: %zi°", feelsLike) : nil
+        return temperature != feelsLike ? String(format: "(%zi°)", feelsLike) : nil
     }
     
 }

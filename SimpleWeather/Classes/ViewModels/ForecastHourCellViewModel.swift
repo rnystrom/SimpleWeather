@@ -33,16 +33,16 @@ class ForecastHourCellViewModel {
     }
 
     var detailsAttributedString: NSAttributedString {
-        let font = UIFont.systemFont(ofSize: 15)
+        let fontSize: CGFloat = 15
         let mAttrString = NSMutableAttributedString(
             string: String(format: "%zi°", temp),
-            attributes: [NSFontAttributeName: font]
+            attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightMedium)]
         )
         if chancePrecip >= 0.2 {
             let percipAttrStr = NSAttributedString(
                 string: String(format: " %.0f%%", round(chancePrecip * 10.0) * 10.0),
                 attributes: [
-                    NSFontAttributeName: font,
+                    NSFontAttributeName: UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightLight),
                     NSForegroundColorAttributeName: UIColor(red: 73/255.0, green: 130/255.0, blue: 193/255.0, alpha: 1)
                 ]
             )

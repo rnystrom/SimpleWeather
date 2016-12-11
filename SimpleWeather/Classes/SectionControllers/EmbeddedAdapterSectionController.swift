@@ -30,6 +30,7 @@ class EmbeddedAdapterSectionController: IGListSectionController, IGListSectionTy
         self.height = height
         self.dataSource = dataSource
         super.init()
+        inset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 0)
     }
 
     // MARK: IGListSectionType
@@ -40,7 +41,7 @@ class EmbeddedAdapterSectionController: IGListSectionController, IGListSectionTy
 
     func sizeForItem(at index: Int) -> CGSize {
         guard let width = collectionContext?.containerSize.width else { return .zero }
-        return CGSize(width: width, height: height)
+        return CGSize(width: width - inset.left - inset.right, height: height - inset.top - inset.bottom)
     }
 
     func cellForItem(at index: Int) -> UICollectionViewCell {

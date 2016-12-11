@@ -26,13 +26,17 @@ extension DailyForecastSection {
             guard viewModels.count < limit else { break }
             guard observationDay != calendar.dateComponents(components, from: day.date).day else { continue }
 
+            // implicit unwrap b/c there has to be first/last to be inside this iteration
+            let position: ForecastDayCellPosition = day == daily.first ? .top : day == daily.last ? .bottom : .none
+
             let viewModel = ForecastDayCellViewModel(
                 date: day.date,
                 high:
                 day.high,
                 low: day.low,
                 conditionImageName: day.condition.icon(),
-                chancePrecip: day.pop
+                chancePrecip: day.pop,
+                position: position
             )
             viewModels.append(viewModel)
         }

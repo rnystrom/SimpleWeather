@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum ForecastDayCellPosition {
+    case top, bottom, none
+}
+
 struct ForecastDayCellViewModel {
 
     static private let dateFormatter: DateFormatter = {
@@ -21,6 +25,7 @@ struct ForecastDayCellViewModel {
     let low: Int
     let conditionImageName: String
     let chancePrecip: Double
+    let position: ForecastDayCellPosition
 
     var dateString: String {
         return ForecastDayCellViewModel.dateFormatter.string(from: date)

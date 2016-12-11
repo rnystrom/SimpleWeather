@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ForecastHourCell: UICollectionViewCell {
+class ForecastHourCell: RoundedCollectionViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
 
     func configure(viewModel: ForecastHourCellViewModel) {
+        cornerOptions = .all
         timeLabel.text = viewModel.dateString
         tempLabel.attributedText = viewModel.detailsAttributedString
         iconImageView.image = UIImage(named: viewModel.conditionImageName)

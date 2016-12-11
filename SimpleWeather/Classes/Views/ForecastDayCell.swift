@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastDayCell: UICollectionViewCell {
+class ForecastDayCell: RoundedCollectionViewCell {
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var highLowConditionsLabel: UILabel!
@@ -19,6 +19,12 @@ class ForecastDayCell: UICollectionViewCell {
         dayLabel.text = viewModel.dateString
         highLowConditionsLabel.attributedText = viewModel.highLowConditionsString
         iconImageView.image = UIImage(named: viewModel.conditionImageName)
+
+        switch viewModel.position {
+        case .top: cornerOptions = .top
+        case .bottom: cornerOptions = .bottom
+        case .none: cornerOptions = []
+        }
 
         if let precip = viewModel.precipString {
             precipLabel.isHidden = false

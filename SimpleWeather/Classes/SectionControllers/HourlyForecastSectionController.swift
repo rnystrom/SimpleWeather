@@ -13,6 +13,13 @@ class HourlyForecastSectionController: IGListSectionController, IGListSectionTyp
 
     var viewModel: ForecastHourCellViewModel?
 
+    override init() {
+        super.init()
+        inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
+    }
+
+    // MARK: IGListSectionType
+
     func numberOfItems() -> Int {
         return 1
     }

@@ -9,13 +9,13 @@
 import Foundation
 import IGListKit
 
-extension RadarSection {
+extension RadarSection: IGListDiffable {
 
-    override func diffIdentifier() -> NSObjectProtocol {
+    func diffIdentifier() -> NSObjectProtocol {
         return self
     }
 
-    override func isEqual(toDiffableObject object: IGListDiffable?) -> Bool {
+    func isEqual(toDiffableObject object: IGListDiffable?) -> Bool {
         return isEqual(object)
     }
 

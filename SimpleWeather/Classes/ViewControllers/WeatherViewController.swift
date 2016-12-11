@@ -118,7 +118,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         } else if object is DailyForecastSection {
             return DailyForecastSectionController()
         } else if object is EmbeddedSection {
-            return EmbeddedAdapterSectionController(height: 80, dataSource: ForecastHourlyDataSource())
+            return EmbeddedAdapterSectionController(height: 96, dataSource: ForecastHourlyDataSource())
         } else if let session = session, object is RadarSection {
             return RadarSectionController(session: session)
         }

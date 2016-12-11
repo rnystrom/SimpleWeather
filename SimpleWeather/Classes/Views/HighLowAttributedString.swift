@@ -9,12 +9,12 @@
 import Foundation
 
 func highLowAttributedString(high: Int, low: Int, size: CGFloat = 15) -> NSAttributedString {
-    let font = UIFont.systemFont(ofSize: size)
+    let font = UIFont.systemFont(ofSize: size, weight: UIFontWeightMedium)
     let mstr = NSMutableAttributedString(
         string: String(format: "%zi°", high),
         attributes: [
             NSFontAttributeName: font,
-            NSForegroundColorAttributeName: UIColor.darkText
+            NSForegroundColorAttributeName: UIColor.white
         ])
     mstr.append(NSAttributedString(
         string: String(format: " %zi°", low),

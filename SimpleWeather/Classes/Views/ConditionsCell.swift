@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConditionsCell: UICollectionViewCell {
+class ConditionsCell: RoundedCollectionViewCell {
     
     @IBOutlet weak private var temperatureLabel: UILabel!
     @IBOutlet weak private var highLowLabel: UILabel!
@@ -16,6 +16,7 @@ class ConditionsCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
 
     func configure(viewModel: ConditionsCellViewModel) {
+        cornerOptions = .all
         temperatureLabel.text = viewModel.temperatureLabelText
         highLowLabel.attributedText = viewModel.highLowLabelText
         iconImageView.image = UIImage(named: viewModel.conditionImageName)

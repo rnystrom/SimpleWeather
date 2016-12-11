@@ -13,13 +13,20 @@ class DailyForecastSectionController: IGListSectionController, IGListSectionType
 
     var model: DailyForecastSection?
 
+    override init() {
+        super.init()
+        inset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
+
+    // MARK: IGListSectionType
+
     func numberOfItems() -> Int {
         return model?.viewModels.count ?? 0
     }
 
     func sizeForItem(at index: Int) -> CGSize {
         guard let size = collectionContext?.containerSize else { return .zero }
-        return CGSize(width: size.width, height: 35)
+        return CGSize(width: size.width - inset.left - inset.right, height: 35)
     }
 
     func cellForItem(at index: Int) -> UICollectionViewCell {
