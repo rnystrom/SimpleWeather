@@ -22,6 +22,7 @@ extension ConditionsCellViewModel: IGListDiffable {
         && high == rhs.high
         && low == rhs.low
         && conditionImageName == rhs.conditionImageName
+        && expanded == rhs.expanded
     }
 
 }

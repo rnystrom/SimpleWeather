@@ -96,7 +96,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
                 high: today.high,
                 low: today.low,
                 conditionImageName: observation.condition.icon(night: timeOfDay == .night),
-                feelsLike: observation.feelslike
+                feelsLike: observation.feelslike,
+                expanded: false
             )
             objects.append(viewModel)
         }

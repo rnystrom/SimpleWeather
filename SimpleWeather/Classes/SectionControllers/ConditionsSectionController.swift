@@ -43,6 +43,9 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
         viewModel = object as? ConditionsCellViewModel
     }
 
-    func didSelectItem(at index: Int) {}
+    func didSelectItem(at index: Int) {
+        guard let cell = collectionContext?.cellForItem(at: 0, sectionController: self) as? ConditionsCell else { return }
+        cell.setExpanded(expanded: true, animated: true)
+    }
 
 }

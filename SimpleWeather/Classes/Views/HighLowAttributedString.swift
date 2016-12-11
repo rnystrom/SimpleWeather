@@ -20,7 +20,7 @@ func highLowAttributedString(high: Int, low: Int, size: CGFloat = 15) -> NSAttri
         string: String(format: " %zi°", low),
         attributes: [
             NSFontAttributeName: font,
-            NSForegroundColorAttributeName: UIColor.lightGray
+            NSForegroundColorAttributeName: UIColor(white: 0.733333333, alpha: 1)
         ]))
     return mstr
 }
