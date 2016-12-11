@@ -12,6 +12,7 @@ import IGListKit
 class ConditionsSectionController: IGListSectionController, IGListSectionType {
 
     var viewModel: ConditionsCellViewModel?
+    var expanded = false
 
     override init() {
         super.init()
@@ -35,7 +36,7 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
             let cell = context.dequeueReusableCellFromStoryboard(withIdentifier: "ConditionsCell", for: self, at: index) as? ConditionsCell
             else { return UICollectionViewCell() }
         cell.configure(viewModel: viewModel)
-        cell.cornerOptions = .all
+        cell.setExpanded(expanded: expanded)
         return cell
     }
 
@@ -45,7 +46,8 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
 
     func didSelectItem(at index: Int) {
         guard let cell = collectionContext?.cellForItem(at: 0, sectionController: self) as? ConditionsCell else { return }
-        cell.setExpanded(expanded: true, animated: true)
+        expanded = !expanded
+        cell.setExpanded(expanded: expanded, animated: true)
     }
 
 }

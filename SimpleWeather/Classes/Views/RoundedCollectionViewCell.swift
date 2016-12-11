@@ -61,10 +61,10 @@ public class RoundedCollectionViewCell : UICollectionViewCell {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-        updateMask()
+        updateMaskIfNeeded()
     }
 
-    func updateMask() {
+    func updateMaskIfNeeded() {
         guard needsUpdateMask else { return }
         needsUpdateMask = true
 

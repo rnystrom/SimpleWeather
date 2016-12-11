@@ -25,6 +25,17 @@ class ConditionsCell: RoundedCollectionViewCell {
     }
 
     func setExpanded(expanded: Bool, animated: Bool = false) {
+        cornerOptions = expanded ? .top : .all
+        updateMaskIfNeeded()
+
+        let color: UIColor
+        if expanded {
+            color = UIColor(red: 53/255.0, green: 55/255.0, blue: 63/255.0, alpha: 1)
+        } else {
+            color = UIColor(red: 30/255.0, green: 32/255.0, blue: 41/255.0, alpha: 1)
+        }
+        backgroundColor = color
+
         UIView.animate(
             withDuration: (animated ? 0.8 : 0),
             delay: 0,
