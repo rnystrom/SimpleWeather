@@ -15,15 +15,13 @@ class ConditionsCellViewModel {
     let low: Int
     let conditionImageName: String
     let feelsLike: Int
-    let expanded: Bool
 
-    init(temperature: Int, high: Int, low: Int, conditionImageName: String, feelsLike: Int, expanded: Bool) {
+    init(temperature: Int, high: Int, low: Int, conditionImageName: String, feelsLike: Int) {
         self.temperature = temperature
         self.high = high
         self.low = low
         self.conditionImageName = conditionImageName
         self.feelsLike = feelsLike
-        self.expanded = expanded
     }
 
     var temperatureLabelText: String {

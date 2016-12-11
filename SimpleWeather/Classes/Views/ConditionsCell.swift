@@ -22,7 +22,6 @@ class ConditionsCell: RoundedCollectionViewCell {
         highLowLabel.attributedText = viewModel.highLowLabelText
         iconImageView.image = UIImage(named: viewModel.conditionImageName)
         feelsLikeLabel.text = viewModel.feelsLikeText
-        setExpanded(expanded: viewModel.expanded)
     }
 
     func setExpanded(expanded: Bool, animated: Bool = false) {
