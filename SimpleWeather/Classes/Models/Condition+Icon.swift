@@ -25,7 +25,7 @@ extension Condition {
         case .fog, .hazy:
             return "Haze"
         case .mostlycloudy, .partlysunny:
-            return night ? "Partly-sunny-night" : "Partly-sunny-day"
+            return night ? "Mostly-sunny-night" : "Partly-sunny-day"
         case .partlycloudy, .mostlysunny:
             return night ? "Mostly-sunny-night" : "Mostly-sunny-day"
         case .unknown:

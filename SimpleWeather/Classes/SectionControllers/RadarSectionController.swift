@@ -23,6 +23,7 @@ class RadarSectionController: IGListSectionController, IGListSectionType, IGList
         self.session = session
         super.init()
         displayDelegate = self
+        inset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
     }
 
     var model: RadarSection?
