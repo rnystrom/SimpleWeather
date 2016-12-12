@@ -57,8 +57,8 @@ extension ForecastDay: JSONConvertible {
             maxhumidity: maxhumidity,
             minhumidity: minhumidity,
             condition: Condition.from(string: icon_name),
-            max_wind: max(max_wind, 0),
-            average_wind: max(ave_wind, 0)
+            max_wind: max_wind,
+            average_wind: ave_wind
         )
     }
 

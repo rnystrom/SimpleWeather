@@ -13,16 +13,16 @@ extension Astronomy: JSONConvertible {
     static func fromJSON(json: [String : Any]) -> Astronomy? {
         guard let illumination = (json["percentIlluminated"] as? NSString)?.doubleValue,
             let age = (json["ageOfMoon"] as? NSString)?.integerValue,
-        let phase = json["phaseofMoon"] as? String,
-        let hemi = json["hemisphere"] as? String,
-        let sunriseHour = (keypath(dict: json, path: "sunrise.hour") as NSString?)?.integerValue,
-        let sunriseMinute = (keypath(dict: json, path: "sunrise.minute") as NSString?)?.integerValue,
-        let sunsetHour = (keypath(dict: json, path: "sunset.hour") as NSString?)?.integerValue,
-        let sunsetMinute = (keypath(dict: json, path: "sunset.minute") as NSString?)?.integerValue,
-        let moonriseHour = (keypath(dict: json, path: "moonrise.hour") as NSString?)?.integerValue,
-        let moonriseMinute = (keypath(dict: json, path: "moonrise.minute") as NSString?)?.integerValue,
-        let moonsetHour = (keypath(dict: json, path: "moonset.hour") as NSString?)?.integerValue,
-        let moonsetMinute = (keypath(dict: json, path: "moonset.minute") as NSString?)?.integerValue
+            let phase = json["phaseofMoon"] as? String,
+            let hemi = json["hemisphere"] as? String,
+            let sunriseHour = (keypath(dict: json, path: "sunrise.hour") as NSString?)?.integerValue,
+            let sunriseMinute = (keypath(dict: json, path: "sunrise.minute") as NSString?)?.integerValue,
+            let sunsetHour = (keypath(dict: json, path: "sunset.hour") as NSString?)?.integerValue,
+            let sunsetMinute = (keypath(dict: json, path: "sunset.minute") as NSString?)?.integerValue,
+            let moonriseHour = (keypath(dict: json, path: "moonrise.hour") as NSString?)?.integerValue,
+            let moonriseMinute = (keypath(dict: json, path: "moonrise.minute") as NSString?)?.integerValue,
+            let moonsetHour = (keypath(dict: json, path: "moonset.hour") as NSString?)?.integerValue,
+            let moonsetMinute = (keypath(dict: json, path: "moonset.minute") as NSString?)?.integerValue
             else { return nil }
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day], from: Date())
@@ -48,11 +48,11 @@ extension Astronomy: JSONConvertible {
             sunset: sunset,
             moonrise: moonrise,
             moonset: moonset,
-            moonIllumination: illumination / 100.0,
-            moonAge: age,
+            moonIllumination: max(illumination / 100.0, 0),
+            moonAge: max(age, 0),
             moonPhaseDescription: phase,
             moonHemisphere: hemi
         )
     }
-
+    
 }
