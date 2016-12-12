@@ -28,7 +28,7 @@ extension ConditionsSection {
         models.append(ConditionsDetailCellViewModel(title: "Humidity", detail: String(format: "%@", humidity)))
         models.append(ConditionsDetailCellViewModel(title: "Dewpoint", detail: String(format: "%.0f°", dewpoint)))
         models.append(ConditionsDetailCellViewModel(title: "Pressure", detail: String(format: "%.2f", pressure)))
-        models.append(ConditionsDetailCellViewModel(title: "Visibility", detail: String(format: "%.0f mi", visibility)))
+        models.append(ConditionsDetailCellViewModel(title: "Rainfall (1h)", detail: String(format: "%.0f in", precip_1hr)))
 
         return models
     }
