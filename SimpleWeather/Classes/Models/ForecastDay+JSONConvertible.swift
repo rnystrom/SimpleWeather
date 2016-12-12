@@ -32,13 +32,13 @@ extension ForecastDay: JSONConvertible {
         var max_wind: Wind? = nil
         if let wspd = keypath(dict: json, path: "maxwind.mph") as Double?,
             let wdir = keypath(dict: json, path: "maxwind.dir") as String? {
-            max_wind = Wind(speed: wspd, direction: wdir)
+            max_wind = Wind(speed: max(wspd, 0), direction: wdir)
         }
 
         var ave_wind: Wind? = nil
         if let wspd = keypath(dict: json, path: "avewind.mph") as Double?,
             let wdir = keypath(dict: json, path: "avewind.dir") as String? {
-            ave_wind = Wind(speed: wspd, direction: wdir)
+            ave_wind = Wind(speed: max(wspd, 0), direction: wdir)
         }
 
         return ForecastDay(
@@ -46,19 +46,19 @@ extension ForecastDay: JSONConvertible {
             high: high,
             low: low,
             description: description,
-            pop: Double(pop) / 100.0,
-            qpf_allday: qpf_allday,
-            qpf_day: qpf_day,
-            qpf_night: qpf_night,
-            snow_allday: snow_allday,
-            snow_day: snow_day,
-            snow_night: snow_night,
+            pop: max(Double(pop) / 100.0, 0),
+            qpf_allday: max(qpf_allday, 0),
+            qpf_day: max(qpf_day, 0),
+            qpf_night: max(qpf_night, 0),
+            snow_allday: max(snow_allday, 0),
+            snow_day: max(snow_day, 0),
+            snow_night: max(snow_night, 0),
             avehumidity: avehumidity,
             maxhumidity: maxhumidity,
             minhumidity: minhumidity,
             condition: Condition.from(string: icon_name),
-            max_wind: max_wind,
-            average_wind: ave_wind
+            max_wind: max(max_wind, 0),
+            average_wind: max(ave_wind, 0)
         )
     }
 
