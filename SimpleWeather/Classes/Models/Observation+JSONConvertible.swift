@@ -29,7 +29,7 @@ extension Observation: JSONConvertible {
             else { return nil }
 
         let condition = Condition.from(string: icon_string)
-        let wind = Wind(speed: wspd, direction: wdir)
+        let wind = Wind(speed: (wspd < 0 ? 0 : wspd), direction: wdir)
 
         return Observation(
             date: Date(timeIntervalSince1970: epoch_interval),
@@ -40,10 +40,10 @@ extension Observation: JSONConvertible {
             pressure: pressure,
             dewpoint: dewpoint,
             feelslike: feelslike,
-            visibility: visibility,
+            visibility: (visibility < 0 ? 0 : visibility),
             uvi: uvi,
-            precip_1hr: precip_1hr,
-            precip_day: precip_day,
+            precip_1hr: (precip_1hr < 0 ? 0 : precip_1hr),
+            precip_day: (precip_day < 0 ? 0 : precip_day),
             condition: condition
         )
     }
