@@ -42,10 +42,10 @@ extension ForecastHourly: JSONConvertible {
             heatindex: heatindex,
             feelslike: feelslike,
             qpf: qpf,
-            snow: snow,
-            pop: pop / 100.0,
+            snow: max(snow, 0),
+            pop: max(pop / 100.0, 0),
             mslp: mslp,
-            wind: Wind(speed: wspd, direction: wdir),
+            wind: Wind(speed: max(wspd, 0), direction: wdir),
             condition: Condition.from(string: icon)
         )
     }
