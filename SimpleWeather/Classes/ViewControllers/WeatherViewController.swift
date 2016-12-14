@@ -25,12 +25,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     var session: APISession? {
         didSet {
-            session?.getForecastForCurrentLocation(completion: { [weak self] (forecast: Forecast?, error: Error?) in
-                self?.forecast = forecast
-                self?.title = forecast?.location?.city
-                self?.adapter.performUpdates(animated: true)
-                self?.updateAlertButton()
-            })
+            fetchCurrentLocation()
         }
     }
 
@@ -46,10 +41,27 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         }
     }
 
+    func fetchCurrentLocation() {
+        session?.getForecastForCurrentLocation(completion: { [weak self] (forecast: Forecast?, error: Error?) in
+            self?.forecast = forecast
+            self?.title = forecast?.location?.city
+            self?.adapter.performUpdates(animated: true)
+            self?.updateAlertButton()
+        })
+    }
+
     // MARK: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(WeatherViewController.applicationWillEnterForeground(notification:)),
+            name: .UIApplicationWillEnterForeground,
+            object: nil
+        )
+
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
@@ -116,6 +128,15 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
         return nil
+    }
+
+    // MARK: Notifications
+
+    func applicationWillEnterForeground(notification: Notification) {
+        let expiration: TimeInterval = 60 * 20 // 20 minutes
+        if let observationDate = forecast?.observation?.date, -1 * observationDate.timeIntervalSinceNow >= expiration {
+            fetchCurrentLocation()
+        }
     }
 
 }

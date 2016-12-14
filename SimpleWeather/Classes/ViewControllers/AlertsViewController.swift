@@ -18,6 +18,7 @@ class AlertsViewController: UIViewController {
         super.viewDidLoad()
         let descriptions: [String]? = alerts?.flatMap({ $0.message })
         textView.text = descriptions?.joined(separator: "\n")
+        textView.contentOffset = .zero
     }
 
 }
