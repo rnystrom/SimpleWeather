@@ -15,6 +15,8 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
     var viewModels: [Any]?
     var expanded = false
 
+    let feedbackGenerator = UISelectionFeedbackGenerator()
+
     override init() {
         super.init()
         inset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -64,6 +66,8 @@ class ConditionsSectionController: IGListSectionController, IGListSectionType {
         guard let cell = collectionContext?.cellForItem(at: 0, sectionController: self) as? ConditionsCell else { return }
         expanded = !expanded
         cell.setExpanded(expanded: expanded, animated: true)
+
+        feedbackGenerator.selectionChanged()
 
         let indexes = IndexSet(integersIn: 1..<(viewModels?.count ?? 0))
         if expanded {
