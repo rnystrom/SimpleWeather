@@ -250,7 +250,7 @@ class SimpleWeatherTests: XCTestCase {
         XCTAssertEqual(observation?.wind, Wind(speed: 2.0, direction: "WNW"))
         XCTAssertEqual(observation?.pressure, 30.42)
         XCTAssertEqual(observation?.dewpoint, 26.0)
-        XCTAssertEqual(observation?.feelslike, 54.0)
+        XCTAssertEqual(observation?.feelslike, 54)
         XCTAssertEqual(observation?.visibility, 10.0)
         XCTAssertEqual(observation?.uvi, 2)
         XCTAssertEqual(observation?.precip_1hr, 1.1)
@@ -308,6 +308,15 @@ class SimpleWeatherTests: XCTestCase {
         let json = sampleJSONResponse["moon_phase"] as! [String: Any]
         let astronomy = Astronomy.fromJSON(json: json)
         XCTAssertNotNil(astronomy)
+    }
+
+    func test_whenEncodingSavedLocation_thatDecodes() {
+        let location = SavedLocation(name: "Foo", latitude: 2, longitude: 3)
+        let data = NSKeyedArchiver.archivedData(withRootObject: location)
+        let decoded = NSKeyedUnarchiver.unarchiveObject(with: data) as! SavedLocation
+        XCTAssertEqual(decoded.name, "Foo")
+        XCTAssertEqual(decoded.latitude, 2.0)
+        XCTAssertEqual(decoded.longitude, 3.0)
     }
 
 }
