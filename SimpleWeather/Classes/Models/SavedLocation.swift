@@ -13,11 +13,13 @@ final class SavedLocation: NSObject {
     let name: String
     let latitude: Double
     let longitude: Double
+    let userLocation: Bool
 
-    init(name: String, latitude: Double, longitude: Double) {
+    init(name: String, latitude: Double, longitude: Double, userLocation: Bool) {
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
+        self.userLocation = userLocation
     }
 
 }

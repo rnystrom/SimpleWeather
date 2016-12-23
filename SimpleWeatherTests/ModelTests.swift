@@ -311,12 +311,13 @@ class SimpleWeatherTests: XCTestCase {
     }
 
     func test_whenEncodingSavedLocation_thatDecodes() {
-        let location = SavedLocation(name: "Foo", latitude: 2, longitude: 3)
+        let location = SavedLocation(name: "Foo", latitude: 2, longitude: 3, userLocation: true)
         let data = NSKeyedArchiver.archivedData(withRootObject: location)
         let decoded = NSKeyedUnarchiver.unarchiveObject(with: data) as! SavedLocation
         XCTAssertEqual(decoded.name, "Foo")
         XCTAssertEqual(decoded.latitude, 2.0)
         XCTAssertEqual(decoded.longitude, 3.0)
+        XCTAssertEqual(decoded.userLocation, true)
     }
 
 }

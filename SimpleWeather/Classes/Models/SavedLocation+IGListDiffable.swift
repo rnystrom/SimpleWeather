@@ -18,7 +18,10 @@ extension SavedLocation: IGListDiffable {
     func isEqual(toDiffableObject object: IGListDiffable?) -> Bool {
         if self === object { return true }
         guard let rhs = object as? SavedLocation else { return false }
-        return name == rhs.name && latitude == rhs.latitude && longitude == rhs.longitude
+        return name == rhs.name
+            && latitude == rhs.latitude
+            && longitude == rhs.longitude
+            && userLocation == rhs.userLocation
     }
-
+    
 }

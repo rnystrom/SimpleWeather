@@ -11,6 +11,7 @@ import Foundation
 let SavedLocationNameKey = "name"
 let SavedLocationLatitudeKey = "latitude"
 let SavedLocationLongitudeKey = "longitude"
+let SavedLocationUserLocationKey = "userLocation"
 
 extension SavedLocation: NSCoding {
 
@@ -19,13 +20,15 @@ extension SavedLocation: NSCoding {
             else { return nil }
         let latitude = aDecoder.decodeDouble(forKey: SavedLocationLatitudeKey)
         let longitude = aDecoder.decodeDouble(forKey: SavedLocationLongitudeKey)
-        self.init(name: name, latitude: latitude, longitude: longitude)
+        let userLocation = aDecoder.decodeBool(forKey: SavedLocationUserLocationKey)
+        self.init(name: name, latitude: latitude, longitude: longitude, userLocation: userLocation)
     }
 
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: SavedLocationNameKey)
         aCoder.encode(latitude, forKey: SavedLocationLatitudeKey)
         aCoder.encode(longitude, forKey: SavedLocationLongitudeKey)
+        aCoder.encode(userLocation, forKey: SavedLocationUserLocationKey)
     }
 
 }
