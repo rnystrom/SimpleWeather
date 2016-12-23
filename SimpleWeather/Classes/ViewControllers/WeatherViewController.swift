@@ -47,12 +47,26 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         })
     }
 
+    func fetchLocation() {
+        guard let location = location else { return }
+        session.getForecast(lat: location.latitude, lon: location.longitude, completion: { [weak self] (forecast: Forecast?, error: Error?) in
+            self?.forecast = forecast
+            self?.title = forecast?.location?.city
+            self?.adapter.performUpdates(animated: true)
+            self?.updateAlertButton()
+        })
+    }
+
     // MARK: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchCurrentLocation()
+        if location?.userLocation == true {
+            fetchCurrentLocation()
+        } else {
+            fetchLocation()
+        }
 
         NotificationCenter.default.addObserver(
             self,
