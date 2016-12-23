@@ -17,7 +17,7 @@ class SavedLocationsViewController: UIViewController, IGListAdapterDataSource {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
 
-    let store = SavedLocationStore()
+    var store: SavedLocationStore?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class SavedLocationsViewController: UIViewController, IGListAdapterDataSource {
     // MARK: IGListAdapterDataSource
 
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
-        return store.locations
+        return store?.locations ?? []
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {

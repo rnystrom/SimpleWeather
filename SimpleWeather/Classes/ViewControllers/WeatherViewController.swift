@@ -23,12 +23,9 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
 
-    var session: APISession? {
-        didSet {
-            fetchCurrentLocation()
-        }
-    }
+    var session = APISession(key: API_KEY, limiter: RateLimiter(rates: RateLimiter.API_RATES))
 
+    var location: SavedLocation?
     var forecast: Forecast?
 
     // MARK: Private API
@@ -42,7 +39,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
     }
 
     func fetchCurrentLocation() {
-        session?.getForecastForCurrentLocation(completion: { [weak self] (forecast: Forecast?, error: Error?) in
+        session.getForecastForCurrentLocation(completion: { [weak self] (forecast: Forecast?, error: Error?) in
             self?.forecast = forecast
             self?.title = forecast?.location?.city
             self?.adapter.performUpdates(animated: true)
@@ -54,6 +51,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        fetchCurrentLocation()
 
         NotificationCenter.default.addObserver(
             self,
@@ -120,7 +119,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
             return DailyForecastSectionController()
         } else if object is EmbeddedSection {
             return EmbeddedAdapterSectionController(height: 96, dataSource: ForecastHourlyDataSource())
-        } else if let session = session, object is RadarSection {
+        } else if object is RadarSection {
             return RadarSectionController(session: session)
         }
         return IGListSectionController()

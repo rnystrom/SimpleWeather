@@ -13,12 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let savedLocationStore = SavedLocationStore()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let nav = window?.rootViewController as? UINavigationController,
-            let weatherVC = nav.viewControllers.first as? WeatherViewController {
-            weatherVC.session = APISession(key: API_KEY, limiter: RateLimiter(rates: RateLimiter.API_RATES))
+            let controller = nav.viewControllers.first as? SavedLocationsViewController {
+            controller.store = savedLocationStore
         }
         return true
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        savedLocationStore.save()
     }
 
 }

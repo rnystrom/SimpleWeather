@@ -35,7 +35,11 @@ class SavedLocationSectionController: IGListSectionController, IGListSectionType
     }
 
     func didSelectItem(at index: Int) {
-
+        guard let controller = viewController?.storyboard?.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController,
+            let location = location
+            else { return }
+        controller.location = location
+        viewController?.navigationController?.pushViewController(controller, animated: true)
     }
 
 }

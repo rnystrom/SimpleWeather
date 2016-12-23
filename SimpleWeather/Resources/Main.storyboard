@@ -35,7 +35,7 @@
         <!--Locations-->
         <scene sceneID="4fE-jA-bYY">
             <objects>
-                <viewController id="wDM-sw-1XB" customClass="SavedLocationsViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedLocationsViewController" id="wDM-sw-1XB" customClass="SavedLocationsViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hPD-g4-H7a"/>
                         <viewControllerLayoutGuide type="bottom" id="xuO-Xv-oLz"/>
@@ -106,7 +106,7 @@
         <!--Your Location-->
         <scene sceneID="UI1-Xg-wRX">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zbT-OB-19z" customClass="WeatherViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeatherViewController" automaticallyAdjustsScrollViewInsets="NO" id="zbT-OB-19z" customClass="WeatherViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G88-K2-Bqb"/>
                         <viewControllerLayoutGuide type="bottom" id="s6t-mY-1wE"/>
@@ -126,7 +126,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MapCell" id="GJQ-hs-I81" customClass="MapCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="16.5" y="0.0" width="287" height="155"/>
+                                        <rect key="frame" x="17" y="0.0" width="287" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="155"/>
@@ -150,7 +150,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConditionsCell" id="WNJ-tn-TKG" customClass="ConditionsCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="16.5" y="165" width="287" height="55"/>
+                                        <rect key="frame" x="17" y="165" width="287" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="55"/>
@@ -208,7 +208,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConditionsDetailCell" id="VE0-af-HuQ" customClass="ConditionsDetailCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="16.5" y="230" width="287" height="37"/>
+                                        <rect key="frame" x="17" y="230" width="287" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="37"/>
@@ -242,7 +242,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmbeddedCollectionViewCell" id="fe4-cb-hjL" customClass="EmbeddedCollectionViewCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="16.5" y="277" width="287" height="80"/>
+                                        <rect key="frame" x="17" y="277" width="287" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="80"/>
@@ -318,7 +318,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastDayCell" id="HcW-nJ-XS5" customClass="ForecastDayCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="16.5" y="367" width="287" height="37"/>
+                                        <rect key="frame" x="17" y="367" width="287" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="37"/>
