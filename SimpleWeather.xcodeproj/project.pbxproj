@@ -110,8 +110,6 @@
 		29E0A3301DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A32F1DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift */; };
 		29E0A3321DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3311DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift */; };
 		29E0A3391DDC0091004EA2C5 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3381DDC0091004EA2C5 /* Wind.swift */; };
-		29E0A33C1DDC0BD1004EA2C5 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */; };
-		29E0A33D1DDCB85F004EA2C5 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */; };
 		B09F792B765E3162221223DA /* Pods_SimpleWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323494716CA1DAF7F4537 /* Pods_SimpleWeatherTests.framework */; };
 		F10762EFE604747FC33BB852 /* Pods_SimpleWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF73A7EF6430DE98858D468 /* Pods_SimpleWeather.framework */; };
 /* End PBXBuildFile section */
@@ -212,7 +210,6 @@
 		29E0A32F1DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForecastHourly+JSONConvertible.swift"; sourceTree = "<group>"; };
 		29E0A3311DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForecastDay+JSONConvertible.swift"; sourceTree = "<group>"; };
 		29E0A3381DDC0091004EA2C5 /* Wind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
-		29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimiter.swift; sourceTree = "<group>"; };
 		448030D10330EE5654539923 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 		53F323494716CA1DAF7F4537 /* Pods_SimpleWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87C7F3447663A67F3CF8D34 /* Pods-SimpleWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherTests/Pods-SimpleWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -358,7 +355,6 @@
 				29E0A31B1DDB61C5004EA2C5 /* KeypathParsing.swift */,
 				29C579431DE103A5003A149B /* LocationRequester.swift */,
 				295EAF311DEBCF8400D1EF26 /* MKCoordinateRegion+Bounds.swift */,
-				29E0A33B1DDC0BD1004EA2C5 /* RateLimiter.swift */,
 				29D873591E0CDDC300A6BA95 /* SavedLocationStore.swift */,
 				29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */,
 				295EAF1F1DEA4E2B00D1EF26 /* ViewPulser.swift */,
@@ -673,7 +669,6 @@
 				29C579531DE28DF9003A149B /* ForecastDayCellViewModel.swift in Sources */,
 				298B664D1DFCFAB30086F0C7 /* ForecastDay+Equatable.swift in Sources */,
 				29C579401DE0F6BA003A149B /* Forecast+JSONConvertible.swift in Sources */,
-				29E0A33C1DDC0BD1004EA2C5 /* RateLimiter.swift in Sources */,
 				290538601DD9231F00531193 /* AppDelegate.swift in Sources */,
 				2949D0611E0789EC00D68F0A /* SavedLocation+NSEncoding.swift in Sources */,
 				295EAF1A1DEA38B700D1EF26 /* Condition+Icon.swift in Sources */,
@@ -727,7 +722,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E0A33D1DDCB85F004EA2C5 /* RateLimiter.swift in Sources */,
 				295EAEF41DE8D4AF00D1EF26 /* ForecastDay.swift in Sources */,
 				295EAF0E1DE8D8D400D1EF26 /* Astronomy.swift in Sources */,
 				295EAF181DEA334200D1EF26 /* DateTests.swift in Sources */,

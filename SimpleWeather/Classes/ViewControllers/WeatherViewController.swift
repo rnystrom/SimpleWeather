@@ -23,7 +23,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
 
-    var session = APISession(key: API_KEY, limiter: RateLimiter(rates: RateLimiter.API_RATES))
+    var session = APISession(key: API_KEY)
 
     var location: SavedLocation?
     var forecast: Forecast?
