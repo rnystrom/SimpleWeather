@@ -102,6 +102,9 @@
 		29DB5B551E1B08F900DE4B1C /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB5B531E1B04D000DE4B1C /* URLBuilder.swift */; };
 		29DB5B581E1B0E1700DE4B1C /* URLBuilder+Wunderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB5B561E1B0BE600DE4B1C /* URLBuilder+Wunderground.swift */; };
 		29DB5B591E1B0E1800DE4B1C /* URLBuilder+Wunderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB5B561E1B0BE600DE4B1C /* URLBuilder+Wunderground.swift */; };
+		29DB5B5B1E1B129E00DE4B1C /* URLSession+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB5B5A1E1B129E00DE4B1C /* URLSession+Convenience.swift */; };
+		29DB5B5D1E1B2AC800DE4B1C /* URLSessionDataTaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB5B5C1E1B2AC800DE4B1C /* URLSessionDataTaskResponse.swift */; };
+		29DB5B5E1E1B2F0000DE4B1C /* URLSessionDataTaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DB5B5C1E1B2AC800DE4B1C /* URLSessionDataTaskResponse.swift */; };
 		29E0A3101DDAA19C004EA2C5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
 		29E0A3131DDAA46E004EA2C5 /* ForecastDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */; };
 		29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */; };
@@ -205,6 +208,8 @@
 		29D873591E0CDDC300A6BA95 /* SavedLocationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationStore.swift; sourceTree = "<group>"; };
 		29DB5B531E1B04D000DE4B1C /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		29DB5B561E1B0BE600DE4B1C /* URLBuilder+Wunderground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLBuilder+Wunderground.swift"; sourceTree = "<group>"; };
+		29DB5B5A1E1B129E00DE4B1C /* URLSession+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Convenience.swift"; sourceTree = "<group>"; };
+		29DB5B5C1E1B2AC800DE4B1C /* URLSessionDataTaskResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskResponse.swift; sourceTree = "<group>"; };
 		29E0A30F1DDAA19C004EA2C5 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		29E0A3121DDAA46E004EA2C5 /* ForecastDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDay.swift; sourceTree = "<group>"; };
 		29E0A3151DDAB2C3004EA2C5 /* ForecastHourly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHourly.swift; sourceTree = "<group>"; };
@@ -366,6 +371,8 @@
 				295EAF1F1DEA4E2B00D1EF26 /* ViewPulser.swift */,
 				29DB5B531E1B04D000DE4B1C /* URLBuilder.swift */,
 				29DB5B561E1B0BE600DE4B1C /* URLBuilder+Wunderground.swift */,
+				29DB5B5A1E1B129E00DE4B1C /* URLSession+Convenience.swift */,
+				29DB5B5C1E1B2AC800DE4B1C /* URLSessionDataTaskResponse.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -680,8 +687,10 @@
 				29C579401DE0F6BA003A149B /* Forecast+JSONConvertible.swift in Sources */,
 				290538601DD9231F00531193 /* AppDelegate.swift in Sources */,
 				2949D0611E0789EC00D68F0A /* SavedLocation+NSEncoding.swift in Sources */,
+				29DB5B5B1E1B129E00DE4B1C /* URLSession+Convenience.swift in Sources */,
 				295EAF1A1DEA38B700D1EF26 /* Condition+Icon.swift in Sources */,
 				295EAECA1DE7630900D1EF26 /* ForecastHourCellViewModel.swift in Sources */,
+				29DB5B5D1E1B2AC800DE4B1C /* URLSessionDataTaskResponse.swift in Sources */,
 				29DB5B541E1B04D000DE4B1C /* URLBuilder.swift in Sources */,
 				298B66551DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift in Sources */,
 				29C579461DE120AF003A149B /* ConditionsCell.swift in Sources */,
@@ -759,6 +768,7 @@
 				295EAEF31DE8D4AF00D1EF26 /* Alert+JSONConvertible.swift in Sources */,
 				29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */,
 				29DB5B591E1B0E1800DE4B1C /* URLBuilder+Wunderground.swift in Sources */,
+				29DB5B5E1E1B2F0000DE4B1C /* URLSessionDataTaskResponse.swift in Sources */,
 				2905388D1DDA093900531193 /* ModelTests.swift in Sources */,
 				295EAEFA1DE8D4AF00D1EF26 /* JSONConvertible.swift in Sources */,
 				295EAF161DEA32FA00D1EF26 /* Date+Daytime.swift in Sources */,
