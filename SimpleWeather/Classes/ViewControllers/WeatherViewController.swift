@@ -10,7 +10,7 @@ import UIKit
 import IGListKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, IGListAdapterDataSource {
+class WeatherViewController: UIViewController, IGListAdapterDataSource, LocationTrackerDelegate {
 
     @IBOutlet weak var collectionView: IGListCollectionView!
     @IBOutlet weak var alertsButton: UIButton!
@@ -23,10 +23,15 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         return IGListAdapter(updater: IGListAdapterUpdater(), viewController: self, workingRangeSize: 0)
     }()
 
-    var session = APISession(key: API_KEY)
+    var tracker: LocationTracker?
+    var task: URLSessionDataTask?
 
     var location: SavedLocation?
     var forecast: Forecast?
+
+    deinit {
+        task?.cancel()
+    }
 
     // MARK: Private API
 
@@ -38,23 +43,38 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         }
     }
 
-    func fetchCurrentLocation() {
-        session.getForecastForCurrentLocation(completion: { [weak self] (forecast: Forecast?, error: Error?) in
-            self?.forecast = forecast
-            self?.title = forecast?.location?.city
-            self?.adapter.performUpdates(animated: true)
-            self?.updateAlertButton()
-        })
+    func fetch() {
+        guard let location = location else { return }
+
+        if location.userLocation == true {
+            fetchCurrentLocation()
+        } else {
+            fetch(lat: location.latitude, lon: location.longitude)
+        }
     }
 
-    func fetchLocation() {
-        guard let location = location else { return }
-        session.getForecast(lat: location.latitude, lon: location.longitude, completion: { [weak self] (forecast: Forecast?, error: Error?) in
-            self?.forecast = forecast
-            self?.title = forecast?.location?.city
-            self?.adapter.performUpdates(animated: true)
-            self?.updateAlertButton()
-        })
+    func fetchCurrentLocation() {
+        tracker = LocationTracker()
+        tracker?.delegate = self
+        tracker?.getLocation()
+    }
+
+    func fetch(lat: Double, lon: Double) {
+        guard let url = WundergroundForecastURL(apiKey: API_KEY, lat: lat, lon: lon) else { return }
+        let request = URLSessionDataTaskResponse(serializeJSON: true) { (json: Any) -> Forecast? in
+            guard let json = json as? [String: Any] else { return nil }
+            return Forecast.fromJSON(json: json)
+        }
+        task = URLSession.shared.fetch(url: url, request: request) { [weak self] (result: URLSessionResult) in
+            switch result {
+            case let .success(forecast):
+                self?.forecast = forecast
+                self?.title = forecast.location?.city
+                self?.adapter.performUpdates(animated: true)
+                self?.updateAlertButton()
+            case .failure(_): break
+            }
+        }
     }
 
     // MARK: UIViewController
@@ -62,11 +82,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if location?.userLocation == true {
-            fetchCurrentLocation()
-        } else {
-            fetchLocation()
-        }
+        fetch()
 
         NotificationCenter.default.addObserver(
             self,
@@ -134,7 +150,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         } else if object is EmbeddedSection {
             return EmbeddedAdapterSectionController(height: 96, dataSource: ForecastHourlyDataSource())
         } else if object is RadarSection {
-            return RadarSectionController(session: session)
+            return RadarSectionController()
         }
         return IGListSectionController()
     }
@@ -149,6 +165,17 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource {
         let expiration: TimeInterval = 60 * 20 // 20 minutes
         if let observationDate = forecast?.observation?.date, -1 * observationDate.timeIntervalSinceNow >= expiration {
             fetchCurrentLocation()
+        }
+    }
+
+    // MARK: LocationTrackerDelegate
+
+    func didFinish(tracker: LocationTracker, result: LocationResult) {
+        switch result {
+        case let .success(location):
+            fetch(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
+        default:
+            print("Error tracking location")
         }
     }
 

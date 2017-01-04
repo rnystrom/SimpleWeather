@@ -49,7 +49,6 @@
 		295EAF011DE8D4AF00D1EF26 /* ForecastDay+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A3311DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift */; };
 		295EAF021DE8D4E300D1EF26 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A30F1DDAA19C004EA2C5 /* Location.swift */; };
 		295EAF031DE8D4E300D1EF26 /* Location+JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0A32D1DDBFE26004EA2C5 /* Location+JSONConvertible.swift */; };
-		295EAF041DE8D51300D1EF26 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C474881DDEA2AF00AE68CE /* APISession.swift */; };
 		295EAF051DE8D52700D1EF26 /* CurrentLocationRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579431DE103A5003A149B /* CurrentLocationRequester.swift */; };
 		295EAF081DE8D59200D1EF26 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF061DE8D59200D1EF26 /* Condition.swift */; };
 		295EAF0A1DE8D59400D1EF26 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295EAF061DE8D59200D1EF26 /* Condition.swift */; };
@@ -79,7 +78,6 @@
 		298B66551DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66541DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift */; };
 		298B66571DFDDCCF0086F0C7 /* ConditionsSection+IGListDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66561DFDDCCF0086F0C7 /* ConditionsSection+IGListDiffable.swift */; };
 		298B66591DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66581DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift */; };
-		29C474891DDEA2AF00AE68CE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C474881DDEA2AF00AE68CE /* APISession.swift */; };
 		29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
 		29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579391DE0F275003A149B /* APISessionTests.swift */; };
 		29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
@@ -187,7 +185,6 @@
 		298B66541DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+Forecast.swift"; sourceTree = "<group>"; };
 		298B66561DFDDCCF0086F0C7 /* ConditionsSection+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+IGListDiffable.swift"; sourceTree = "<group>"; };
 		298B66581DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+ViewModels.swift"; sourceTree = "<group>"; };
-		29C474881DDEA2AF00AE68CE /* APISession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+DiskCacheKey.swift"; sourceTree = "<group>"; };
 		29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWeather-Briding-Header.h"; sourceTree = "<group>"; };
 		29C579391DE0F275003A149B /* APISessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionTests.swift; sourceTree = "<group>"; };
@@ -361,10 +358,9 @@
 			isa = PBXGroup;
 			children = (
 				290538841DD92C3C00531193 /* API.swift */,
-				29C474881DDEA2AF00AE68CE /* APISession.swift */,
+				29C579431DE103A5003A149B /* CurrentLocationRequester.swift */,
 				295EAF141DEA311800D1EF26 /* Date+Daytime.swift */,
 				29E0A31B1DDB61C5004EA2C5 /* KeypathParsing.swift */,
-				29C579431DE103A5003A149B /* CurrentLocationRequester.swift */,
 				295EAF311DEBCF8400D1EF26 /* MKCoordinateRegion+Bounds.swift */,
 				29D873591E0CDDC300A6BA95 /* SavedLocationStore.swift */,
 				29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */,
@@ -724,7 +720,6 @@
 				29C579441DE103A5003A149B /* CurrentLocationRequester.swift in Sources */,
 				295EAF2E1DEBC7D100D1EF26 /* RadarSection+IGListDiffable.swift in Sources */,
 				295EAEDA1DE78F5C00D1EF26 /* ForecastHourCellViewModel+IGListDiffable.swift in Sources */,
-				29C474891DDEA2AF00AE68CE /* APISession.swift in Sources */,
 				29C5793E1DE0F652003A149B /* Forecast.swift in Sources */,
 				298B664F1DFDB55D0086F0C7 /* ConditionsDetailCell.swift in Sources */,
 				295EAED01DE788A500D1EF26 /* EmbeddedAdapterSectionController.swift in Sources */,
@@ -758,7 +753,6 @@
 				295EAEF91DE8D4AF00D1EF26 /* Alert.swift in Sources */,
 				29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */,
 				295EAEED1DE8D4AF00D1EF26 /* Observation.swift in Sources */,
-				295EAF041DE8D51300D1EF26 /* APISession.swift in Sources */,
 				295EAEF11DE8D4AF00D1EF26 /* Forecast.swift in Sources */,
 				295EAF021DE8D4E300D1EF26 /* Location.swift in Sources */,
 				295EAEEF1DE8D4AF00D1EF26 /* ForecastHourly+JSONConvertible.swift in Sources */,

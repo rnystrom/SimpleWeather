@@ -17,10 +17,7 @@ func configure(mapView: MKMapView, region: MKCoordinateRegion) {
 
 class RadarSectionController: IGListSectionController, IGListSectionType, IGListDisplayDelegate, MKMapViewDelegate {
 
-    let session: APISession
-
-    init(session: APISession) {
-        self.session = session
+    override init() {
         super.init()
         displayDelegate = self
         inset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
@@ -28,20 +25,36 @@ class RadarSectionController: IGListSectionController, IGListSectionType, IGList
 
     var model: RadarSection?
     var radarImage: UIImage?
+    var task: URLSessionDataTask?
+
+    deinit {
+        task?.cancel()
+    }
 
     // MARK: Private API
 
     func loadRadar(region: MKCoordinateRegion, size: CGSize) {
         let bounds = region.bounds
 
-        session.getRadar(
+        guard let url = WundergroundRadarURL(
+            apiKey: API_KEY,
             minLat: Double(bounds.origin.x),
-            minLon: Double(bounds.origin.y),
             maxLat: Double(bounds.maxX),
+            minLon: Double(bounds.origin.y),
             maxLon: Double(bounds.maxY),
             width: Double(size.width),
-            height: Double(size.height),
-            completion: { [weak self] (image: UIImage?, error: Error?) in
+            height: Double(size.height)
+            )
+            else { return }
+
+        let request = URLSessionDataTaskResponse(serializeJSON: false) { (data: Any) -> UIImage? in
+            guard let data = data as? Data else { return nil }
+            return UIImage(data: data)
+        }
+
+        task = URLSession.shared.fetch(url: url, request: request) { [weak self] (result: URLSessionResult) in
+            switch result {
+            case let .success(image):
                 guard let myself = self,
                     let context = myself.collectionContext,
                     let mapView = (context.cellForItem(at: 0, sectionController: myself) as? MapCell)?.mapView
@@ -49,10 +62,9 @@ class RadarSectionController: IGListSectionController, IGListSectionType, IGList
 
                 myself.radarImage = image
                 configure(mapView: mapView, region: region)
-
-                // bug in IGListKit
-                //                myself.collectionContext?.reload(myself)
-        })
+            case .failure(_): break;
+            }
+        }
     }
 
     // MARK: IGListSectionType
