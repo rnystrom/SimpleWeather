@@ -17,7 +17,7 @@ class APISession {
     let session: URLSession
     let key: String
 
-    var locationRequester: LocationRequester?
+    var locationRequester: CurrentLocationRequester?
     var task: URLSessionDataTask?
 
     init(key: String, session: URLSession = URLSession.shared) {
@@ -28,7 +28,7 @@ class APISession {
     // MARK: Public API
 
     public func getForecastForCurrentLocation(completion: @escaping APISessionForecastCompletion) {
-        locationRequester = LocationRequester()
+        locationRequester = CurrentLocationRequester()
         locationRequester?.getLocation(completion: { [weak self] (location: CLLocation?, error: Error?) in
             if let coordinate = location?.coordinate {
                 self?.getForecast(lat: coordinate.latitude, lon: coordinate.longitude, completion: completion)

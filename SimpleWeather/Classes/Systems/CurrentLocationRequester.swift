@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class LocationRequester: NSObject, CLLocationManagerDelegate {
+class CurrentLocationRequester: NSObject, CLLocationManagerDelegate {
 
     private lazy var locationManager: CLLocationManager = {
         let l = CLLocationManager()
