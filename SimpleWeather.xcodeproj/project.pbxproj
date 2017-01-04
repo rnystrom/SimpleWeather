@@ -377,8 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				295EAF1B1DEA427F00D1EF26 /* AlertsViewController.swift */,
-				290538821DD9287A00531193 /* WeatherViewController.swift */,
 				2949D05A1E0786D500D68F0A /* SavedLocationsViewController.swift */,
+				290538821DD9287A00531193 /* WeatherViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

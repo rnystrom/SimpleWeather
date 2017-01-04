@@ -60,11 +60,16 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     }
 
     func fetch(lat: Double, lon: Double) {
-        guard let url = WundergroundForecastURL(apiKey: API_KEY, lat: lat, lon: lon) else { return }
+        guard let url = WundergroundForecastURL(apiKey: API_KEY, lat: lat, lon: lon),
+            task?.originalRequest?.url != url || task?.state != .running
+            else { return }
+
         let request = URLSessionDataTaskResponse(serializeJSON: true) { (json: Any) -> Forecast? in
             guard let json = json as? [String: Any] else { return nil }
             return Forecast.fromJSON(json: json)
         }
+
+        task?.cancel()
         task = URLSession.shared.fetch(url: url, request: request) { [weak self] (result: URLSessionResult) in
             switch result {
             case let .success(forecast):
