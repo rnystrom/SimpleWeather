@@ -36,7 +36,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     // MARK: Private API
 
     func updateAlertButton() {
-        if let alerts = forecast?.alerts, alerts.count > 0 {
+        if WeatherNavigationShouldDisplayAlerts(forecast: forecast) {
             pulser.enable()
         } else {
             pulser.disable()
@@ -71,10 +71,12 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
 
         task?.cancel()
         task = URLSession.shared.fetch(url: url, request: request) { [weak self] (result: URLSessionResult) in
+            guard let location = self?.location else { return }
+
             switch result {
             case let .success(forecast):
                 self?.forecast = forecast
-                self?.title = forecast.location?.city
+                self?.title = WeatherNavigationTitle(location: location, forecast: forecast)
                 self?.adapter.performUpdates(animated: true)
                 self?.updateAlertButton()
             case .failure(_): break
