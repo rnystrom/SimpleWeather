@@ -44,7 +44,9 @@ class RadarSectionController: IGListSectionController, IGListSectionType, IGList
             maxLon: Double(bounds.maxY),
             width: Double(size.width),
             height: Double(size.height)
-            )
+            ),
+            // because MKMapView can be erradic, avoid over-requesting the same radar image
+            task?.originalRequest?.url != url || task?.state != .running
             else { return }
 
         let request = URLSessionDataTaskResponse(serializeJSON: false) { (data: Any) -> UIImage? in
@@ -52,6 +54,7 @@ class RadarSectionController: IGListSectionController, IGListSectionType, IGList
             return UIImage(data: data)
         }
 
+        task?.cancel()
         task = URLSession.shared.fetch(url: url, request: request) { [weak self] (result: URLSessionResult) in
             switch result {
             case let .success(image):
