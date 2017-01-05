@@ -378,24 +378,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ov0-ME-C27">
-                                                    <rect key="frame" x="128" y="57" width="31" height="18"/>
+                                                    <rect key="frame" x="128" y="10" width="31" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                     <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-KL-thv">
-                                                    <rect key="frame" x="15" y="83" width="257" height="54"/>
+                                                    <rect key="frame" x="15" y="43" width="257" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-Aa-qEV" customClass="BorderedButton" customModule="SimpleWeather" customModuleProvider="target">
-                                                    <rect key="frame" x="99.5" y="144" width="88" height="30"/>
+                                                    <rect key="frame" x="99.5" y="127" width="88" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="Oa4-3k-ESp"/>
                                                         <constraint firstAttribute="height" constant="30" id="nue-r3-lw3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="Retry">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -410,14 +411,13 @@
                                             <constraint firstAttribute="trailing" secondItem="eOa-KL-thv" secondAttribute="trailing" constant="15" id="3kf-tq-80r"/>
                                             <constraint firstItem="eOa-KL-thv" firstAttribute="leading" secondItem="UCM-WJ-hEO" secondAttribute="leading" constant="15" id="6u8-KE-Ehi"/>
                                             <constraint firstItem="ov0-ME-C27" firstAttribute="centerX" secondItem="UCM-WJ-hEO" secondAttribute="centerX" id="TsI-VH-XqI"/>
-                                            <constraint firstItem="eOa-KL-thv" firstAttribute="centerY" secondItem="UCM-WJ-hEO" secondAttribute="centerY" constant="10" id="XrO-tH-2Yq"/>
-                                            <constraint firstItem="eOa-KL-thv" firstAttribute="top" secondItem="ov0-ME-C27" secondAttribute="bottom" constant="8" id="dNg-yx-bij"/>
+                                            <constraint firstItem="eOa-KL-thv" firstAttribute="centerY" secondItem="UCM-WJ-hEO" secondAttribute="centerY" constant="-30" id="XrO-tH-2Yq"/>
+                                            <constraint firstItem="eOa-KL-thv" firstAttribute="top" secondItem="ov0-ME-C27" secondAttribute="bottom" constant="15" id="dNg-yx-bij"/>
                                             <constraint firstItem="Ab1-Aa-qEV" firstAttribute="centerX" secondItem="UCM-WJ-hEO" secondAttribute="centerX" id="n9c-ru-07O"/>
-                                            <constraint firstItem="Ab1-Aa-qEV" firstAttribute="top" secondItem="eOa-KL-thv" secondAttribute="bottom" constant="7" id="ufJ-ec-Cof"/>
+                                            <constraint firstItem="Ab1-Aa-qEV" firstAttribute="top" secondItem="eOa-KL-thv" secondAttribute="bottom" constant="30" id="ufJ-ec-Cof"/>
                                         </constraints>
                                         <size key="customSize" width="287" height="200"/>
                                         <connections>
-                                            <outlet property="dayLabel" destination="ov0-ME-C27" id="07E-Nc-3m0"/>
                                             <outlet property="messageLabel" destination="eOa-KL-thv" id="NdW-BN-ddv"/>
                                             <outlet property="retryButton" destination="Ab1-Aa-qEV" id="6mt-oj-yGD"/>
                                             <outlet property="titleLabel" destination="ov0-ME-C27" id="1tY-I1-QJV"/>

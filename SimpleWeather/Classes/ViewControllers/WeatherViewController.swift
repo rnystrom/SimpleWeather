@@ -10,7 +10,7 @@ import UIKit
 import IGListKit
 import CoreLocation
 
-class WeatherViewController: UIViewController, IGListAdapterDataSource, LocationTrackerDelegate {
+class WeatherViewController: UIViewController, IGListAdapterDataSource, LocationTrackerDelegate, ErrorSectionControllerDelegate {
 
     @IBOutlet weak var collectionView: IGListCollectionView!
     @IBOutlet weak var alertsButton: UIButton!
@@ -77,13 +77,15 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
 
             switch result {
             case let .success(forecast):
-                self?.stateMachine.state = .forecast(forecast)
                 self?.forecast = forecast
                 self?.title = WeatherNavigationTitle(location: location, forecast: forecast)
-                self?.adapter.performUpdates(animated: true)
-                self?.updateAlertButton()
-            case .failure(_): break
+                self?.stateMachine.state = .forecast(forecast)
+            case let .failure(error):
+                self?.stateMachine.state = .fetchError(error)
             }
+
+            self?.adapter.performUpdates(animated: true)
+            self?.updateAlertButton()
         }
     }
 
@@ -128,7 +130,20 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
-        return stateMachine.sectionController(object: object)
+        if object is ConditionsSection {
+            return ConditionsSectionController()
+        } else if object is DailyForecastSection {
+            return DailyForecastSectionController()
+        } else if object is EmbeddedSection {
+            return EmbeddedAdapterSectionController(height: 96, dataSource: ForecastHourlyDataSource())
+        } else if object is RadarSection {
+            return RadarSectionController()
+        } else if object is ErrorViewModel {
+            let errorSectionController = ErrorSectionController()
+            errorSectionController.delegate = self
+            return errorSectionController
+        }
+        return IGListSectionController()
     }
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
@@ -153,6 +168,14 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
         default:
             print("Error tracking location")
         }
+    }
+
+    // MARK: ErrorSectionControllerDelegate
+
+    func errorSectionControllerDidTapRetry(errorSectionController: ErrorSectionController) {
+        stateMachine.state = .empty
+        adapter.performUpdates(animated: true)
+        fetch()
     }
 
 }

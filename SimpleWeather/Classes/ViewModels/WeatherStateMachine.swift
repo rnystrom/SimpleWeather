@@ -32,19 +32,6 @@ class WeatherStateMachine {
         }
     }
 
-    func sectionController(object: Any) -> IGListSectionController {
-        if object is ConditionsSection {
-            return ConditionsSectionController()
-        } else if object is DailyForecastSection {
-            return DailyForecastSectionController()
-        } else if object is EmbeddedSection {
-            return EmbeddedAdapterSectionController(height: 96, dataSource: ForecastHourlyDataSource())
-        } else if object is RadarSection {
-            return RadarSectionController()
-        }
-        return IGListSectionController()
-    }
-
     // MARK: Private API
 
     fileprivate func objects(forecast: Forecast) -> [IGListDiffable] {
