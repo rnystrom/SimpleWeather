@@ -122,6 +122,8 @@
 		29F80FE61E1DE3B900A76A16 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F80FE51E1DE3B900A76A16 /* LoadingView.swift */; };
 		29F80FE81E1DE58400A76A16 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F80FE71E1DE58400A76A16 /* ErrorViewModel.swift */; };
 		29F80FEA1E1DE5E800A76A16 /* ErrorViewModel+IGListDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F80FE91E1DE5E800A76A16 /* ErrorViewModel+IGListDiffable.swift */; };
+		29F80FEC1E1DE7DF00A76A16 /* RetryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F80FEB1E1DE7DF00A76A16 /* RetryCell.swift */; };
+		29F80FEE1E1DE94A00A76A16 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F80FED1E1DE94A00A76A16 /* BorderedButton.swift */; };
 		B09F792B765E3162221223DA /* Pods_SimpleWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323494716CA1DAF7F4537 /* Pods_SimpleWeatherTests.framework */; };
 		F10762EFE604747FC33BB852 /* Pods_SimpleWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF73A7EF6430DE98858D468 /* Pods_SimpleWeather.framework */; };
 /* End PBXBuildFile section */
@@ -231,6 +233,8 @@
 		29F80FE51E1DE3B900A76A16 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		29F80FE71E1DE58400A76A16 /* ErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		29F80FE91E1DE5E800A76A16 /* ErrorViewModel+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorViewModel+IGListDiffable.swift"; sourceTree = "<group>"; };
+		29F80FEB1E1DE7DF00A76A16 /* RetryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryCell.swift; sourceTree = "<group>"; };
+		29F80FED1E1DE94A00A76A16 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		448030D10330EE5654539923 /* Pods-SimpleWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeather/Pods-SimpleWeather.release.xcconfig"; sourceTree = "<group>"; };
 		53F323494716CA1DAF7F4537 /* Pods_SimpleWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87C7F3447663A67F3CF8D34 /* Pods-SimpleWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleWeatherTests/Pods-SimpleWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -408,8 +412,10 @@
 				29F80FE51E1DE3B900A76A16 /* LoadingView.swift */,
 				295EAF231DEBBEA400D1EF26 /* MapCell.swift */,
 				295EAF331DEBD1B800D1EF26 /* RadarOverlayView.swift */,
+				29F80FEB1E1DE7DF00A76A16 /* RetryCell.swift */,
 				298B66491DFB3BE50086F0C7 /* RoundedCollectionViewCell.swift */,
 				2949D05C1E0786F700D68F0A /* SavedLocationCell.swift */,
+				29F80FED1E1DE94A00A76A16 /* BorderedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -685,11 +691,13 @@
 				29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */,
 				295EAECC1DE77C6B00D1EF26 /* HourlyForecastSectionController.swift in Sources */,
 				29DB5B581E1B0E1700DE4B1C /* URLBuilder+Wunderground.swift in Sources */,
+				29F80FEE1E1DE94A00A76A16 /* BorderedButton.swift in Sources */,
 				295EAF201DEA4E2B00D1EF26 /* ViewPulser.swift in Sources */,
 				295EAED61DE78D1700D1EF26 /* ForecastHourlyDataSource.swift in Sources */,
 				295EAEE11DE8D3FE00D1EF26 /* Observation.swift in Sources */,
 				295EAF281DEBBF6C00D1EF26 /* RadarSection.swift in Sources */,
 				29E0A32E1DDBFE26004EA2C5 /* Location+JSONConvertible.swift in Sources */,
+				29F80FEC1E1DE7DF00A76A16 /* RetryCell.swift in Sources */,
 				29C579491DE121FE003A149B /* ConditionsCellViewModel.swift in Sources */,
 				29D873581E0CD8BC00A6BA95 /* SavedLocationSectionController.swift in Sources */,
 				29C579551DE28F08003A149B /* DailyForecastSectionController.swift in Sources */,
