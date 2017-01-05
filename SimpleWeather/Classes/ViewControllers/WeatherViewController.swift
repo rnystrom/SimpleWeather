@@ -132,7 +132,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     }
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
-        return nil
+        return LoadingView()
     }
 
     // MARK: Notifications
