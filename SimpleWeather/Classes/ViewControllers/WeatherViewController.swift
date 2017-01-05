@@ -26,6 +26,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     var tracker: LocationTracker?
     var task: URLSessionDataTask?
 
+    let stateMachine = WeatherStateMachine()
+
     var location: SavedLocation?
     var forecast: Forecast?
 
@@ -75,6 +77,7 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
 
             switch result {
             case let .success(forecast):
+                self?.stateMachine.state = .forecast(forecast)
                 self?.forecast = forecast
                 self?.title = WeatherNavigationTitle(location: location, forecast: forecast)
                 self?.adapter.performUpdates(animated: true)
@@ -121,45 +124,11 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     // MARK: IGListAdapterDataSource
 
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {
-        var objects = [IGListDiffable]()
-        guard let forecast = forecast else { return objects }
-
-        if let location = forecast.location {
-            let radar = RadarSection(
-                center: CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon),
-                width: 1
-            )
-            objects.append(radar)
-        }
-
-        let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
-
-        if let conditions = ConditionsSection.from(observation: forecast.observation, today: sortedDaily?.first, astronomy: forecast.astronomy) {
-            objects.append(conditions)
-        }
-
-        if let hourly = EmbeddedSection.from(forecast: forecast) {
-            objects.append(hourly)
-        }
-
-        if let dailySection = DailyForecastSection.from(forecast: forecast) {
-            objects.append(dailySection)
-        }
-
-        return objects
+        return stateMachine.objects
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
-        if object is ConditionsSection {
-            return ConditionsSectionController()
-        } else if object is DailyForecastSection {
-            return DailyForecastSectionController()
-        } else if object is EmbeddedSection {
-            return EmbeddedAdapterSectionController(height: 96, dataSource: ForecastHourlyDataSource())
-        } else if object is RadarSection {
-            return RadarSectionController()
-        }
-        return IGListSectionController()
+        return stateMachine.sectionController(object: object)
     }
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
