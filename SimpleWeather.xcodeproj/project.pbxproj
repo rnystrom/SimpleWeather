@@ -453,6 +453,8 @@
 			children = (
 				29C579481DE121FE003A149B /* ConditionsCellViewModel.swift */,
 				298B66501DFDB57E0086F0C7 /* ConditionsDetailCellViewModel.swift */,
+				29F80FE71E1DE58400A76A16 /* ErrorViewModel.swift */,
+				29F80FE91E1DE5E800A76A16 /* ErrorViewModel+IGListDiffable.swift */,
 				29C579521DE28DF9003A149B /* ForecastDayCellViewModel.swift */,
 				29C5795C1DE34601003A149B /* ForecastDayCellViewModel+Equatable.swift */,
 				295EAEC91DE7630900D1EF26 /* ForecastHourCellViewModel.swift */,
@@ -461,8 +463,6 @@
 				295EAF2F1DEBCCFC00D1EF26 /* RadarOverlay.swift */,
 				29F491DB1E1D4DA7004B7F91 /* WeatherNavigationViewModel.swift */,
 				293026661E1DDE6200B0CEF9 /* WeatherStateMachine.swift */,
-				29F80FE71E1DE58400A76A16 /* ErrorViewModel.swift */,
-				29F80FE91E1DE5E800A76A16 /* ErrorViewModel+IGListDiffable.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

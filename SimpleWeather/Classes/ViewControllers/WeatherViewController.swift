@@ -165,8 +165,9 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
         switch result {
         case let .success(location):
             fetch(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
-        default:
-            print("Error tracking location")
+        case let .failure(error):
+            stateMachine.state = .locationError(error)
+            adapter.performUpdates(animated: true)
         }
     }
 
