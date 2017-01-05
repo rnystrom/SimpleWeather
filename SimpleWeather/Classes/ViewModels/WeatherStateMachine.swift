@@ -11,6 +11,7 @@ import CoreLocation
 
 enum WeatherState {
     case empty
+    case fetchError(FetchError)
     case forecast(Forecast)
 }
 
@@ -22,10 +23,12 @@ class WeatherStateMachine {
 
     var objects: [IGListDiffable] {
         switch state {
-        case let .forecast(forecast):
-            return objects(forecast: forecast)
         case .empty:
             return []
+        case let .forecast(forecast):
+            return objects(forecast: forecast)
+        case let .fetchError(error):
+            return [errorViewModel(fetchError: error)]
         }
     }
 
@@ -70,6 +73,24 @@ class WeatherStateMachine {
         }
         
         return objects
+    }
+
+    fileprivate func errorViewModel(fetchError: FetchError) -> ErrorViewModel {
+        let title = NSLocalizedString("Something went wrong", comment: "")
+        let message: String
+        switch fetchError {
+        case .emptyResponse:
+            message = NSLocalizedString("The data is missing. Try again in a minute.", comment: "")
+        case .jsonCast:
+            message = NSLocalizedString("Weather data was returned in the wrong format.", comment: "")
+        case let .json(str):
+            message = str
+        case let .network(str):
+            message = str
+        case .parsing:
+            message = NSLocalizedString("Weather data was corrupted.", comment: "")
+        }
+        return ErrorViewModel(title: title, message: message, type: .network)
     }
 
 }
