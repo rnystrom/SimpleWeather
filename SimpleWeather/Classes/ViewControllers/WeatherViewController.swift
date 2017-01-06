@@ -15,6 +15,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
     @IBOutlet weak var collectionView: IGListCollectionView!
     @IBOutlet weak var alertsButton: UIButton!
 
+    let stateMachine = WeatherStateMachine()
+
     lazy var pulser: ViewPulser = {
         return ViewPulser(view: self.alertsButton)
     }()
@@ -25,11 +27,8 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
 
     var tracker: LocationTracker?
     var task: URLSessionDataTask?
-
-    let stateMachine = WeatherStateMachine()
-
-    var location: SavedLocation?
     var forecast: Forecast?
+    var location: SavedLocation? { didSet { updateTitle() } }
 
     deinit {
         task?.cancel()
@@ -73,12 +72,10 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
 
         task?.cancel()
         task = URLSession.shared.fetch(url: url, request: request) { [weak self] (result: URLSessionResult) in
-            guard let location = self?.location else { return }
-
             switch result {
             case let .success(forecast):
                 self?.forecast = forecast
-                self?.title = WeatherNavigationTitle(location: location, forecast: forecast)
+                self?.updateTitle()
                 self?.stateMachine.state = .forecast(forecast)
             case let .failure(error):
                 self?.stateMachine.state = .fetchError(error)
@@ -87,6 +84,11 @@ class WeatherViewController: UIViewController, IGListAdapterDataSource, Location
             self?.adapter.performUpdates(animated: true)
             self?.updateAlertButton()
         }
+    }
+
+    func updateTitle() {
+        guard let location = location else { return }
+        title = WeatherNavigationTitle(location: location, forecast: forecast)
     }
 
     // MARK: UIViewController
