@@ -48,9 +48,7 @@ class WeatherStateMachine {
             objects.append(radar)
         }
 
-        let sortedDaily = forecast.daily?.sorted(by: { $0.date > $1.date })
-
-        if let conditions = ConditionsSection.from(observation: forecast.observation, today: sortedDaily?.first, astronomy: forecast.astronomy) {
+        if let conditions = ConditionsSection.from(forecast: forecast) {
             objects.append(conditions)
         }
 

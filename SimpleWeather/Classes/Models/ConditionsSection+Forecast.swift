@@ -10,8 +10,11 @@ import Foundation
 
 extension ConditionsSection {
 
-    static func from(observation: Observation?, today: ForecastDay?, astronomy: Astronomy?) -> ConditionsSection? {
-        guard let observation = observation, let today = today, let astronomy = astronomy else { return nil }
+    static func from(forecast: Forecast?) -> ConditionsSection? {
+        guard let observation = forecast?.observation,
+            let today = forecast?.daily?.sorted(by: { $0.date > $1.date }).first,
+            let astronomy = forecast?.astronomy
+            else { return nil }
 
         return ConditionsSection(
             temperature: Int(observation.temp),
@@ -30,5 +33,5 @@ extension ConditionsSection {
             timeOfDay: Date().timeOfDay(sunrise: astronomy.sunrise, sunset: astronomy.sunset)
         )
     }
-
+    
 }
