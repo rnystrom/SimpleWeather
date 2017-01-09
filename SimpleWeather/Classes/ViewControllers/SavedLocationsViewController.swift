@@ -27,6 +27,13 @@ class SavedLocationsViewController: UIViewController, IGListAdapterDataSource, S
         store?.add(listener: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nav = segue.destination as? UINavigationController,
+            let controller = nav.viewControllers.first as? SearchViewController {
+            controller.store = store
+        }
+    }
+
     // MARK: IGListAdapterDataSource
 
     func objects(for listAdapter: IGListAdapter) -> [IGListDiffable] {

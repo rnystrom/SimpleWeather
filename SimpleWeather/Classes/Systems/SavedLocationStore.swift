@@ -22,6 +22,14 @@ class SavedLocationStore {
         return URL(string: documents)?.appendingPathComponent("saved_location.store").absoluteString
     }()
 
+    fileprivate func announce() {
+        for listener in listeners.objectEnumerator() {
+            if let listener = listener as? SavedLocationStoreListener {
+                listener.storeDidUpdate(store: self)
+            }
+        }
+    }
+
     lazy private(set) var locations: [SavedLocation] = {
         if let filePath = self.filePath,
             let locations = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [SavedLocation] {
@@ -51,11 +59,13 @@ class SavedLocationStore {
     func add(location: SavedLocation) {
         guard locations.index(of: location) == nil else { return }
         locations.append(location)
+        announce()
     }
 
     func remove(location: SavedLocation) {
         if let index = locations.index(of: location) {
             locations.remove(at: index)
+            announce()
         }
     }
 
