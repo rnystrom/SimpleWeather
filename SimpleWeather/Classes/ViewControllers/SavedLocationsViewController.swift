@@ -9,7 +9,7 @@
 import UIKit
 import IGListKit
 
-class SavedLocationsViewController: UIViewController, IGListAdapterDataSource {
+class SavedLocationsViewController: UIViewController, IGListAdapterDataSource, SavedLocationStoreListener {
     
     @IBOutlet weak var collectionView: IGListCollectionView!
 
@@ -23,6 +23,8 @@ class SavedLocationsViewController: UIViewController, IGListAdapterDataSource {
         super.viewDidLoad()
         adapter.collectionView = collectionView
         adapter.dataSource = self
+
+        store?.add(listener: self)
     }
 
     // MARK: IGListAdapterDataSource
@@ -37,6 +39,12 @@ class SavedLocationsViewController: UIViewController, IGListAdapterDataSource {
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {
         return nil
+    }
+
+    // MARK: SavedLocationStoreListener
+
+    func storeDidUpdate(store: SavedLocationStore) {
+        adapter.performUpdates(animated: true)
     }
 
 }
