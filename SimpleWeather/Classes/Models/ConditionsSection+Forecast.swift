@@ -12,7 +12,7 @@ extension ConditionsSection {
 
     static func from(forecast: Forecast?) -> ConditionsSection? {
         guard let observation = forecast?.observation,
-            let today = forecast?.daily?.sorted(by: { $0.date > $1.date }).first,
+            let today = forecast?.daily?.sorted(by: { $0.date < $1.date }).first,
             let astronomy = forecast?.astronomy
             else { return nil }
 
