@@ -125,19 +125,56 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EFy-PJ-IET">
-                                    <size key="itemSize" width="267" height="50"/>
+                                    <size key="itemSize" width="267" height="55"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2nW-XS-HYw">
-                                        <rect key="frame" x="26.5" y="0.0" width="267" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultCell" id="2nW-XS-HYw" customClass="SearchResultCell" customModule="SimpleWeather" customModuleProvider="target">
+                                        <rect key="frame" x="27" y="0.0" width="267" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="267" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-rS-JxR">
+                                                    <rect key="frame" x="15" y="10.5" width="237" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kV3-R5-yFI">
+                                                    <rect key="frame" x="15" y="54" width="252" height="1"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="GZ7-uG-PcY"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxL-DM-bFN">
+                                                    <rect key="frame" x="15" y="31" width="237" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="kV3-R5-yFI" firstAttribute="leading" secondItem="2nW-XS-HYw" secondAttribute="leading" constant="15" id="82g-dK-kly"/>
+                                            <constraint firstAttribute="bottom" secondItem="kV3-R5-yFI" secondAttribute="bottom" id="86H-9L-Ql6"/>
+                                            <constraint firstItem="XxL-DM-bFN" firstAttribute="leading" secondItem="ReC-rS-JxR" secondAttribute="leading" id="KJT-yL-RPw"/>
+                                            <constraint firstItem="XxL-DM-bFN" firstAttribute="trailing" secondItem="ReC-rS-JxR" secondAttribute="trailing" id="LuG-iC-U9j"/>
+                                            <constraint firstItem="XxL-DM-bFN" firstAttribute="top" secondItem="ReC-rS-JxR" secondAttribute="bottom" id="SU9-eP-gtM"/>
+                                            <constraint firstAttribute="trailing" secondItem="kV3-R5-yFI" secondAttribute="trailing" id="bsy-wz-atG"/>
+                                            <constraint firstAttribute="trailing" secondItem="ReC-rS-JxR" secondAttribute="trailing" constant="15" id="mA5-BI-yxt"/>
+                                            <constraint firstItem="ReC-rS-JxR" firstAttribute="leading" secondItem="2nW-XS-HYw" secondAttribute="leading" constant="15" id="r8r-cr-VBL"/>
+                                            <constraint firstItem="ReC-rS-JxR" firstAttribute="centerY" secondItem="2nW-XS-HYw" secondAttribute="centerY" constant="-6" id="sE0-bQ-xXW"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="XxL-DM-bFN" id="aGX-ug-4A6"/>
+                                            <outlet property="label" destination="ReC-rS-JxR" id="Ba5-Q4-f6g"/>
+                                            <outlet property="labelVerticalConstraint" destination="sE0-bQ-xXW" id="kij-5O-8YX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -159,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xft-yY-4g4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600" y="868.75"/>
+            <point key="canvasLocation" x="-581" y="869"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dgD-a8-WG4">

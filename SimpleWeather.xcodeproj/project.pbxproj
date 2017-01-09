@@ -83,6 +83,9 @@
 		2996CB871E230C3B00F723E3 /* ConditionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66521DFDDC760086F0C7 /* ConditionsSection.swift */; };
 		2996CB881E230C3B00F723E3 /* ConditionsSection+Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66541DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift */; };
 		2996CB8A1E231C9E00F723E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB891E231C9E00F723E3 /* SearchViewController.swift */; };
+		2996CB8C1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB8B1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift */; };
+		2996CB8E1E2321A500F723E3 /* SearchResultSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB8D1E2321A500F723E3 /* SearchResultSectionController.swift */; };
+		2996CB901E23221000F723E3 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB8F1E23221000F723E3 /* SearchResultCell.swift */; };
 		29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
 		29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579391DE0F275003A149B /* APISessionTests.swift */; };
 		29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
@@ -202,6 +205,9 @@
 		298B66561DFDDCCF0086F0C7 /* ConditionsSection+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+IGListDiffable.swift"; sourceTree = "<group>"; };
 		298B66581DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+ViewModels.swift"; sourceTree = "<group>"; };
 		2996CB891E231C9E00F723E3 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2996CB8B1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKLocalSearchCompletion+IGListDiffable.swift"; sourceTree = "<group>"; };
+		2996CB8D1E2321A500F723E3 /* SearchResultSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultSectionController.swift; sourceTree = "<group>"; };
+		2996CB8F1E23221000F723E3 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+DiskCacheKey.swift"; sourceTree = "<group>"; };
 		29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWeather-Briding-Header.h"; sourceTree = "<group>"; };
 		29C579391DE0F275003A149B /* APISessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionTests.swift; sourceTree = "<group>"; };
@@ -354,6 +360,7 @@
 				29E0A3291DDBFD46004EA2C5 /* JSONConvertible.swift */,
 				29E0A30F1DDAA19C004EA2C5 /* Location.swift */,
 				29E0A32D1DDBFE26004EA2C5 /* Location+JSONConvertible.swift */,
+				2996CB8B1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift */,
 				295EAEDF1DE8D3FE00D1EF26 /* Observation.swift */,
 				295EAEE01DE8D3FE00D1EF26 /* Observation+JSONConvertible.swift */,
 				295EAF271DEBBF6C00D1EF26 /* RadarSection.swift */,
@@ -376,6 +383,7 @@
 				295EAECB1DE77C6B00D1EF26 /* HourlyForecastSectionController.swift */,
 				295EAF251DEBBF2900D1EF26 /* RadarSectionController.swift */,
 				29D873571E0CD8BC00A6BA95 /* SavedLocationSectionController.swift */,
+				2996CB8D1E2321A500F723E3 /* SearchResultSectionController.swift */,
 			);
 			path = SectionControllers;
 			sourceTree = "<group>";
@@ -413,6 +421,7 @@
 		290538761DD9254F00531193 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29F80FED1E1DE94A00A76A16 /* BorderedButton.swift */,
 				29C579451DE120AF003A149B /* ConditionsCell.swift */,
 				298B664E1DFDB55D0086F0C7 /* ConditionsDetailCell.swift */,
 				295EAECD1DE7860000D1EF26 /* EmbeddedCollectionViewCell.swift */,
@@ -425,7 +434,7 @@
 				29F80FEB1E1DE7DF00A76A16 /* RetryCell.swift */,
 				298B66491DFB3BE50086F0C7 /* RoundedCollectionViewCell.swift */,
 				2949D05C1E0786F700D68F0A /* SavedLocationCell.swift */,
-				29F80FED1E1DE94A00A76A16 /* BorderedButton.swift */,
+				2996CB8F1E23221000F723E3 /* SearchResultCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -693,6 +702,7 @@
 			files = (
 				29E0A32C1DDBFD82004EA2C5 /* Alert+JSONConvertible.swift in Sources */,
 				2949D05B1E0786D500D68F0A /* SavedLocationsViewController.swift in Sources */,
+				2996CB901E23221000F723E3 /* SearchResultCell.swift in Sources */,
 				29E0A3301DDBFEA3004EA2C5 /* ForecastHourly+JSONConvertible.swift in Sources */,
 				29E0A3131DDAA46E004EA2C5 /* ForecastDay.swift in Sources */,
 				295EAF261DEBBF2900D1EF26 /* RadarSectionController.swift in Sources */,
@@ -701,6 +711,7 @@
 				29C5795D1DE34601003A149B /* ForecastDayCellViewModel+Equatable.swift in Sources */,
 				29E0A3161DDAB2C3004EA2C5 /* ForecastHourly.swift in Sources */,
 				295EAECC1DE77C6B00D1EF26 /* HourlyForecastSectionController.swift in Sources */,
+				2996CB8C1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift in Sources */,
 				29DB5B581E1B0E1700DE4B1C /* URLBuilder+Wunderground.swift in Sources */,
 				29F80FEE1E1DE94A00A76A16 /* BorderedButton.swift in Sources */,
 				295EAF201DEA4E2B00D1EF26 /* ViewPulser.swift in Sources */,
@@ -731,6 +742,7 @@
 				29C579461DE120AF003A149B /* ConditionsCell.swift in Sources */,
 				29E0A3321DDBFF05004EA2C5 /* ForecastDay+JSONConvertible.swift in Sources */,
 				295EAF241DEBBEA400D1EF26 /* MapCell.swift in Sources */,
+				2996CB8E1E2321A500F723E3 /* SearchResultSectionController.swift in Sources */,
 				29C5794D1DE16525003A149B /* ConditionsSectionController.swift in Sources */,
 				295EAEE21DE8D3FE00D1EF26 /* Observation+JSONConvertible.swift in Sources */,
 				295EAF221DEBBA9200D1EF26 /* HighLowAttributedString.swift in Sources */,
