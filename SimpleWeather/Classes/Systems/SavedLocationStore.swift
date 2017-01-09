@@ -8,9 +8,15 @@
 
 import Foundation
 
+protocol SavedLocationStoreListener: class {
+    func storeDidUpdate(store: SavedLocationStore)
+}
+
 class SavedLocationStore {
 
-    let filePath: String? = {
+    fileprivate let listeners = NSHashTable<AnyObject>.weakObjects()
+
+    fileprivate let filePath: String? = {
         guard let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
             else { return nil }
         return URL(string: documents)?.appendingPathComponent("saved_location.store").absoluteString
@@ -32,6 +38,25 @@ class SavedLocationStore {
     func save() {
         guard let filePath = filePath else { return }
         NSKeyedArchiver.archiveRootObject(locations, toFile: filePath)
+    }
+
+    func add(listener: SavedLocationStoreListener) {
+        listeners.add(listener)
+    }
+
+    func remove(listener: SavedLocationStoreListener) {
+        listeners.remove(listener)
+    }
+
+    func add(location: SavedLocation) {
+        guard locations.index(of: location) == nil else { return }
+        locations.append(location)
+    }
+
+    func remove(location: SavedLocation) {
+        if let index = locations.index(of: location) {
+            locations.remove(at: index)
+        }
     }
 
 }

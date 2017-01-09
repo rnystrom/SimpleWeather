@@ -94,7 +94,13 @@ IGListSingleSectionControllerDelegate {
         let search = MKLocalSearch(request: searchRequest)
         search.start { (response, error) in
             if let coordinate = response?.mapItems.first?.placemark.coordinate {
-                
+                let location = SavedLocation(
+                    name: object.title,
+                    latitude: coordinate.latitude, 
+                    longitude: coordinate.longitude,
+                    userLocation: false
+                )
+                self.store?.add(location: location)
             } else {
                 let alert = UIAlertController(
                     title: NSLocalizedString("Error", comment: ""),

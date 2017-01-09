@@ -86,6 +86,7 @@
 		2996CB8C1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB8B1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift */; };
 		2996CB8E1E2321A500F723E3 /* SearchResultSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB8D1E2321A500F723E3 /* SearchResultSectionController.swift */; };
 		2996CB901E23221000F723E3 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB8F1E23221000F723E3 /* SearchResultCell.swift */; };
+		2996CB921E2334B200F723E3 /* SavedLocation+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB911E2334B200F723E3 /* SavedLocation+Equatable.swift */; };
 		29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
 		29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579391DE0F275003A149B /* APISessionTests.swift */; };
 		29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
@@ -208,6 +209,7 @@
 		2996CB8B1E2320DE00F723E3 /* MKLocalSearchCompletion+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKLocalSearchCompletion+IGListDiffable.swift"; sourceTree = "<group>"; };
 		2996CB8D1E2321A500F723E3 /* SearchResultSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultSectionController.swift; sourceTree = "<group>"; };
 		2996CB8F1E23221000F723E3 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		2996CB911E2334B200F723E3 /* SavedLocation+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedLocation+Equatable.swift"; sourceTree = "<group>"; };
 		29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+DiskCacheKey.swift"; sourceTree = "<group>"; };
 		29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWeather-Briding-Header.h"; sourceTree = "<group>"; };
 		29C579391DE0F275003A149B /* APISessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionTests.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				295EAF271DEBBF6C00D1EF26 /* RadarSection.swift */,
 				295EAF2D1DEBC7D100D1EF26 /* RadarSection+IGListDiffable.swift */,
 				2949D05E1E07880B00D68F0A /* SavedLocation.swift */,
+				2996CB911E2334B200F723E3 /* SavedLocation+Equatable.swift */,
 				2949D0621E07994D00D68F0A /* SavedLocation+IGListDiffable.swift */,
 				2949D0601E0789EC00D68F0A /* SavedLocation+NSEncoding.swift */,
 				29E0A3381DDC0091004EA2C5 /* Wind.swift */,
@@ -726,6 +729,7 @@
 				29C579591DE28F75003A149B /* DailyForecastSection+IGListDiffable.swift in Sources */,
 				295EAF101DE8D8F000D1EF26 /* Astronomy+JSONConvertible.swift in Sources */,
 				29D8735A1E0CDDC300A6BA95 /* SavedLocationStore.swift in Sources */,
+				2996CB921E2334B200F723E3 /* SavedLocation+Equatable.swift in Sources */,
 				29F80FF01E1DEA8700A76A16 /* ErrorSectionController.swift in Sources */,
 				2949D0631E07994D00D68F0A /* SavedLocation+IGListDiffable.swift in Sources */,
 				29C579531DE28DF9003A149B /* ForecastDayCellViewModel.swift in Sources */,
