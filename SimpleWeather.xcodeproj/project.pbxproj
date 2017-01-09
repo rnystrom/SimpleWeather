@@ -82,6 +82,7 @@
 		298B66591DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66581DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift */; };
 		2996CB871E230C3B00F723E3 /* ConditionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66521DFDDC760086F0C7 /* ConditionsSection.swift */; };
 		2996CB881E230C3B00F723E3 /* ConditionsSection+Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B66541DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift */; };
+		2996CB8A1E231C9E00F723E3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996CB891E231C9E00F723E3 /* SearchViewController.swift */; };
 		29C579371DE0E80B003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
 		29C5793A1DE0F275003A149B /* APISessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579391DE0F275003A149B /* APISessionTests.swift */; };
 		29C5793C1DE0F2CF003A149B /* URL+DiskCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */; };
@@ -200,6 +201,7 @@
 		298B66541DFDDC8E0086F0C7 /* ConditionsSection+Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+Forecast.swift"; sourceTree = "<group>"; };
 		298B66561DFDDCCF0086F0C7 /* ConditionsSection+IGListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+IGListDiffable.swift"; sourceTree = "<group>"; };
 		298B66581DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConditionsSection+ViewModels.swift"; sourceTree = "<group>"; };
+		2996CB891E231C9E00F723E3 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		29C579361DE0E80B003A149B /* URL+DiskCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+DiskCacheKey.swift"; sourceTree = "<group>"; };
 		29C579381DE0E84F003A149B /* SimpleWeather-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SimpleWeather-Briding-Header.h"; sourceTree = "<group>"; };
 		29C579391DE0F275003A149B /* APISessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISessionTests.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			children = (
 				295EAF1B1DEA427F00D1EF26 /* AlertsViewController.swift */,
 				2949D05A1E0786D500D68F0A /* SavedLocationsViewController.swift */,
+				2996CB891E231C9E00F723E3 /* SearchViewController.swift */,
 				290538821DD9287A00531193 /* WeatherViewController.swift */,
 			);
 			path = ViewControllers;
@@ -749,6 +752,7 @@
 				295EAF0D1DE8D84800D1EF26 /* Astronomy.swift in Sources */,
 				29F80FEA1E1DE5E800A76A16 /* ErrorViewModel+IGListDiffable.swift in Sources */,
 				298B66591DFDE4F90086F0C7 /* ConditionsSection+ViewModels.swift in Sources */,
+				2996CB8A1E231C9E00F723E3 /* SearchViewController.swift in Sources */,
 				290538951DDA09E100531193 /* Alert.swift in Sources */,
 				2949D05D1E0786F700D68F0A /* SavedLocationCell.swift in Sources */,
 				29E0A31C1DDB61C5004EA2C5 /* KeypathParsing.swift in Sources */,

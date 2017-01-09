@@ -55,7 +55,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SavedLocationCell" id="UAj-pV-iM1" customClass="SavedLocationCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="0.0" width="285" height="50"/>
+                                        <rect key="frame" x="17.5" y="0.0" width="285" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
@@ -94,7 +94,13 @@
                             <constraint firstAttribute="trailing" secondItem="luZ-rG-vIP" secondAttribute="trailing" id="pfz-Nt-MLP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Locations" id="wbv-Zg-jpq"/>
+                    <navigationItem key="navigationItem" title="Locations" id="wbv-Zg-jpq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WPF-fN-S0u">
+                            <connections>
+                                <segue destination="3Ub-um-U2g" kind="presentation" id="77S-cS-d6k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="luZ-rG-vIP" id="qnt-QG-0FU"/>
                     </connections>
@@ -102,6 +108,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK0-QZ-dps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1342.5" y="90"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="0Id-ul-QbN">
+            <objects>
+                <viewController id="z17-fS-1v4" customClass="SearchViewController" customModule="SimpleWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pkT-v2-N2T"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJc-gE-JgW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7ad-9H-SQB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-95-X37" customClass="IGListCollectionView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EFy-PJ-IET">
+                                    <size key="itemSize" width="267" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2nW-XS-HYw">
+                                        <rect key="frame" x="26.5" y="0.0" width="267" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070276074111461639" green="0.073418788611888885" blue="0.12315741926431656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EJc-gE-JgW" firstAttribute="top" secondItem="8ts-95-X37" secondAttribute="bottom" id="HNK-61-JsO"/>
+                            <constraint firstItem="8ts-95-X37" firstAttribute="leading" secondItem="7ad-9H-SQB" secondAttribute="leading" id="Kim-Jn-N7P"/>
+                            <constraint firstItem="8ts-95-X37" firstAttribute="top" secondItem="7ad-9H-SQB" secondAttribute="top" id="j6o-Gm-7A2"/>
+                            <constraint firstAttribute="trailing" secondItem="8ts-95-X37" secondAttribute="trailing" id="sqt-31-xxz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JGK-zG-9Kf">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="8ts-95-X37" id="xYs-8n-3Jw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xft-yY-4g4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="868.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dgD-a8-WG4">
+            <objects>
+                <navigationController id="3Ub-um-U2g" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXe-gF-fTQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.070588235289999995" green="0.074509803920000006" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z17-fS-1v4" kind="relationship" relationship="rootViewController" id="ofY-DF-7rn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQL-v0-NHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343" y="869"/>
         </scene>
         <!--Your Location-->
         <scene sceneID="UI1-Xg-wRX">
