@@ -89,7 +89,23 @@ IGListSingleSectionControllerDelegate {
     // MARK: IGListSingleSectionControllerDelegate
 
     func didSelect(_ sectionController: IGListSingleSectionController) {
-
+        guard let object = adapter.object(for: sectionController) as? MKLocalSearchCompletion else { return }
+        let searchRequest = MKLocalSearchRequest(completion: object)
+        let search = MKLocalSearch(request: searchRequest)
+        search.start { (response, error) in
+            if let coordinate = response?.mapItems.first?.placemark.coordinate {
+                
+            } else {
+                let alert = UIAlertController(
+                    title: NSLocalizedString("Error", comment: ""),
+                    message: NSLocalizedString("There was a problem saving the location.", comment: ""),
+                    preferredStyle: .alert
+                )
+                let action = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+        }
     }
 
 }
