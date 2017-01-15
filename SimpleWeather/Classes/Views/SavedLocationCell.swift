@@ -109,7 +109,7 @@ class SavedLocationCell: UICollectionViewCell, UIScrollViewDelegate {
         let alpha: CGFloat
         let percentVisible = actionPercentVisible(x: scrollView.contentOffset.x)
         if percentVisible > 0 {
-            alpha = 1 - percentVisible * 0.5
+            alpha = 1 - percentVisible * 0.75
         } else {
             alpha = 1
         }
