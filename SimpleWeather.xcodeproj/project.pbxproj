@@ -966,7 +966,7 @@
 				DEVELOPMENT_TEAM = 523C4DWBTH;
 				INFOPLIST_FILE = SimpleWeather/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.SimpleWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleWeather/SimpleWeather-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -983,7 +983,7 @@
 				DEVELOPMENT_TEAM = 523C4DWBTH;
 				INFOPLIST_FILE = SimpleWeather/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.SimpleWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.whoisryannystrom.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleWeather/SimpleWeather-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
