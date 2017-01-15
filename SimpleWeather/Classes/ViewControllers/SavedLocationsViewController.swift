@@ -41,7 +41,8 @@ class SavedLocationsViewController: UIViewController, IGListAdapterDataSource, S
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, sectionControllerFor object: Any) -> IGListSectionController {
-        return SavedLocationSectionController()
+        guard let store = store else { return IGListSectionController() }
+        return SavedLocationSectionController(store: store)
     }
 
     func emptyView(for listAdapter: IGListAdapter) -> UIView? {

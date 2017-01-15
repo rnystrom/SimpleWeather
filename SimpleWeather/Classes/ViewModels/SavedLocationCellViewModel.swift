@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-struct SavedLocationContentViewModel {
+struct SavedLocationCellViewModel {
     let text: String
     let userLocation: Bool
     let region: MKCoordinateRegion

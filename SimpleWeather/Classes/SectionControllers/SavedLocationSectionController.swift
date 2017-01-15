@@ -10,14 +10,15 @@ import UIKit
 import IGListKit
 import MapKit
 
-class SavedLocationSectionController: IGListSectionController, IGListSectionType, IGListDisplayDelegate {
+class SavedLocationSectionController: IGListSectionController, IGListSectionType, IGListDisplayDelegate, SavedLocationCellDelegate {
 
     var location: SavedLocation?
+    let store: SavedLocationStore
 
-    override init() {
+    init(store: SavedLocationStore) {
+        self.store = store
         super.init()
-        displayDelegate = self
-//        inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.displayDelegate = self
     }
 
     // MARK: IGListSectionType
@@ -34,6 +35,7 @@ class SavedLocationSectionController: IGListSectionController, IGListSectionType
     func cellForItem(at index: Int) -> UICollectionViewCell {
         guard let cell = collectionContext?.dequeueReusableCell(of: SavedLocationCell.self, for: self, at: index) as? SavedLocationCell
             else { return UICollectionViewCell() }
+        cell.delegate = self
         return cell
     }
 
@@ -41,13 +43,7 @@ class SavedLocationSectionController: IGListSectionController, IGListSectionType
         location = object as? SavedLocation
     }
 
-    func didSelectItem(at index: Int) {
-        guard let controller = viewController?.storyboard?.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController,
-            let location = location
-            else { return }
-        controller.location = location
-        viewController?.navigationController?.pushViewController(controller, animated: true)
-    }
+    func didSelectItem(at index: Int) {}
 
     // MARK: IGListDisplayDelegate
 
@@ -65,12 +61,27 @@ class SavedLocationSectionController: IGListSectionController, IGListSectionType
             width: 1,
             size: sizeForItem(at: index)
         )
-        let viewModel = SavedLocationContentViewModel(text: location.name, userLocation: location.userLocation, region: region)
-        cell.locationContentView.configure(viewModel: viewModel)
+        let viewModel = SavedLocationCellViewModel(text: location.name, userLocation: location.userLocation, region: region)
+        cell.configure(viewModel: viewModel)
     }
 
     func listAdapter(_ listAdapter: IGListAdapter, willDisplay sectionController: IGListSectionController) {}
     func listAdapter(_ listAdapter: IGListAdapter, didEndDisplaying sectionController: IGListSectionController) {}
     func listAdapter(_ listAdapter: IGListAdapter, didEndDisplaying sectionController: IGListSectionController, cell: UICollectionViewCell, at index: Int) {}
+
+    // MARK: SavedLocationCellDelegate
+
+    func didSelectSavedLocation(cell: SavedLocationCell) {
+        guard let controller = viewController?.storyboard?.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController,
+            let location = location
+            else { return }
+        controller.location = location
+        viewController?.navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func didDeleteSavedLocation(cell: SavedLocationCell) {
+        guard let location = location else { return }
+        store.remove(location: location)
+    }
 
 }

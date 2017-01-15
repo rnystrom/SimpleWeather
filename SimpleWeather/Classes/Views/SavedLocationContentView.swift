@@ -35,7 +35,7 @@ class SavedLocationContentView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.cornerRadius = 4
+        layer.cornerRadius = 8
         clipsToBounds = true
         addSubview(mapView)
         addSubview(label)
@@ -53,12 +53,6 @@ class SavedLocationContentView: UIView {
         label.frame = divide.slice.insetBy(dx: 15, dy: 0)
         mapView.frame = divide.remainder
         disclosure.center = CGPoint(x: bounds.width - disclosure.bounds.width / 2 - 15, y: label.center.y)
-    }
-
-    func configure(viewModel: SavedLocationContentViewModel) {
-        label.text = viewModel.text
-        mapView.region = mapView.regionThatFits(viewModel.region)
-        mapView.userTrackingMode = viewModel.userLocation ? .follow : .none
     }
 
 }
