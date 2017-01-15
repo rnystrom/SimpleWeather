@@ -37,8 +37,8 @@ class SavedLocationStore {
         } else {
             return [
                 SavedLocation(name: "Your Location", latitude: 0, longitude: 0, userLocation: true),
-                SavedLocation(name: "New York, NY", latitude: 40.7128, longitude: -74.0059, userLocation: false),
-                SavedLocation(name: "San Francisco, CA", latitude: 37.7749, longitude: -122.4194, userLocation: false),
+                SavedLocation(name: "New York", latitude: 40.7128, longitude: -74.0059, userLocation: false),
+                SavedLocation(name: "San Francisco", latitude: 37.7749, longitude: -122.4194, userLocation: false),
             ]
         }
     }()
