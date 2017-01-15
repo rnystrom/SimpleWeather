@@ -14,11 +14,17 @@ default_platform :ios
 # don't worry, fastlane will prompt you for required
 # info which you can add here later
 lane :beta do
-  # build your iOS app
-  gym(
-    scheme: "SimpleWeather"
-  )
-
-  # upload to Testflight
+  cert
+  sigh
+  gym(scheme: "SimpleWeather",
+      workspace: "SimpleWeather.xcworkspace")
   pilot(skip_waiting_for_build_processing: true)
+end
+
+lane :appstore do
+	snapshot
+	match(type: "appstore")
+  gym(scheme: "SimpleWeather",
+      workspace: "SimpleWeather.xcworkspace")
+  appstore
 end
