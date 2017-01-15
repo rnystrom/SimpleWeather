@@ -41,10 +41,7 @@ class WeatherStateMachine {
         var objects = [IGListDiffable]()
 
         if let location = forecast.location {
-            let radar = RadarSection(
-                center: CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon),
-                width: 1
-            )
+            let radar = RadarSection(center: CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon))
             objects.append(radar)
         }
 

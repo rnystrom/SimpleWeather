@@ -1,141 +1,153 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+import MapKit
 import PlaygroundSupport
 
-struct CornerOptions: OptionSet {
-    let rawValue: Int
-    static let topLeft = CornerOptions(rawValue: 1 << 0)
-    static let topRight = CornerOptions(rawValue: 1 << 1)
-    static let bottomLeft = CornerOptions(rawValue: 1 << 2)
-    static let bottomRight = CornerOptions(rawValue: 1 << 3)
+class ContentView: UIView {
 
-    static let top: CornerOptions = [.topLeft, .topRight]
-    static let bottom: CornerOptions = [.bottomLeft, .bottomRight]
-    static let all: CornerOptions = [.topLeft, .topRight, .bottomLeft, .bottomRight]
-}
-
-extension CGRect {
-
-    var topLeft: CGPoint {
-        return origin
-    }
-
-    var topRight: CGPoint {
-        return CGPoint(x: maxX, y: minY)
-    }
-
-    var bottomRight: CGPoint {
-        return CGPoint(x: maxX, y: maxY)
-    }
-
-    var bottomLeft: CGPoint {
-        return CGPoint(x: minX, y: maxY)
-    }
-
-}
-
-class RoundedView : UIView {
-
-    var cornerOptions: CornerOptions = [] {
-        didSet {
-            setNeedsUpdateMask()
-        }
-    }
-
-    lazy var roundedCornerMask: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        self.layer.mask = layer
-        return layer
+    let mapView: MKMapView = {
+        let view = MKMapView()
+        view.showsScale = false
+        view.showsCompass = false
+        view.showsTraffic = false
+        view.showsBuildings = false
+        view.showsUserLocation = false
+        view.showsPointsOfInterest = false
+        view.backgroundColor = .orange
+        return view
     }()
 
-    var needsUpdateMask = true
-    func setNeedsUpdateMask() {
-        needsUpdateMask = true
+    let label: UILabel = {
+        let view = UILabel()
+        view.font = UIFont.systemFont(ofSize: 17)
+        view.textColor = .white
+        view.backgroundColor = .purple
+        return view
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.cornerRadius = 4
+        clipsToBounds = true
+        addSubview(mapView)
+        addSubview(label)
+        backgroundColor = .green
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        updateMask()
+        let divide = bounds.divided(atDistance: 40, from: .minYEdge)
+        label.frame = divide.slice.insetBy(dx: 15, dy: 0)
+        mapView.frame = divide.remainder
     }
 
-    func updateMask() {
-        guard needsUpdateMask else { return }
-        needsUpdateMask = false
+    func configure(text: String) {
+        label.text = text
+    }
 
-        let radius: CGFloat = 8
-        let innerBounds = bounds.insetBy(dx: radius, dy: radius)
+}
 
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: bounds.height / 2.0))
+class MyView: UIView, UIScrollViewDelegate {
+    let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.alwaysBounceHorizontal = true
+        view.alwaysBounceVertical = false
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
+        view.scrollsToTop = false
+        view.backgroundColor = .clear
+        return view
+    }()
 
-        if cornerOptions.contains(.topLeft) {
-            path.addArc(
-                withCenter: innerBounds.topLeft,
-                radius: radius,
-                startAngle: CGFloat.pi,
-                endAngle: 3.0 * CGFloat.pi / 2.0,
-                clockwise: true
-            )
-        } else {
-            path.addLine(to: bounds.topLeft)
-        }
+    let contentView: UIView = {
+//        let view = ContentView(frame: .zero)
+        let view = UIView()
+//        view.configure(text: "New York")
+        view.backgroundColor = .red
+        return view
+    }()
 
-        if cornerOptions.contains(.topRight) {
-            path.addArc(
-                withCenter: innerBounds.topRight,
-                radius: radius,
-                startAngle: 3.0 * CGFloat.pi / 2.0,
-                endAngle: 0,
-                clockwise: true
-            )
-        } else {
-            path.addLine(to: bounds.topRight)
-        }
+    let actionView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        return view
+    }()
 
-        if cornerOptions.contains(.bottomRight) {
-            path.addArc(
-                withCenter: innerBounds.bottomRight,
-                radius: radius,
-                startAngle: 0,
-                endAngle: CGFloat.pi / 2.0,
-                clockwise: true
-            )
-        } else {
-            path.addLine(to: bounds.bottomRight)
-        }
+    let actionWidth: CGFloat = 100
 
-        if cornerOptions.contains(.bottomLeft) {
-            path.addArc(
-                withCenter: innerBounds.bottomLeft,
-                radius: radius,
-                startAngle: CGFloat.pi / 2.0,
-                endAngle: CGFloat.pi,
-                clockwise: true
-            )
-        } else {
-            path.addLine(to: bounds.bottomLeft)
-        }
-        
-        roundedCornerMask.path = path.cgPath
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(scrollView)
+
+        scrollView.delegate = self
+        scrollView.addSubview(contentView)
+        scrollView.addSubview(actionView)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        scrollView.contentSize = CGSize(width: bounds.width + actionWidth, height: bounds.height)
+        scrollView.frame = bounds
+        contentView.frame = bounds
+
+        var actionFrame = bounds
+        actionFrame.origin.x = contentView.frame.maxX
+        actionFrame.size.width = actionWidth
+        actionView.frame = actionFrame
+    }
+
+    // MARK: UIScrollViewDelegate
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = actionView.bounds.width
+        let actionPercentVisible = scrollView.contentOffset.x / width
+
+        let alpha: CGFloat
+        if actionPercentVisible > 0 {
+            alpha = 1 - min(actionPercentVisible, 1) * 0.5
+        } else {
+            alpha = 1
+        }
+        contentView.alpha = alpha
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let width = actionView.bounds.width
+        let actionPercentVisible = scrollView.contentOffset.x / width
+
+        let x: CGFloat
+        if actionPercentVisible > 0.5 {
+            x = width
+        } else {
+            x = 0
+        }
+        targetContentOffset.pointee.x = x
+    }
 }
 
 let container = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
 container.backgroundColor = .black
 PlaygroundPage.current.liveView = container
 
-let square = UIView(frame: container.frame.insetBy(dx: 120, dy: 90))
-square.backgroundColor = .white
-container.addSubview(square)
+//let myView = MyView(frame: container.bounds.insetBy(dx: 20, dy: 40))
+//container.addSubview(myView)
 
-UIView.animate(
-    withDuration: 0.8,
-    delay: 0.5,
-    usingSpringWithDamping: 0.6,
-    initialSpringVelocity: 0,
-    options: [],
-    animations: {
-        square.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-})
+let contentView = ContentView(frame: container.bounds.insetBy(dx: 20, dy: 40))
+container.addSubview(contentView)
+
+var mapRegion = MKCoordinateRegion()
+
+// center the map on our office
+mapRegion.center = CLLocationCoordinate2DMake(42.396701, -71.120087)
+mapRegion.span.latitudeDelta = 0.05
+mapRegion.span.longitudeDelta = 0.05
+contentView.mapView.setRegion(mapRegion, animated: true)

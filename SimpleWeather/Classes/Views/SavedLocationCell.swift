@@ -10,6 +10,20 @@ import UIKit
 
 class SavedLocationCell: UICollectionViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    let locationContentView = SavedLocationContentView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(locationContentView)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        locationContentView.frame = contentView.bounds.insetBy(dx: 15, dy: 8)
+    }
 
 }

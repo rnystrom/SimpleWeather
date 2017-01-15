@@ -53,37 +53,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SavedLocationCell" id="UAj-pV-iM1" customClass="SavedLocationCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="17.5" y="0.0" width="285" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, NY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L24-sU-aRQ">
-                                                    <rect key="frame" x="15" y="15" width="109" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure" translatesAutoresizingMaskIntoConstraints="NO" id="njq-iY-L9f">
-                                                    <rect key="frame" x="258" y="15" width="12" height="20"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.11764705882352941" green="0.12549019607843137" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="njq-iY-L9f" secondAttribute="trailing" constant="15" id="2az-Jg-8Tl"/>
-                                            <constraint firstItem="L24-sU-aRQ" firstAttribute="leading" secondItem="UAj-pV-iM1" secondAttribute="leading" constant="15" id="EWb-I5-8wh"/>
-                                            <constraint firstItem="L24-sU-aRQ" firstAttribute="centerY" secondItem="UAj-pV-iM1" secondAttribute="centerY" id="MlC-G8-XJ9"/>
-                                            <constraint firstItem="njq-iY-L9f" firstAttribute="centerY" secondItem="UAj-pV-iM1" secondAttribute="centerY" id="crL-n3-75r"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="L24-sU-aRQ" id="dU8-WM-aMH"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.074509803921568626" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,7 +102,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultCell" id="2nW-XS-HYw" customClass="SearchResultCell" customModule="SimpleWeather" customModuleProvider="target">
-                                        <rect key="frame" x="27" y="0.0" width="267" height="55"/>
+                                        <rect key="frame" x="26.5" y="0.0" width="267" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="267" height="55"/>
@@ -624,6 +594,5 @@
     <resources>
         <image name="Arrow" width="20" height="12"/>
         <image name="Cloudy" width="30" height="30"/>
-        <image name="Disclosure" width="12" height="20"/>
     </resources>
 </document>

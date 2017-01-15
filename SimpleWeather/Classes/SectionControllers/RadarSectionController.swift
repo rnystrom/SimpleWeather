@@ -107,8 +107,9 @@ class RadarSectionController: IGListSectionController, IGListSectionType, IGList
         // otherwise the region will be set using the frame in the storyboard prototype
         cell.layoutIfNeeded()
 
-        let region = mapView.regionThatFits(model.region(cell.bounds.size))
-        configure(mapView: mapView, region: region)
+        let region = MKCoordinateRegion(center: model.center, width: 1, size: cell.bounds.size)
+        let regionThatFits = mapView.regionThatFits(region)
+        configure(mapView: mapView, region: regionThatFits)
         mapView.region = region
     }
 
