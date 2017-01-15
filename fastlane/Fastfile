@@ -16,7 +16,7 @@ default_platform :ios
 lane :beta do
   # build your iOS app
   gym(
-    # scheme: "YourScheme"
+    scheme: "SimpleWeather"
   )
 
   # upload to Testflight
