@@ -30,7 +30,7 @@ class ViewPulser {
 
         let group = CAAnimationGroup()
         group.duration = 2
-        group.repeatCount = FLT_MAX
+        group.repeatCount = Float.greatestFiniteMagnitude
         group.animations = [pulseAnimation]
 
         view.layer.add(group, forKey: "animateOpacity")
